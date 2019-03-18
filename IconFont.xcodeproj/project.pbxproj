@@ -14,6 +14,9 @@
 		2FD1342C223F61B40023B097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD1342A223F61B40023B097 /* LaunchScreen.storyboard */; };
 		2FD13437223F61B40023B097 /* IconFontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD13436223F61B40023B097 /* IconFontTests.swift */; };
 		2FD13442223F61B40023B097 /* IconFontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD13441223F61B40023B097 /* IconFontUITests.swift */; };
+		469AA9B6AF068CB50ED03705 /* Pods_IconFontTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D063CDC879F9AC2A0BD91013 /* Pods_IconFontTests.framework */; };
+		70C470A93F2AA4D218688034 /* Pods_IconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D13C2AD5060CDAD6BB8198F /* Pods_IconFont.framework */; };
+		9C2AEE9ED5B07428C62FE454 /* Pods_IconFontUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65819DF1B984C86E541D973 /* Pods_IconFontUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D390D62D3F9CD4306FD9AE7 /* Pods-IconFontTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFontTests.release.xcconfig"; path = "Target Support Files/Pods-IconFontTests/Pods-IconFontTests.release.xcconfig"; sourceTree = "<group>"; };
 		2FD1341E223F61B20023B097 /* IconFont.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconFont.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD13421223F61B20023B097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD13423223F61B20023B097 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,14 @@
 		2FD1343D223F61B40023B097 /* IconFontUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IconFontUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD13441223F61B40023B097 /* IconFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconFontUITests.swift; sourceTree = "<group>"; };
 		2FD13443223F61B40023B097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3628752A21A91BF3FDC3DB76 /* Pods-IconFontUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFontUITests.release.xcconfig"; path = "Target Support Files/Pods-IconFontUITests/Pods-IconFontUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6B7FCDBDA111ADBDCC57E3FA /* Pods-IconFontUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFontUITests.debug.xcconfig"; path = "Target Support Files/Pods-IconFontUITests/Pods-IconFontUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6CE19778AF5FB9C650BEBDA0 /* Pods-IconFont.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFont.debug.xcconfig"; path = "Target Support Files/Pods-IconFont/Pods-IconFont.debug.xcconfig"; sourceTree = "<group>"; };
+		76D68381198FA81C64799C77 /* Pods-IconFont.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFont.release.xcconfig"; path = "Target Support Files/Pods-IconFont/Pods-IconFont.release.xcconfig"; sourceTree = "<group>"; };
+		8D13C2AD5060CDAD6BB8198F /* Pods_IconFont.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IconFont.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D063CDC879F9AC2A0BD91013 /* Pods_IconFontTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IconFontTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E56199D75298A58B5738559A /* Pods-IconFontTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFontTests.debug.xcconfig"; path = "Target Support Files/Pods-IconFontTests/Pods-IconFontTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E65819DF1B984C86E541D973 /* Pods_IconFontUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IconFontUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70C470A93F2AA4D218688034 /* Pods_IconFont.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				469AA9B6AF068CB50ED03705 /* Pods_IconFontTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C2AEE9ED5B07428C62FE454 /* Pods_IconFontUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +96,8 @@
 				2FD13435223F61B40023B097 /* IconFontTests */,
 				2FD13440223F61B40023B097 /* IconFontUITests */,
 				2FD1341F223F61B20023B097 /* Products */,
+				7CBB41780CE6930819E976A1 /* Pods */,
+				E9CA76E852518F844C1A56B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +142,30 @@
 			path = IconFontUITests;
 			sourceTree = "<group>";
 		};
+		7CBB41780CE6930819E976A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6CE19778AF5FB9C650BEBDA0 /* Pods-IconFont.debug.xcconfig */,
+				76D68381198FA81C64799C77 /* Pods-IconFont.release.xcconfig */,
+				E56199D75298A58B5738559A /* Pods-IconFontTests.debug.xcconfig */,
+				0D390D62D3F9CD4306FD9AE7 /* Pods-IconFontTests.release.xcconfig */,
+				6B7FCDBDA111ADBDCC57E3FA /* Pods-IconFontUITests.debug.xcconfig */,
+				3628752A21A91BF3FDC3DB76 /* Pods-IconFontUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E9CA76E852518F844C1A56B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D13C2AD5060CDAD6BB8198F /* Pods_IconFont.framework */,
+				D063CDC879F9AC2A0BD91013 /* Pods_IconFontTests.framework */,
+				E65819DF1B984C86E541D973 /* Pods_IconFontUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +173,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FD13446223F61B40023B097 /* Build configuration list for PBXNativeTarget "IconFont" */;
 			buildPhases = (
+				487487EDAD2B2B23C1FD50AA /* [CP] Check Pods Manifest.lock */,
 				2FD1341A223F61B20023B097 /* Sources */,
 				2FD1341B223F61B20023B097 /* Frameworks */,
 				2FD1341C223F61B20023B097 /* Resources */,
@@ -149,6 +191,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FD13449223F61B40023B097 /* Build configuration list for PBXNativeTarget "IconFontTests" */;
 			buildPhases = (
+				17630E79F10FAD93B06732FD /* [CP] Check Pods Manifest.lock */,
 				2FD1342E223F61B40023B097 /* Sources */,
 				2FD1342F223F61B40023B097 /* Frameworks */,
 				2FD13430223F61B40023B097 /* Resources */,
@@ -167,6 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FD1344C223F61B40023B097 /* Build configuration list for PBXNativeTarget "IconFontUITests" */;
 			buildPhases = (
+				063C8BA3C3EBE8C2E622126C /* [CP] Check Pods Manifest.lock */,
 				2FD13439223F61B40023B097 /* Sources */,
 				2FD1343A223F61B40023B097 /* Frameworks */,
 				2FD1343B223F61B40023B097 /* Resources */,
@@ -250,6 +294,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		063C8BA3C3EBE8C2E622126C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IconFontUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		17630E79F10FAD93B06732FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IconFontTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		487487EDAD2B2B23C1FD50AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IconFont-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2FD1341A223F61B20023B097 /* Sources */ = {
@@ -430,6 +543,7 @@
 		};
 		2FD13447223F61B40023B097 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CE19778AF5FB9C650BEBDA0 /* Pods-IconFont.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -447,6 +561,7 @@
 		};
 		2FD13448223F61B40023B097 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76D68381198FA81C64799C77 /* Pods-IconFont.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +579,7 @@
 		};
 		2FD1344A223F61B40023B097 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E56199D75298A58B5738559A /* Pods-IconFontTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -484,6 +600,7 @@
 		};
 		2FD1344B223F61B40023B097 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D390D62D3F9CD4306FD9AE7 /* Pods-IconFontTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -504,6 +621,7 @@
 		};
 		2FD1344D223F61B40023B097 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B7FCDBDA111ADBDCC57E3FA /* Pods-IconFontUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -523,6 +641,7 @@
 		};
 		2FD1344E223F61B40023B097 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3628752A21A91BF3FDC3DB76 /* Pods-IconFontUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
