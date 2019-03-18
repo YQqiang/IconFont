@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: d96dc1bae322487c2d64efcf8885b1da7232a0be
+PODS:
+  - IconFontRegister (0.1.1)
+  - SnapKit (4.2.0)
+
+DEPENDENCIES:
+  - IconFontRegister
+  - SnapKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - IconFontRegister
+    - SnapKit
+
+SPEC CHECKSUMS:
+  IconFontRegister: 0a119b2a97342854a2e9e5d3c8880b0d1df84517
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+
+PODFILE CHECKSUM: e647a8a50f8d5ce3f1dcd8a52357776b73bb15d3
 
 COCOAPODS: 1.6.0.beta.2

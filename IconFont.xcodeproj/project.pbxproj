@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F3F86A2223F816400EBE35A /* iconfont_app.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F3F86A1223F800800EBE35A /* iconfont_app.ttf */; };
+		2F3F86A4223F831500EBE35A /* IconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F86A3223F831500EBE35A /* IconFont.swift */; };
+		2F3F86A6223F946000EBE35A /* UIColor+IF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F86A5223F946000EBE35A /* UIColor+IF.swift */; };
+		2F60EED0223FAC3C0031A484 /* IFRoundShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EECF223FAC3C0031A484 /* IFRoundShadowView.swift */; };
 		2FD13422223F61B20023B097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD13421223F61B20023B097 /* AppDelegate.swift */; };
-		2FD13424223F61B20023B097 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD13423223F61B20023B097 /* ViewController.swift */; };
-		2FD13427223F61B30023B097 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD13425223F61B20023B097 /* Main.storyboard */; };
 		2FD13429223F61B40023B097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FD13428223F61B40023B097 /* Assets.xcassets */; };
 		2FD1342C223F61B40023B097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD1342A223F61B40023B097 /* LaunchScreen.storyboard */; };
 		2FD13437223F61B40023B097 /* IconFontTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD13436223F61B40023B097 /* IconFontTests.swift */; };
 		2FD13442223F61B40023B097 /* IconFontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD13441223F61B40023B097 /* IconFontUITests.swift */; };
+		2FD13454223F64AA0023B097 /* IFBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD13453223F64AA0023B097 /* IFBaseViewController.swift */; };
+		2FD13456223F64F10023B097 /* IFMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD13455223F64F10023B097 /* IFMainViewController.swift */; };
+		2FD13459223F664A0023B097 /* IFBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD13458223F664A0023B097 /* IFBaseView.swift */; };
+		2FD1345B223F66660023B097 /* IFMainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD1345A223F66660023B097 /* IFMainTabBar.swift */; };
 		469AA9B6AF068CB50ED03705 /* Pods_IconFontTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D063CDC879F9AC2A0BD91013 /* Pods_IconFontTests.framework */; };
 		70C470A93F2AA4D218688034 /* Pods_IconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D13C2AD5060CDAD6BB8198F /* Pods_IconFont.framework */; };
 		9C2AEE9ED5B07428C62FE454 /* Pods_IconFontUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65819DF1B984C86E541D973 /* Pods_IconFontUITests.framework */; };
@@ -38,10 +44,12 @@
 
 /* Begin PBXFileReference section */
 		0D390D62D3F9CD4306FD9AE7 /* Pods-IconFontTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFontTests.release.xcconfig"; path = "Target Support Files/Pods-IconFontTests/Pods-IconFontTests.release.xcconfig"; sourceTree = "<group>"; };
+		2F3F86A1223F800800EBE35A /* iconfont_app.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont_app.ttf; sourceTree = "<group>"; };
+		2F3F86A3223F831500EBE35A /* IconFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconFont.swift; sourceTree = "<group>"; };
+		2F3F86A5223F946000EBE35A /* UIColor+IF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+IF.swift"; sourceTree = "<group>"; };
+		2F60EECF223FAC3C0031A484 /* IFRoundShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFRoundShadowView.swift; sourceTree = "<group>"; };
 		2FD1341E223F61B20023B097 /* IconFont.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconFont.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD13421223F61B20023B097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2FD13423223F61B20023B097 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2FD13426223F61B20023B097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2FD13428223F61B40023B097 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2FD1342B223F61B40023B097 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2FD1342D223F61B40023B097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +59,10 @@
 		2FD1343D223F61B40023B097 /* IconFontUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IconFontUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD13441223F61B40023B097 /* IconFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconFontUITests.swift; sourceTree = "<group>"; };
 		2FD13443223F61B40023B097 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FD13453223F64AA0023B097 /* IFBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFBaseViewController.swift; sourceTree = "<group>"; };
+		2FD13455223F64F10023B097 /* IFMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMainViewController.swift; sourceTree = "<group>"; };
+		2FD13458223F664A0023B097 /* IFBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFBaseView.swift; sourceTree = "<group>"; };
+		2FD1345A223F66660023B097 /* IFMainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMainTabBar.swift; sourceTree = "<group>"; };
 		3628752A21A91BF3FDC3DB76 /* Pods-IconFontUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFontUITests.release.xcconfig"; path = "Target Support Files/Pods-IconFontUITests/Pods-IconFontUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6B7FCDBDA111ADBDCC57E3FA /* Pods-IconFontUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFontUITests.debug.xcconfig"; path = "Target Support Files/Pods-IconFontUITests/Pods-IconFontUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6CE19778AF5FB9C650BEBDA0 /* Pods-IconFont.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFont.debug.xcconfig"; path = "Target Support Files/Pods-IconFont/Pods-IconFont.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,10 +126,12 @@
 		2FD13420223F61B20023B097 /* IconFont */ = {
 			isa = PBXGroup;
 			children = (
+				2FD13451223F633A0023B097 /* Util */,
+				2FD13450223F63330023B097 /* Base */,
+				2FD1344F223F632A0023B097 /* Main */,
 				2FD13421223F61B20023B097 /* AppDelegate.swift */,
-				2FD13423223F61B20023B097 /* ViewController.swift */,
-				2FD13425223F61B20023B097 /* Main.storyboard */,
 				2FD13428223F61B40023B097 /* Assets.xcassets */,
+				2F3F86A1223F800800EBE35A /* iconfont_app.ttf */,
 				2FD1342A223F61B40023B097 /* LaunchScreen.storyboard */,
 				2FD1342D223F61B40023B097 /* Info.plist */,
 			);
@@ -142,6 +156,50 @@
 			path = IconFontUITests;
 			sourceTree = "<group>";
 		};
+		2FD1344F223F632A0023B097 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2FD13455223F64F10023B097 /* IFMainViewController.swift */,
+				2FD13457223F66300023B097 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2FD13450223F63330023B097 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2FD13453223F64AA0023B097 /* IFBaseViewController.swift */,
+				2FD13458223F664A0023B097 /* IFBaseView.swift */,
+				2F60EECF223FAC3C0031A484 /* IFRoundShadowView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2FD13451223F633A0023B097 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				2FD13452223F63470023B097 /* Catetory */,
+				2F3F86A3223F831500EBE35A /* IconFont.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		2FD13452223F63470023B097 /* Catetory */ = {
+			isa = PBXGroup;
+			children = (
+				2F3F86A5223F946000EBE35A /* UIColor+IF.swift */,
+			);
+			path = Catetory;
+			sourceTree = "<group>";
+		};
+		2FD13457223F66300023B097 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2FD1345A223F66660023B097 /* IFMainTabBar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7CBB41780CE6930819E976A1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +210,6 @@
 				6B7FCDBDA111ADBDCC57E3FA /* Pods-IconFontUITests.debug.xcconfig */,
 				3628752A21A91BF3FDC3DB76 /* Pods-IconFontUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -177,6 +234,7 @@
 				2FD1341A223F61B20023B097 /* Sources */,
 				2FD1341B223F61B20023B097 /* Frameworks */,
 				2FD1341C223F61B20023B097 /* Resources */,
+				B913DAA23D0CDDAFFEBA2052 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,6 +289,7 @@
 		2FD13416223F61B20023B097 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = IF;
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = yuqiang;
@@ -275,7 +334,7 @@
 			files = (
 				2FD1342C223F61B40023B097 /* LaunchScreen.storyboard in Resources */,
 				2FD13429223F61B40023B097 /* Assets.xcassets in Resources */,
-				2FD13427223F61B30023B097 /* Main.storyboard in Resources */,
+				2F3F86A2223F816400EBE35A /* iconfont_app.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +421,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B913DAA23D0CDDAFFEBA2052 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IconFont/Pods-IconFont-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -369,8 +447,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FD13424223F61B20023B097 /* ViewController.swift in Sources */,
+				2FD13459223F664A0023B097 /* IFBaseView.swift in Sources */,
+				2F3F86A4223F831500EBE35A /* IconFont.swift in Sources */,
+				2F60EED0223FAC3C0031A484 /* IFRoundShadowView.swift in Sources */,
+				2FD13456223F64F10023B097 /* IFMainViewController.swift in Sources */,
 				2FD13422223F61B20023B097 /* AppDelegate.swift in Sources */,
+				2F3F86A6223F946000EBE35A /* UIColor+IF.swift in Sources */,
+				2FD13454223F64AA0023B097 /* IFBaseViewController.swift in Sources */,
+				2FD1345B223F66660023B097 /* IFMainTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,14 +490,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2FD13425223F61B20023B097 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2FD13426223F61B20023B097 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2FD1342A223F61B40023B097 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -547,7 +623,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = IconFont/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -565,7 +643,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = IconFont/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
