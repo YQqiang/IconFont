@@ -11,11 +11,26 @@ import SnapKit
 
 class IFMainTabBar: IFBaseView {
     
+    public var items: [UITabBarItem]? {
+        didSet {
+            tabBar.items = items
+        }
+    }
+    
+    public var selectItem: UITabBarItem? {
+        didSet {
+            tabBar.selectedItem = selectItem
+        }
+    }
+    
+    public var didSelectItem: ((_ tabBar: UITabBar, _ item: UITabBarItem) -> Void)?
+    
     public private(set) lazy var tabBar: UITabBar = {
         let tab = UITabBar()
         tab.tintColor = UIColor.IFTabEnable
         tab.barTintColor = UIColor.IFTabBg
         tab.clipsToBounds = true
+        tab.delegate = self
         return tab
     }()
     
@@ -25,7 +40,7 @@ class IFMainTabBar: IFBaseView {
         backgroundColor = UIColor.clear
         
         let superView = IFRoundShadowView()
-        superView.backgroundColor = UIColor.IFTabBg
+        superView.contentView.backgroundColor = UIColor.clear
         let radius: CGFloat = 22
         superView.cornerRadius = radius
         superView.fillColor = UIColor.IFTabBg
@@ -48,18 +63,14 @@ class IFMainTabBar: IFBaseView {
             make.right.equalToSuperview().offset(-radius)
             make.height.equalTo(radius * 2)
         }
-        
-        let image1 = IconFontType.nodeManage.image(background: UIColor.clear, tint: UIColor.red, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
-        let item1 = UITabBarItem(title: "预览", image: image1, selectedImage: nil)
-        
-        let image2 = IconFontType.appManage.image(background: UIColor.clear, tint: UIColor.red, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
-        let item2 = UITabBarItem(title: "列表", image: image2, selectedImage: nil)
-        
-        let image3 = IconFontType.editHexagon.image(background: UIColor.clear, tint: UIColor.red, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
-        let item3 = UITabBarItem(title: "编辑", image: image3, selectedImage: nil)
-        
-        tabBar.items = [item1, item2, item3]
-        
     }
 
+}
+
+extension IFMainTabBar: UITabBarDelegate {
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        if let closure = didSelectItem {
+            closure(tabBar, item)
+        }
+    }
 }
