@@ -11,15 +11,37 @@ import UIKit
 class IFOverviewViewController: IFBaseViewController {
     
     fileprivate lazy var dataSource: [IFGroupItem] = {
-        let htmlPath = Bundle.main.path(forResource: "dingding_index.html", ofType: nil) ?? ""
-        let htmlPathUrl = URL(fileURLWithPath: htmlPath)
         
-        let fontPath = Bundle.main.path(forResource: "dingding_iconfont.ttf", ofType: nil) ?? ""
-        let fontPathUrl = URL(fileURLWithPath: fontPath)
-        
-        let group = IFGroupItem(title: "钉钉", fontName: "dingding_iconfont", fontPath: fontPathUrl, htmlPath: htmlPathUrl)
-        group.register()
-        return [group]
+        var datas: [(html: String, file: String, icon: String, title: String)] = []
+        datas.append(("beautyMakeup_index.html",
+                      "beautyMakeup_iconfont.ttf",
+                      "beauty_makeup_iconfont",
+                      "美妆"))
+        datas.append(("sportMovement_index.html",
+                     "sportMovement_iconfont.ttf",
+                     "sports_movement_iconfont",
+                     "体育运动"))
+        datas.append(("sportProject_index.html",
+                     "sportProject_iconfont.ttf",
+                     "sport_project_iconfont",
+                     "体育项目"))
+        datas.append(("dingding_index.html",
+                     "dingding_iconfont.ttf",
+                     "dingding_iconfont",
+                     "钉钉"))
+        var groups: [IFGroupItem] = []
+        for data in datas {
+            let htmlPath = Bundle.main.path(forResource: data.html, ofType: nil) ?? ""
+            let htmlPathUrl = URL(fileURLWithPath: htmlPath)
+            
+            let fontPath = Bundle.main.path(forResource: data.file, ofType: nil) ?? ""
+            let fontPathUrl = URL(fileURLWithPath: fontPath)
+            
+            let group = IFGroupItem(title: data.title, fontName: data.icon, fontPath: fontPathUrl, htmlPath: htmlPathUrl)
+            group.register()
+            groups.append(group)
+        }
+        return groups
     }()
 
     fileprivate lazy var collectionView: UICollectionView = {
