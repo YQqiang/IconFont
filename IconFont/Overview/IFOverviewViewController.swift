@@ -11,10 +11,10 @@ import UIKit
 class IFOverviewViewController: IFBaseViewController {
     
     fileprivate lazy var dataSource: [IFGroupItem] = {
-        let htmlPath = Bundle.main.path(forResource: "index_dingding.html", ofType: nil) ?? ""
+        let htmlPath = Bundle.main.path(forResource: "dingding_index.html", ofType: nil) ?? ""
         let htmlPathUrl = URL(fileURLWithPath: htmlPath)
         
-        let fontPath = Bundle.main.path(forResource: "iconfont_dingding.ttf", ofType: nil) ?? ""
+        let fontPath = Bundle.main.path(forResource: "dingding_iconfont.ttf", ofType: nil) ?? ""
         let fontPathUrl = URL(fileURLWithPath: fontPath)
         
         let group = IFGroupItem(title: "钉钉", fontName: "dingding_iconfont", fontPath: fontPathUrl, htmlPath: htmlPathUrl)

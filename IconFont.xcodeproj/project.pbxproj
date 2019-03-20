@@ -16,8 +16,8 @@
 		2F60EEDB22406A310031A484 /* IFBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EEDA22406A310031A484 /* IFBaseNavigationController.swift */; };
 		2F60EEDE224089C20031A484 /* IFListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EEDD224089C20031A484 /* IFListViewController.swift */; };
 		2FAC3D422241F0550089EC76 /* IFItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC3D412241F0550089EC76 /* IFItem.swift */; };
-		2FAC3D472241F21E0089EC76 /* index_dingding.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FAC3D452241F21E0089EC76 /* index_dingding.html */; };
-		2FAC3D482241F21E0089EC76 /* iconfont_dingding.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FAC3D462241F21E0089EC76 /* iconfont_dingding.ttf */; };
+		2FAC3D472241F21E0089EC76 /* dingding_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FAC3D452241F21E0089EC76 /* dingding_index.html */; };
+		2FAC3D482241F21E0089EC76 /* dingding_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FAC3D462241F21E0089EC76 /* dingding_iconfont.ttf */; };
 		2FAC3D4A224225140089EC76 /* IFOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC3D49224225140089EC76 /* IFOverviewCell.swift */; };
 		2FAC3D4C22423D690089EC76 /* IFOverviewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC3D4B22423D690089EC76 /* IFOverviewHeaderView.swift */; };
 		2FD13422223F61B20023B097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD13421223F61B20023B097 /* AppDelegate.swift */; };
@@ -62,8 +62,8 @@
 		2F60EEDA22406A310031A484 /* IFBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFBaseNavigationController.swift; sourceTree = "<group>"; };
 		2F60EEDD224089C20031A484 /* IFListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFListViewController.swift; sourceTree = "<group>"; };
 		2FAC3D412241F0550089EC76 /* IFItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFItem.swift; sourceTree = "<group>"; };
-		2FAC3D452241F21E0089EC76 /* index_dingding.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index_dingding.html; sourceTree = "<group>"; };
-		2FAC3D462241F21E0089EC76 /* iconfont_dingding.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont_dingding.ttf; sourceTree = "<group>"; };
+		2FAC3D452241F21E0089EC76 /* dingding_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = dingding_index.html; sourceTree = "<group>"; };
+		2FAC3D462241F21E0089EC76 /* dingding_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dingding_iconfont.ttf; sourceTree = "<group>"; };
 		2FAC3D49224225140089EC76 /* IFOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewCell.swift; sourceTree = "<group>"; };
 		2FAC3D4B22423D690089EC76 /* IFOverviewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewHeaderView.swift; sourceTree = "<group>"; };
 		2FD1341E223F61B20023B097 /* IconFont.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconFont.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,8 +164,8 @@
 		2FAC3D442241F2070089EC76 /* dingding */ = {
 			isa = PBXGroup;
 			children = (
-				2FAC3D452241F21E0089EC76 /* index_dingding.html */,
-				2FAC3D462241F21E0089EC76 /* iconfont_dingding.ttf */,
+				2FAC3D452241F21E0089EC76 /* dingding_index.html */,
+				2FAC3D462241F21E0089EC76 /* dingding_iconfont.ttf */,
 			);
 			path = dingding;
 			sourceTree = "<group>";
@@ -409,8 +409,8 @@
 			files = (
 				2FD1342C223F61B40023B097 /* LaunchScreen.storyboard in Resources */,
 				2FD13429223F61B40023B097 /* Assets.xcassets in Resources */,
-				2FAC3D472241F21E0089EC76 /* index_dingding.html in Resources */,
-				2FAC3D482241F21E0089EC76 /* iconfont_dingding.ttf in Resources */,
+				2FAC3D472241F21E0089EC76 /* dingding_index.html in Resources */,
+				2FAC3D482241F21E0089EC76 /* dingding_iconfont.ttf in Resources */,
 				2F3F86A2223F816400EBE35A /* iconfont_app.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
