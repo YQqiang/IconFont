@@ -32,6 +32,9 @@ struct IFItem: IconFontAble {
 }
 
 struct IFGroupItem {
+    
+    public var title: String
+    
     public var fontName: String
     
     public var fontPath: URL
@@ -53,7 +56,8 @@ struct IFGroupItem {
         return itemArray
     }()
     
-    init(fontName: String, fontPath: URL, htmlPath: URL) {
+    init(title: String, fontName: String, fontPath: URL, htmlPath: URL) {
+        self.title = title
         self.fontName = fontName
         self.fontPath = fontPath
         self.htmlPath = htmlPath

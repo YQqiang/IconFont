@@ -81,7 +81,7 @@ class IFMainViewController: IFBaseViewController {
         view.addSubview(tabBar)
         tabBar.snp.makeConstraints { (make) in
             make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-22)
+            make.bottom.equalToSuperview().offset(-20)
         }
         tabBar.tabBar.selectedItem = tabBar.tabBar.items?.first
         handleShowViewController(index: 0, forward: true)

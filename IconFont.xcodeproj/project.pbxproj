@@ -19,6 +19,7 @@
 		2FAC3D472241F21E0089EC76 /* index_dingding.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FAC3D452241F21E0089EC76 /* index_dingding.html */; };
 		2FAC3D482241F21E0089EC76 /* iconfont_dingding.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FAC3D462241F21E0089EC76 /* iconfont_dingding.ttf */; };
 		2FAC3D4A224225140089EC76 /* IFOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC3D49224225140089EC76 /* IFOverviewCell.swift */; };
+		2FAC3D4C22423D690089EC76 /* IFOverviewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC3D4B22423D690089EC76 /* IFOverviewHeaderView.swift */; };
 		2FD13422223F61B20023B097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD13421223F61B20023B097 /* AppDelegate.swift */; };
 		2FD13429223F61B40023B097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FD13428223F61B40023B097 /* Assets.xcassets */; };
 		2FD1342C223F61B40023B097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD1342A223F61B40023B097 /* LaunchScreen.storyboard */; };
@@ -64,6 +65,7 @@
 		2FAC3D452241F21E0089EC76 /* index_dingding.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index_dingding.html; sourceTree = "<group>"; };
 		2FAC3D462241F21E0089EC76 /* iconfont_dingding.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont_dingding.ttf; sourceTree = "<group>"; };
 		2FAC3D49224225140089EC76 /* IFOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewCell.swift; sourceTree = "<group>"; };
+		2FAC3D4B22423D690089EC76 /* IFOverviewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewHeaderView.swift; sourceTree = "<group>"; };
 		2FD1341E223F61B20023B097 /* IconFont.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconFont.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD13421223F61B20023B097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD13428223F61B40023B097 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				2FAC3D49224225140089EC76 /* IFOverviewCell.swift */,
+				2FAC3D4B22423D690089EC76 /* IFOverviewHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				2FD13454223F64AA0023B097 /* IFBaseViewController.swift in Sources */,
 				2F60EED7224069DE0031A484 /* IFOverviewViewController.swift in Sources */,
 				2FD1345B223F66660023B097 /* IFMainTabBar.swift in Sources */,
+				2FAC3D4C22423D690089EC76 /* IFOverviewHeaderView.swift in Sources */,
 				2FAC3D422241F0550089EC76 /* IFItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
