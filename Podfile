@@ -10,6 +10,8 @@ target 'IconFont' do
   # Pods for IconFont
   pod 'SnapKit'
   pod 'IconFontRegister'
+  pod 'Kanna'
+  pod 'Reveal-SDK','~>4', :configurations => ['Debug']
 
   target 'IconFontTests' do
     inherit! :search_paths

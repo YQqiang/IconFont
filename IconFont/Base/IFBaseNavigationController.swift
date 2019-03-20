@@ -14,6 +14,16 @@ class IFBaseNavigationController: UINavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        navigationBar.isTranslucent = false
+        navigationBar.shadowImage = UIImage()
+        if #available(iOS 11.0, *) {
+            navigationBar.prefersLargeTitles = true
+            navigationItem.largeTitleDisplayMode = .automatic
+        } else {
+            
+        }
+        
+        
     }
     
 

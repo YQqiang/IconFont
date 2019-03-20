@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     fileprivate func registerIconFont() {
-        IconFontType.register()
+        IconFontType.register(url: IconFontType.path)
     }
 }
 
