@@ -28,4 +28,8 @@ extension UIColor {
     class var IFItem: UIColor {
         return UIColor(red:0.55, green:0.60, blue:0.69, alpha:1.00)
     }
+    
+    class var IFAlertBg: UIColor {
+        return UIColor(red:0.96, green:0.97, blue:0.98, alpha:1.00)
+    }
 }

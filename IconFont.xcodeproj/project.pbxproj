@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		2F29377D22432DA200F55578 /* weather_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F29377B22432DA200F55578 /* weather_iconfont.ttf */; };
 		2F29377E22432DA200F55578 /* weather_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2F29377C22432DA200F55578 /* weather_index.html */; };
+		2F2937802243315200F55578 /* IFOverviewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F29377F2243315200F55578 /* IFOverviewDetailController.swift */; };
+		2F2937822243353400F55578 /* IFSlowlyShowTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2937812243353400F55578 /* IFSlowlyShowTransition.swift */; };
+		2F2937842243373100F55578 /* IFGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2937832243373100F55578 /* IFGradientView.swift */; };
+		2F2937862243577E00F55578 /* IFOverviewDetailTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2937852243577E00F55578 /* IFOverviewDetailTitleView.swift */; };
 		2F3F86A2223F816400EBE35A /* iconfont_app.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F3F86A1223F800800EBE35A /* iconfont_app.ttf */; };
 		2F3F86A4223F831500EBE35A /* IconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F86A3223F831500EBE35A /* IconFont.swift */; };
 		2F3F86A6223F946000EBE35A /* UIColor+IF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F86A5223F946000EBE35A /* UIColor+IF.swift */; };
@@ -63,6 +67,10 @@
 		0D390D62D3F9CD4306FD9AE7 /* Pods-IconFontTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFontTests.release.xcconfig"; path = "Target Support Files/Pods-IconFontTests/Pods-IconFontTests.release.xcconfig"; sourceTree = "<group>"; };
 		2F29377B22432DA200F55578 /* weather_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = weather_iconfont.ttf; sourceTree = "<group>"; };
 		2F29377C22432DA200F55578 /* weather_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = weather_index.html; sourceTree = "<group>"; };
+		2F29377F2243315200F55578 /* IFOverviewDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewDetailController.swift; sourceTree = "<group>"; };
+		2F2937812243353400F55578 /* IFSlowlyShowTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFSlowlyShowTransition.swift; sourceTree = "<group>"; };
+		2F2937832243373100F55578 /* IFGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFGradientView.swift; sourceTree = "<group>"; };
+		2F2937852243577E00F55578 /* IFOverviewDetailTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewDetailTitleView.swift; sourceTree = "<group>"; };
 		2F3F86A1223F800800EBE35A /* iconfont_app.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont_app.ttf; sourceTree = "<group>"; };
 		2F3F86A3223F831500EBE35A /* IconFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconFont.swift; sourceTree = "<group>"; };
 		2F3F86A5223F946000EBE35A /* UIColor+IF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+IF.swift"; sourceTree = "<group>"; };
@@ -148,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				2F60EED6224069DE0031A484 /* IFOverviewViewController.swift */,
+				2F29377F2243315200F55578 /* IFOverviewDetailController.swift */,
 				2FAC3D402241C3440089EC76 /* View */,
 			);
 			path = Overview;
@@ -174,6 +183,7 @@
 			children = (
 				2FAC3D49224225140089EC76 /* IFOverviewCell.swift */,
 				2FAC3D4B22423D690089EC76 /* IFOverviewHeaderView.swift */,
+				2F2937852243577E00F55578 /* IFOverviewDetailTitleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +301,7 @@
 				2FD13453223F64AA0023B097 /* IFBaseViewController.swift */,
 				2FD13458223F664A0023B097 /* IFBaseView.swift */,
 				2F60EECF223FAC3C0031A484 /* IFRoundShadowView.swift */,
+				2F2937832243373100F55578 /* IFGradientView.swift */,
 				2F60EEDA22406A310031A484 /* IFBaseNavigationController.swift */,
 			);
 			path = Base;
@@ -302,6 +313,7 @@
 				2FD13452223F63470023B097 /* Catetory */,
 				2F3F86A3223F831500EBE35A /* IconFont.swift */,
 				2FAC3D412241F0550089EC76 /* IFItem.swift */,
+				2F2937812243353400F55578 /* IFSlowlyShowTransition.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -588,6 +600,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F2937802243315200F55578 /* IFOverviewDetailController.swift in Sources */,
 				2FD13459223F664A0023B097 /* IFBaseView.swift in Sources */,
 				2F3F86A4223F831500EBE35A /* IconFont.swift in Sources */,
 				2F60EED0223FAC3C0031A484 /* IFRoundShadowView.swift in Sources */,
@@ -597,8 +610,11 @@
 				2F60EEDB22406A310031A484 /* IFBaseNavigationController.swift in Sources */,
 				2F60EEDE224089C20031A484 /* IFListViewController.swift in Sources */,
 				2F3F86A6223F946000EBE35A /* UIColor+IF.swift in Sources */,
+				2F2937822243353400F55578 /* IFSlowlyShowTransition.swift in Sources */,
 				2FAC3D4A224225140089EC76 /* IFOverviewCell.swift in Sources */,
+				2F2937862243577E00F55578 /* IFOverviewDetailTitleView.swift in Sources */,
 				2FD13454223F64AA0023B097 /* IFBaseViewController.swift in Sources */,
+				2F2937842243373100F55578 /* IFGradientView.swift in Sources */,
 				2F60EED7224069DE0031A484 /* IFOverviewViewController.swift in Sources */,
 				2FD1345B223F66660023B097 /* IFMainTabBar.swift in Sources */,
 				2FAC3D4C22423D690089EC76 /* IFOverviewHeaderView.swift in Sources */,

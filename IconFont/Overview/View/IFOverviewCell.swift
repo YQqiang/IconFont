@@ -23,6 +23,7 @@ class IFOverviewCell: UICollectionViewCell {
     
     fileprivate lazy var iconBtn: UIButton = {
         let btn = UIButton(type: .custom)
+        btn.isUserInteractionEnabled = false
         btn.adjustsImageWhenHighlighted = false
         return btn
     }()

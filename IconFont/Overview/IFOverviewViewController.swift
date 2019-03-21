@@ -93,10 +93,6 @@ extension IFOverviewViewController: UICollectionViewDataSource {
         cell.item = self.dataSource[indexPath.section].items[indexPath.item]
         return cell
     }
-    
-    
-    
-    
 }
 
 extension IFOverviewViewController: UICollectionViewDelegateFlowLayout {
@@ -107,5 +103,11 @@ extension IFOverviewViewController: UICollectionViewDelegateFlowLayout {
             return header
         }
         return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detail = IFOverviewDetailController()
+        detail.item = dataSource[indexPath.section].items[indexPath.row]
+        present(detail, animated: true, completion: nil)
     }
 }
