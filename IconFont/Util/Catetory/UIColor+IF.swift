@@ -24,4 +24,8 @@ extension UIColor {
     class var IFTabDisable: UIColor {
         return UIColor(red:0.77, green:0.77, blue:0.77, alpha:1.00)
     }
+    
+    class var IFItem: UIColor {
+        return UIColor(red:0.55, green:0.60, blue:0.69, alpha:1.00)
+    }
 }

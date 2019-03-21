@@ -13,7 +13,7 @@ class IFOverviewCell: UICollectionViewCell {
     public var item: IFItem? {
         didSet {
             DispatchQueue.global().async {
-                let image = self.item?.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
+                let image = self.item?.image(background: UIColor.clear, tint: UIColor.IFItem, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
                 DispatchQueue.main.async(execute: {
                     self.iconBtn.setImage(image, for: .normal)
                 })

@@ -13,7 +13,7 @@ class IFOverviewHeaderView: UICollectionReusableView {
     public private(set) lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 0
-        lbl.font = UIFont.boldSystemFont(ofSize: 30)
+        lbl.font = UIFont.boldSystemFont(ofSize: 24)
         lbl.textAlignment = .center
         lbl.textColor = UIColor.black
         return lbl
