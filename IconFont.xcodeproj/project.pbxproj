@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F29377D22432DA200F55578 /* weather_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F29377B22432DA200F55578 /* weather_iconfont.ttf */; };
+		2F29377E22432DA200F55578 /* weather_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2F29377C22432DA200F55578 /* weather_index.html */; };
 		2F3F86A2223F816400EBE35A /* iconfont_app.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F3F86A1223F800800EBE35A /* iconfont_app.ttf */; };
 		2F3F86A4223F831500EBE35A /* IconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F86A3223F831500EBE35A /* IconFont.swift */; };
 		2F3F86A6223F946000EBE35A /* UIColor+IF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F86A5223F946000EBE35A /* UIColor+IF.swift */; };
@@ -59,6 +61,8 @@
 
 /* Begin PBXFileReference section */
 		0D390D62D3F9CD4306FD9AE7 /* Pods-IconFontTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFontTests.release.xcconfig"; path = "Target Support Files/Pods-IconFontTests/Pods-IconFontTests.release.xcconfig"; sourceTree = "<group>"; };
+		2F29377B22432DA200F55578 /* weather_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = weather_iconfont.ttf; sourceTree = "<group>"; };
+		2F29377C22432DA200F55578 /* weather_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = weather_index.html; sourceTree = "<group>"; };
 		2F3F86A1223F800800EBE35A /* iconfont_app.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont_app.ttf; sourceTree = "<group>"; };
 		2F3F86A3223F831500EBE35A /* IconFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconFont.swift; sourceTree = "<group>"; };
 		2F3F86A5223F946000EBE35A /* UIColor+IF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+IF.swift"; sourceTree = "<group>"; };
@@ -131,6 +135,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F29377A22432D8D00F55578 /* weather */ = {
+			isa = PBXGroup;
+			children = (
+				2F29377C22432DA200F55578 /* weather_index.html */,
+				2F29377B22432DA200F55578 /* weather_iconfont.ttf */,
+			);
+			path = weather;
+			sourceTree = "<group>";
+		};
 		2F60EED4224069710031A484 /* Overview */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +181,7 @@
 		2FAC3D432241F1F70089EC76 /* IFResource */ = {
 			isa = PBXGroup;
 			children = (
+				2F29377A22432D8D00F55578 /* weather */,
 				2FE4ABDB224264C800A777D1 /* beautyMakeup */,
 				2FAC3D4E224258880089EC76 /* sportMovement */,
 				2FAC3D4D224258720089EC76 /* sportProject */,
@@ -457,6 +471,8 @@
 				2FE4ABD9224263AF00A777D1 /* sportMovement_index.html in Resources */,
 				2FE4ABDE224264E600A777D1 /* beautyMakeup_index.html in Resources */,
 				2FE4ABDF224264E600A777D1 /* beautyMakeup_iconfont.ttf in Resources */,
+				2F29377D22432DA200F55578 /* weather_iconfont.ttf in Resources */,
+				2F29377E22432DA200F55578 /* weather_index.html in Resources */,
 				2FE4ABDA224263AF00A777D1 /* sportMovement_iconfont.ttf in Resources */,
 				2FAC3D51224258BC0089EC76 /* sportProject_index.html in Resources */,
 				2F3F86A2223F816400EBE35A /* iconfont_app.ttf in Resources */,
