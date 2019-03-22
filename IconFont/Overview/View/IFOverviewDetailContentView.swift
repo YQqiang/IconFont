@@ -37,6 +37,19 @@ class IFOverviewDetailContentView: IFGradientView {
                     leftStackView.addArrangedSubview(itemView)                    
                 }
             }
+            
+            var sizeDatas: [(title: String, size: CGSize, color: UIColor)] = []
+            sizeDatas.append(("8 * 8", CGSize(width: 8, height: 8), UIColor.red))
+            sizeDatas.append(("16 * 16", CGSize(width: 16, height: 16), UIColor.orange))
+            sizeDatas.append(("24 * 24", CGSize(width: 24, height: 24), UIColor.brown))
+            sizeDatas.append(("32 * 32", CGSize(width: 32, height: 32), UIColor.purple))
+            for data in sizeDatas.enumerated() {
+                let itemView = IFOverviewDetailContentItem()
+                itemView.nameLbl.text = data.element.title
+                let image = obj.image(background: UIColor.clear, tint: data.element.color, size: data.element.size, insets: UIEdgeInsets.zero, orientation: .up)
+                itemView.iconImgV.image = image
+                otherStackView.addArrangedSubview(itemView)
+            }
         }
     }
     
@@ -67,6 +80,15 @@ class IFOverviewDetailContentView: IFGradientView {
         return stack
     }()
     
+    fileprivate lazy var otherStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fill
+        stack.spacing = 0
+        return stack
+    }()
+    
     override func createViews() {
         super.createViews()
         
@@ -77,6 +99,7 @@ class IFOverviewDetailContentView: IFGradientView {
             make.edges.equalToSuperview()
         }
         
+        stackView.addArrangedSubview(otherStackView)
         stackView.addArrangedSubview(leftStackView)
         stackView.addArrangedSubview(rightStackView)
     }
