@@ -19,12 +19,8 @@ class IFOverviewDetailController: IFBaseViewController {
             }
             let image = self.item?.image(background: UIColor.clear, tint: UIColor.white, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
             titleView.iconImgV.image = image
-            titleView.nameLbl.text = obj.name + String(unicodeScalarLiteral: obj.unicode)
-            let s = obj.unicode.unicodeScalars
-            for c in obj.unicode.characters {
-                print(c)
-            }
-            print("---\(s)")
+            titleView.nameLbl.text = obj.name
+            contentItems.item = obj
         }
     }
     
@@ -52,6 +48,12 @@ class IFOverviewDetailController: IFBaseViewController {
         return v
     }()
     
+    fileprivate lazy var contentItems: IFOverviewDetailContentView = {
+        let v = IFOverviewDetailContentView()
+        v.roundRadius = radius
+        return v
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,13 +61,17 @@ class IFOverviewDetailController: IFBaseViewController {
         view.addSubview(contentView)
         contentView.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
-            make.width.height.equalTo(200)
         }
         
         contentView.contentView.addSubview(titleView)
         titleView.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
-//            make.height.equalTo(64)
+        }
+        
+        contentView.contentView.addSubview(contentItems)
+        contentItems.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalToSuperview()
+            make.top.equalTo(titleView.snp.bottom)
         }
     }
     

@@ -21,6 +21,7 @@
 		2F60EED9224069EB0031A484 /* IFEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EED8224069EB0031A484 /* IFEditViewController.swift */; };
 		2F60EEDB22406A310031A484 /* IFBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EEDA22406A310031A484 /* IFBaseNavigationController.swift */; };
 		2F60EEDE224089C20031A484 /* IFListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EEDD224089C20031A484 /* IFListViewController.swift */; };
+		2FA1717E224482AD000EC866 /* IFOverviewDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */; };
 		2FAC3D422241F0550089EC76 /* IFItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC3D412241F0550089EC76 /* IFItem.swift */; };
 		2FAC3D472241F21E0089EC76 /* dingding_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FAC3D452241F21E0089EC76 /* dingding_index.html */; };
 		2FAC3D482241F21E0089EC76 /* dingding_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FAC3D462241F21E0089EC76 /* dingding_iconfont.ttf */; };
@@ -79,6 +80,7 @@
 		2F60EED8224069EB0031A484 /* IFEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditViewController.swift; sourceTree = "<group>"; };
 		2F60EEDA22406A310031A484 /* IFBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFBaseNavigationController.swift; sourceTree = "<group>"; };
 		2F60EEDD224089C20031A484 /* IFListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFListViewController.swift; sourceTree = "<group>"; };
+		2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewDetailContentView.swift; sourceTree = "<group>"; };
 		2FAC3D412241F0550089EC76 /* IFItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFItem.swift; sourceTree = "<group>"; };
 		2FAC3D452241F21E0089EC76 /* dingding_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = dingding_index.html; sourceTree = "<group>"; };
 		2FAC3D462241F21E0089EC76 /* dingding_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dingding_iconfont.ttf; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				2FAC3D49224225140089EC76 /* IFOverviewCell.swift */,
 				2FAC3D4B22423D690089EC76 /* IFOverviewHeaderView.swift */,
 				2F2937852243577E00F55578 /* IFOverviewDetailTitleView.swift */,
+				2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				2FD13422223F61B20023B097 /* AppDelegate.swift in Sources */,
 				2F60EEDB22406A310031A484 /* IFBaseNavigationController.swift in Sources */,
 				2F60EEDE224089C20031A484 /* IFListViewController.swift in Sources */,
+				2FA1717E224482AD000EC866 /* IFOverviewDetailContentView.swift in Sources */,
 				2F3F86A6223F946000EBE35A /* UIColor+IF.swift in Sources */,
 				2F2937822243353400F55578 /* IFSlowlyShowTransition.swift in Sources */,
 				2FAC3D4A224225140089EC76 /* IFOverviewCell.swift in Sources */,
