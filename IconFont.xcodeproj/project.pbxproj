@@ -23,6 +23,8 @@
 		2F60EEDB22406A310031A484 /* IFBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EEDA22406A310031A484 /* IFBaseNavigationController.swift */; };
 		2F60EEDE224089C20031A484 /* IFListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EEDD224089C20031A484 /* IFListViewController.swift */; };
 		2FA1717E224482AD000EC866 /* IFOverviewDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */; };
+		2FA171872246253C000EC866 /* creativeLetters_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FA171852246253C000EC866 /* creativeLetters_index.html */; };
+		2FA171882246253C000EC866 /* creativeLetters_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FA171862246253C000EC866 /* creativeLetters_iconfont.ttf */; };
 		2FAC3D422241F0550089EC76 /* IFItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC3D412241F0550089EC76 /* IFItem.swift */; };
 		2FAC3D472241F21E0089EC76 /* dingding_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FAC3D452241F21E0089EC76 /* dingding_index.html */; };
 		2FAC3D482241F21E0089EC76 /* dingding_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FAC3D462241F21E0089EC76 /* dingding_iconfont.ttf */; };
@@ -83,6 +85,8 @@
 		2F60EEDA22406A310031A484 /* IFBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFBaseNavigationController.swift; sourceTree = "<group>"; };
 		2F60EEDD224089C20031A484 /* IFListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFListViewController.swift; sourceTree = "<group>"; };
 		2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewDetailContentView.swift; sourceTree = "<group>"; };
+		2FA171852246253C000EC866 /* creativeLetters_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = creativeLetters_index.html; sourceTree = "<group>"; };
+		2FA171862246253C000EC866 /* creativeLetters_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = creativeLetters_iconfont.ttf; sourceTree = "<group>"; };
 		2FAC3D412241F0550089EC76 /* IFItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFItem.swift; sourceTree = "<group>"; };
 		2FAC3D452241F21E0089EC76 /* dingding_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = dingding_index.html; sourceTree = "<group>"; };
 		2FAC3D462241F21E0089EC76 /* dingding_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dingding_iconfont.ttf; sourceTree = "<group>"; };
@@ -190,6 +194,15 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		2FA171842246251C000EC866 /* creativeLetters */ = {
+			isa = PBXGroup;
+			children = (
+				2FA171852246253C000EC866 /* creativeLetters_index.html */,
+				2FA171862246253C000EC866 /* creativeLetters_iconfont.ttf */,
+			);
+			path = creativeLetters;
+			sourceTree = "<group>";
+		};
 		2FAC3D402241C3440089EC76 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +217,7 @@
 		2FAC3D432241F1F70089EC76 /* IFResource */ = {
 			isa = PBXGroup;
 			children = (
+				2FA171842246251C000EC866 /* creativeLetters */,
 				2F29377A22432D8D00F55578 /* weather */,
 				2FE4ABDB224264C800A777D1 /* beautyMakeup */,
 				2FAC3D4E224258880089EC76 /* sportMovement */,
@@ -491,11 +505,13 @@
 			files = (
 				2FD1342C223F61B40023B097 /* LaunchScreen.storyboard in Resources */,
 				2FD13429223F61B40023B097 /* Assets.xcassets in Resources */,
+				2FA171872246253C000EC866 /* creativeLetters_index.html in Resources */,
 				2FAC3D52224258BC0089EC76 /* sportProject_iconfont.ttf in Resources */,
 				2FAC3D472241F21E0089EC76 /* dingding_index.html in Resources */,
 				2FAC3D482241F21E0089EC76 /* dingding_iconfont.ttf in Resources */,
 				2FE4ABD9224263AF00A777D1 /* sportMovement_index.html in Resources */,
 				2FE4ABDE224264E600A777D1 /* beautyMakeup_index.html in Resources */,
+				2FA171882246253C000EC866 /* creativeLetters_iconfont.ttf in Resources */,
 				2FE4ABDF224264E600A777D1 /* beautyMakeup_iconfont.ttf in Resources */,
 				2F29377D22432DA200F55578 /* weather_iconfont.ttf in Resources */,
 				2F29377E22432DA200F55578 /* weather_index.html in Resources */,
