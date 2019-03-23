@@ -70,6 +70,7 @@ class IFOverviewViewController: IFBaseViewController {
         super.viewDidLoad()
         navigationItem.title = "预览"
         navigationController?.setNavigationBarHidden(true, animated: true)
+        registerForPreviewing(with: self, sourceView: collectionView)
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             make.top.equalTo(topLayoutGuide.snp.bottom)
@@ -109,5 +110,22 @@ extension IFOverviewViewController: UICollectionViewDelegateFlowLayout {
         let detail = IFOverviewDetailController()
         detail.item = dataSource[indexPath.section].items[indexPath.row]
         present(detail, animated: true, completion: nil)
+    }
+}
+
+extension IFOverviewViewController: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = collectionView.indexPathForItem(at: location) else {
+            return nil
+        }
+        let cell = collectionView.cellForItem(at: indexPath)
+        previewingContext.sourceRect = cell?.frame ?? CGRect.zero
+        let detail = IFOverviewDetailController(isPeek: true)
+        detail.item = dataSource[indexPath.section].items[indexPath.row]
+        return detail
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        present(viewControllerToCommit, animated: true, completion: nil)
     }
 }
