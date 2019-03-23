@@ -30,7 +30,7 @@ class IFOverviewDetailController: IFBaseViewController {
     }
     
     override var transitioningDelegate: UIViewControllerTransitioningDelegate? {
-        get { return IFSlowlyShowTransition() }
+        get { return isPeek ? super.transitioningDelegate : IFSlowlyShowTransition() }
         set {}
     }
     
@@ -54,6 +54,21 @@ class IFOverviewDetailController: IFBaseViewController {
         return v
     }()
     
+    private var isPeek: Bool = false
+    
+    init(isPeek: Bool) {
+        super.init(nibName: nil, bundle: nil)
+        self.isPeek = isPeek
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,6 +88,22 @@ class IFOverviewDetailController: IFBaseViewController {
             make.left.right.bottom.equalToSuperview()
             make.top.equalTo(titleView.snp.bottom)
         }
+    }
+    
+    override var previewActionItems: [UIPreviewActionItem] {
+        guard let obj = item else {
+            return []
+        }
+        let action1 = UIPreviewAction(title: "0x" + obj.hexString, style: .default) { (action, viewControlelr) in
+            UIPasteboard.general.string = action.title
+        }
+        let action2 = UIPreviewAction(title: obj.name, style: .default) { (action, viewControlelr) in
+            UIPasteboard.general.string = action.title
+        }
+        let action3 = UIPreviewAction(title: obj.fontName, style: .default) { (action, viewControlelr) in
+            UIPasteboard.general.string = action.title
+        }
+        return [action1, action2, action3]
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
