@@ -13,14 +13,14 @@ class IFOverviewViewController: IFBaseViewController {
     fileprivate lazy var dataSource: [IFGroupItem] = {
         
         var datas: [(html: String, file: String, icon: String, title: String)] = []
-        datas.append(("weather_index.html",
-                      "weather_iconfont.ttf",
-                      "weather_iconfont",
-                      "天气"))
-//        datas.append(("beautyMakeup_index.html",
-//                      "beautyMakeup_iconfont.ttf",
-//                      "beauty_makeup_iconfont",
-//                      "美妆"))
+//        datas.append(("weather_index.html",
+//                      "weather_iconfont.ttf",
+//                      "weather_iconfont",
+//                      "天气"))
+        datas.append(("beautyMakeup_index.html",
+                      "beautyMakeup_iconfont.ttf",
+                      "beauty_makeup_iconfont",
+                      "美妆"))
         datas.append(("sportMovement_index.html",
                      "sportMovement_iconfont.ttf",
                      "sports_movement_iconfont",
