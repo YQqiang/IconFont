@@ -107,7 +107,12 @@ class IFOverviewDetailController: IFBaseViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        dismissSelf()
+        guard let touch = touches.first else {
+            return
+        }
+        if touch.view == view {
+            dismissSelf()
+        }
     }
     
     fileprivate func dismissSelf() {
