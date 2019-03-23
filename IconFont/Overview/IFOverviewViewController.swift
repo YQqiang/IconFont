@@ -17,6 +17,10 @@ class IFOverviewViewController: IFBaseViewController {
 //                      "weather_iconfont.ttf",
 //                      "weather_iconfont",
 //                      "天气"))
+        datas.append(("creativeLetters_index.html",
+                      "creativeLetters_iconfont.ttf",
+                      "creative_letters_iconfont",
+                      "创意字母"))
         datas.append(("beautyMakeup_index.html",
                       "beautyMakeup_iconfont.ttf",
                       "beauty_makeup_iconfont",
