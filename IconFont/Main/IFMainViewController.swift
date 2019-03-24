@@ -20,18 +20,18 @@ class IFMainViewController: IFBaseViewController {
         return vc
     }()
     
-    fileprivate lazy var listVC: IFListViewController = {
-        let vc = IFListViewController()
+    fileprivate lazy var introductionVC: IFIntroductionViewController = {
+        let vc = IFIntroductionViewController()
         return vc
     }()
 
     fileprivate lazy var tabBar: IFMainTabBar = {
         let tab = IFMainTabBar()
         let image1 = IconFontType.nodeManage.image(background: UIColor.clear, tint: UIColor.red, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
-        let item1 = UITabBarItem(title: "预览", image: image1, selectedImage: nil)
+        let item1 = UITabBarItem(title: "简介", image: image1, selectedImage: nil)
         
         let image2 = IconFontType.appManage.image(background: UIColor.clear, tint: UIColor.red, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
-        let item2 = UITabBarItem(title: "列表", image: image2, selectedImage: nil)
+        let item2 = UITabBarItem(title: "预览", image: image2, selectedImage: nil)
         
         let image3 = IconFontType.editHexagon.image(background: UIColor.clear, tint: UIColor.red, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
         let item3 = UITabBarItem(title: "编辑", image: image3, selectedImage: nil)
@@ -54,8 +54,8 @@ class IFMainViewController: IFBaseViewController {
     
     fileprivate lazy var dataSource: [IFBaseNavigationController] = {
         var vcs = [IFBaseNavigationController]()
+        vcs.append(IFBaseNavigationController(rootViewController: introductionVC))
         vcs.append(IFBaseNavigationController(rootViewController: overviewVC))
-        vcs.append(IFBaseNavigationController(rootViewController: listVC))
         vcs.append(IFBaseNavigationController(rootViewController: editVC))
         return vcs
     }()
