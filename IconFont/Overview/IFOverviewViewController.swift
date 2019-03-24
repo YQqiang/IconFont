@@ -13,14 +13,18 @@ class IFOverviewViewController: IFBaseViewController {
     fileprivate lazy var dataSource: [IFGroupItem] = {
         
         var datas: [(html: String, file: String, icon: String, title: String)] = []
-        datas.append(("weather_index.html",
-                      "weather_iconfont.ttf",
-                      "weather_iconfont",
-                      "天气"))
-//        datas.append(("beautyMakeup_index.html",
-//                      "beautyMakeup_iconfont.ttf",
-//                      "beauty_makeup_iconfont",
-//                      "美妆"))
+//        datas.append(("weather_index.html",
+//                      "weather_iconfont.ttf",
+//                      "weather_iconfont",
+//                      "天气"))
+        datas.append(("creativeLetters_index.html",
+                      "creativeLetters_iconfont.ttf",
+                      "creative_letters_iconfont",
+                      "创意字母"))
+        datas.append(("beautyMakeup_index.html",
+                      "beautyMakeup_iconfont.ttf",
+                      "beauty_makeup_iconfont",
+                      "美妆"))
         datas.append(("sportMovement_index.html",
                      "sportMovement_iconfont.ttf",
                      "sports_movement_iconfont",
@@ -70,6 +74,7 @@ class IFOverviewViewController: IFBaseViewController {
         super.viewDidLoad()
         navigationItem.title = "预览"
         navigationController?.setNavigationBarHidden(true, animated: true)
+        registerForPreviewing(with: self, sourceView: collectionView)
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { (make) in
             make.top.equalTo(topLayoutGuide.snp.bottom)
@@ -109,5 +114,22 @@ extension IFOverviewViewController: UICollectionViewDelegateFlowLayout {
         let detail = IFOverviewDetailController()
         detail.item = dataSource[indexPath.section].items[indexPath.row]
         present(detail, animated: true, completion: nil)
+    }
+}
+
+extension IFOverviewViewController: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = collectionView.indexPathForItem(at: location) else {
+            return nil
+        }
+        let cell = collectionView.cellForItem(at: indexPath)
+        previewingContext.sourceRect = cell?.frame ?? CGRect.zero
+        let detail = IFOverviewDetailController(isPeek: true)
+        detail.item = dataSource[indexPath.section].items[indexPath.row]
+        return detail
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        present(viewControllerToCommit, animated: true, completion: nil)
     }
 }
