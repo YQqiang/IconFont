@@ -16,6 +16,10 @@ struct RGB {
     var blue: CGFloat
     var alpha: CGFloat
     
+    var color: UIColor {
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
+    }
+    
     init(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat, _ alpha: CGFloat) {
         self.red = red
         self.green = green
@@ -88,6 +92,10 @@ struct HSB {
     var saturation: CGFloat
     var brightness: CGFloat
     var alpha: CGFloat
+    
+    var color: UIColor {
+        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
+    }
     
     init(_ hue: CGFloat, _ saturation: CGFloat, _ brightness: CGFloat, _ alpha: CGFloat) {
         self.hue = hue
