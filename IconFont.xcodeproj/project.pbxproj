@@ -14,6 +14,7 @@
 		2F2937822243353400F55578 /* IFSlowlyShowTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2937812243353400F55578 /* IFSlowlyShowTransition.swift */; };
 		2F2937842243373100F55578 /* IFGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2937832243373100F55578 /* IFGradientView.swift */; };
 		2F2937862243577E00F55578 /* IFOverviewDetailTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2937852243577E00F55578 /* IFOverviewDetailTitleView.swift */; };
+		2F3A40442249ABDA0065E982 /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A40432249ABDA0065E982 /* ColorUtil.swift */; };
 		2F3F86A2223F816400EBE35A /* iconfont_app.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F3F86A1223F800800EBE35A /* iconfont_app.ttf */; };
 		2F3F86A4223F831500EBE35A /* IconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F86A3223F831500EBE35A /* IconFont.swift */; };
 		2F3F86A6223F946000EBE35A /* UIColor+IF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F86A5223F946000EBE35A /* UIColor+IF.swift */; };
@@ -76,6 +77,7 @@
 		2F2937812243353400F55578 /* IFSlowlyShowTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFSlowlyShowTransition.swift; sourceTree = "<group>"; };
 		2F2937832243373100F55578 /* IFGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFGradientView.swift; sourceTree = "<group>"; };
 		2F2937852243577E00F55578 /* IFOverviewDetailTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewDetailTitleView.swift; sourceTree = "<group>"; };
+		2F3A40432249ABDA0065E982 /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
 		2F3F86A1223F800800EBE35A /* iconfont_app.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont_app.ttf; sourceTree = "<group>"; };
 		2F3F86A3223F831500EBE35A /* IconFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconFont.swift; sourceTree = "<group>"; };
 		2F3F86A5223F946000EBE35A /* UIColor+IF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+IF.swift"; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				2F3F86A5223F946000EBE35A /* UIColor+IF.swift */,
+				2F3A40432249ABDA0065E982 /* ColorUtil.swift */,
 			);
 			path = Catetory;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				2FAC3D4A224225140089EC76 /* IFOverviewCell.swift in Sources */,
 				1A242B1B2245272700FE6365 /* IFIntroductionViewController.swift in Sources */,
 				2F2937862243577E00F55578 /* IFOverviewDetailTitleView.swift in Sources */,
+				2F3A40442249ABDA0065E982 /* ColorUtil.swift in Sources */,
 				2FD13454223F64AA0023B097 /* IFBaseViewController.swift in Sources */,
 				2F2937842243373100F55578 /* IFGradientView.swift in Sources */,
 				2F60EED7224069DE0031A484 /* IFOverviewViewController.swift in Sources */,
