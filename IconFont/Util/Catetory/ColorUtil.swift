@@ -10,12 +10,14 @@ import UIKit
 
 private let colorComponentValueRange = (CGFloat(0.0) ... CGFloat(1.0))
 
+/// RGB
 struct RGB {
     var red: CGFloat
     var green: CGFloat
     var blue: CGFloat
     var alpha: CGFloat
     
+    /// RGB -> UIColor
     var color: UIColor {
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
@@ -27,6 +29,7 @@ struct RGB {
         self.alpha = alpha
     }
     
+    /// UIColor -> RGB
     init(_ color: UIColor) {
         self.red = 1
         self.green = 1
@@ -57,6 +60,7 @@ struct RGB {
         }
     }
     
+    /// RGB -> HSB
     var hsb: HSB {
         let rd = Double(red)
         let gd = Double(green)
@@ -87,12 +91,14 @@ struct RGB {
     }
 }
 
+/// HSB
 struct HSB {
     var hue: CGFloat
     var saturation: CGFloat
     var brightness: CGFloat
     var alpha: CGFloat
     
+    /// HSB -> UIColor
     var color: UIColor {
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
     }
@@ -104,6 +110,7 @@ struct HSB {
         self.alpha = alpha
     }
     
+    /// HSB -> RGB
     var rgb: RGB {
         var r: CGFloat = 0.0, g: CGFloat = 0.0, b: CGFloat = 0.0
         
@@ -151,12 +158,14 @@ struct HSB {
     }
 }
 
+// MARK: - Comparable
 extension Comparable {
     func clamped(to limits: ClosedRange<Self>) -> Self {
         return min(max(self, limits.lowerBound), limits.upperBound)
     }
 }
 
+// MARK: - UIColor
 extension UIColor {
     var hexString: String? {
         guard let colorSpaceModel: CGColorSpaceModel = cgColor.colorSpace?.model else {
@@ -192,8 +201,59 @@ extension UIColor {
             UInt64(alpha * 0xff)
         )
     }
+    
+    /// RGB -> UIColor
+    ///
+    /// - Parameters:
+    ///   - hex3: 3位16进制数值 (RGB)
+    ///   - alpha: 透明度
+    public convenience init(hex3: UInt16, alpha: CGFloat = 1.0) {
+        let divisor = CGFloat(15)
+        let red = CGFloat((hex3 >> 8) & 0xf) / divisor
+        let green = CGFloat((hex3 >> 4) & 0xf) / divisor
+        let blue = CGFloat((hex3 >> 0) & 0xf) / divisor
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
+    }
+    
+    /// RGBA -> UIColor
+    ///
+    /// - Parameter hex4: 4位16进制数值 (RGBA)
+    public convenience init(hex4: UInt16) {
+        let divisor = CGFloat(15)
+        let red = CGFloat((hex4 >> 12) & 0xf) / divisor
+        let green = CGFloat((hex4 >> 8) & 0xf) / divisor
+        let blue = CGFloat((hex4 >> 4) & 0xf) / divisor
+        let alpha = CGFloat((hex4 >> 0) & 0xf) / divisor
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
+    }
+    
+    /// RRGGBB -> UIColor
+    ///
+    /// - Parameters:
+    ///   - hex6: 6位16进制数值 (RRGGBB)
+    ///   - alpha: 透明度
+    public convenience init(hex6: UInt32, alpha: CGFloat = 1.0) {
+        let divisor = CGFloat(255)
+        let red = CGFloat((hex6 >> 16) & 0xff) / divisor
+        let green = CGFloat((hex6 >> 8) & 0xff) / divisor
+        let blue = CGFloat((hex6 >> 0) & 0xff) / divisor
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
+    }
+    
+    /// RRGGBBAA -> UIColor
+    ///
+    /// - Parameter hex8: 8位16进制数值 (RRGGBBAA)
+    public convenience init(hex8: UInt32) {
+        let divisor = CGFloat(255)
+        let red = CGFloat((hex8 >> 24) & 0xff) / divisor
+        let green = CGFloat((hex8 >> 16) & 0xff) / divisor
+        let blue = CGFloat((hex8 >> 8) & 0xff) / divisor
+        let alpha = CGFloat((hex8 >> 0) & 0xff) / divisor
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
+    }
 }
 
+// MARK: - String
 extension String {
     var hexColor: UIColor? {
         if !hasPrefix("#") {
@@ -207,17 +267,17 @@ extension String {
         if !scanner.scanHexInt32(&hexNum) {
             return nil
         }
-        
-        let r: CGFloat = CGFloat((hexNum >> 24) & 0xff)
-        let g: CGFloat = CGFloat((hexNum >> 16) & 0xff)
-        let b: CGFloat = CGFloat((hexNum >> 8) & 0xff)
-        let a: CGFloat = CGFloat((hexNum) & 0xFF)
-        
-        return UIColor(
-            red: r / 0xff,
-            green: g / 0xff,
-            blue: b / 0xff,
-            alpha: a / 0xff
-        )
+        switch String(format: "%x", hexNum).count {
+        case 3:
+            return UIColor(hex3: UInt16(hexNum))
+        case 4:
+            return UIColor(hex4: UInt16(hexNum))
+        case 6:
+            return UIColor(hex6: hexNum)
+        case 8:
+            return UIColor(hex8: hexNum)
+        default:
+            return nil
+        }
     }
 }
