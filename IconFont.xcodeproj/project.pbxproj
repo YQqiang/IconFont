@@ -20,7 +20,7 @@
 		2F3F86A6223F946000EBE35A /* UIColor+IF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3F86A5223F946000EBE35A /* UIColor+IF.swift */; };
 		2F60EED0223FAC3C0031A484 /* IFRoundShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EECF223FAC3C0031A484 /* IFRoundShadowView.swift */; };
 		2F60EED7224069DE0031A484 /* IFOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EED6224069DE0031A484 /* IFOverviewViewController.swift */; };
-		2F60EED9224069EB0031A484 /* IFEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EED8224069EB0031A484 /* IFEditViewController.swift */; };
+		2F60EED9224069EB0031A484 /* IFEditHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EED8224069EB0031A484 /* IFEditHomeViewController.swift */; };
 		2F60EEDB22406A310031A484 /* IFBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EEDA22406A310031A484 /* IFBaseNavigationController.swift */; };
 		2F60EEDE224089C20031A484 /* IFListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EEDD224089C20031A484 /* IFListViewController.swift */; };
 		2FA1717E224482AD000EC866 /* IFOverviewDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */; };
@@ -34,6 +34,8 @@
 		2FAC3D51224258BC0089EC76 /* sportProject_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FAC3D4F224258BC0089EC76 /* sportProject_index.html */; };
 		2FAC3D52224258BC0089EC76 /* sportProject_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FAC3D50224258BC0089EC76 /* sportProject_iconfont.ttf */; };
 		2FC38039224E0DE5006B12B7 /* IFGlobalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC38038224E0DE5006B12B7 /* IFGlobalManager.swift */; };
+		2FC3803C224E132B006B12B7 /* IFEditHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC3803B224E132B006B12B7 /* IFEditHomeCell.swift */; };
+		2FC3803E224E147C006B12B7 /* IFEditHomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC3803D224E147C006B12B7 /* IFEditHomeHeaderView.swift */; };
 		2FD13422223F61B20023B097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD13421223F61B20023B097 /* AppDelegate.swift */; };
 		2FD13429223F61B40023B097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FD13428223F61B40023B097 /* Assets.xcassets */; };
 		2FD1342C223F61B40023B097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD1342A223F61B40023B097 /* LaunchScreen.storyboard */; };
@@ -84,7 +86,7 @@
 		2F3F86A5223F946000EBE35A /* UIColor+IF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+IF.swift"; sourceTree = "<group>"; };
 		2F60EECF223FAC3C0031A484 /* IFRoundShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFRoundShadowView.swift; sourceTree = "<group>"; };
 		2F60EED6224069DE0031A484 /* IFOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewViewController.swift; sourceTree = "<group>"; };
-		2F60EED8224069EB0031A484 /* IFEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditViewController.swift; sourceTree = "<group>"; };
+		2F60EED8224069EB0031A484 /* IFEditHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditHomeViewController.swift; sourceTree = "<group>"; };
 		2F60EEDA22406A310031A484 /* IFBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFBaseNavigationController.swift; sourceTree = "<group>"; };
 		2F60EEDD224089C20031A484 /* IFListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFListViewController.swift; sourceTree = "<group>"; };
 		2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewDetailContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,8 @@
 		2FAC3D4F224258BC0089EC76 /* sportProject_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = sportProject_index.html; sourceTree = "<group>"; };
 		2FAC3D50224258BC0089EC76 /* sportProject_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sportProject_iconfont.ttf; sourceTree = "<group>"; };
 		2FC38038224E0DE5006B12B7 /* IFGlobalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFGlobalManager.swift; sourceTree = "<group>"; };
+		2FC3803B224E132B006B12B7 /* IFEditHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditHomeCell.swift; sourceTree = "<group>"; };
+		2FC3803D224E147C006B12B7 /* IFEditHomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditHomeHeaderView.swift; sourceTree = "<group>"; };
 		2FD1341E223F61B20023B097 /* IconFont.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconFont.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD13421223F61B20023B097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD13428223F61B40023B097 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -185,7 +189,8 @@
 		2F60EED5224069950031A484 /* Edit */ = {
 			isa = PBXGroup;
 			children = (
-				2F60EED8224069EB0031A484 /* IFEditViewController.swift */,
+				2F60EED8224069EB0031A484 /* IFEditHomeViewController.swift */,
+				2FC3803A224E130A006B12B7 /* View */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -257,6 +262,15 @@
 				2FE4ABD8224263AF00A777D1 /* sportMovement_iconfont.ttf */,
 			);
 			path = sportMovement;
+			sourceTree = "<group>";
+		};
+		2FC3803A224E130A006B12B7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2FC3803B224E132B006B12B7 /* IFEditHomeCell.swift */,
+				2FC3803D224E147C006B12B7 /* IFEditHomeHeaderView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		2FD13415223F61B20023B097 = {
@@ -640,7 +654,7 @@
 				2FD13459223F664A0023B097 /* IFBaseView.swift in Sources */,
 				2F3F86A4223F831500EBE35A /* IconFont.swift in Sources */,
 				2F60EED0223FAC3C0031A484 /* IFRoundShadowView.swift in Sources */,
-				2F60EED9224069EB0031A484 /* IFEditViewController.swift in Sources */,
+				2F60EED9224069EB0031A484 /* IFEditHomeViewController.swift in Sources */,
 				2FD13456223F64F10023B097 /* IFMainViewController.swift in Sources */,
 				2FD13422223F61B20023B097 /* AppDelegate.swift in Sources */,
 				2F60EEDB22406A310031A484 /* IFBaseNavigationController.swift in Sources */,
@@ -653,10 +667,12 @@
 				2F2937862243577E00F55578 /* IFOverviewDetailTitleView.swift in Sources */,
 				2F3A40442249ABDA0065E982 /* ColorUtil.swift in Sources */,
 				2FD13454223F64AA0023B097 /* IFBaseViewController.swift in Sources */,
+				2FC3803E224E147C006B12B7 /* IFEditHomeHeaderView.swift in Sources */,
 				2F2937842243373100F55578 /* IFGradientView.swift in Sources */,
 				2FC38039224E0DE5006B12B7 /* IFGlobalManager.swift in Sources */,
 				2F60EED7224069DE0031A484 /* IFOverviewViewController.swift in Sources */,
 				2FD1345B223F66660023B097 /* IFMainTabBar.swift in Sources */,
+				2FC3803C224E132B006B12B7 /* IFEditHomeCell.swift in Sources */,
 				2FAC3D4C22423D690089EC76 /* IFOverviewHeaderView.swift in Sources */,
 				2FAC3D422241F0550089EC76 /* IFItem.swift in Sources */,
 			);
