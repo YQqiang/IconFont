@@ -15,8 +15,8 @@ class IFMainViewController: IFBaseViewController {
         return vc
     }()
     
-    fileprivate lazy var editVC: IFEditViewController = {
-        let vc = IFEditViewController()
+    fileprivate lazy var editVC: IFEditHomeViewController = {
+        let vc = IFEditHomeViewController()
         return vc
     }()
     
