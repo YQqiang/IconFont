@@ -13,7 +13,7 @@ class IFOverviewCell: UICollectionViewCell {
     public var item: IFItem? {
         didSet {
             DispatchQueue.global().async {
-                let image = self.item?.image(background: UIColor(red:0.91, green:0.92, blue:0.94, alpha:1.00), tint: UIColor.IFItem, size: CGSize(width: 24 + 16, height: 24 + 16), insets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8), orientation: .up)
+                let image = self.item?.image(background: UIColor(red:0.91, green:0.92, blue:0.94, alpha:1.00), tint: UIColor.IFItem, size: CGSize(width: 48 + 16, height: 48 + 16), insets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8), orientation: .up)
                 DispatchQueue.main.async(execute: {
                     self.iconBtn.setImage(image, for: .normal)
                 })
@@ -43,8 +43,8 @@ class IFOverviewCell: UICollectionViewCell {
     private func createView() {
         contentView.addSubview(iconBtn)
         iconBtn.snp.makeConstraints { (make) in
-            make.top.left.equalToSuperview().offset(8)
-            make.bottom.right.equalToSuperview().offset(-8)
+            make.top.left.equalToSuperview().offset(0)
+            make.bottom.right.equalToSuperview().offset(0)
         }
     }
     
