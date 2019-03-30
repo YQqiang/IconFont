@@ -17,9 +17,9 @@ class IFOverviewViewController: IFBaseViewController {
     fileprivate lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: 48, height: 48)
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
+        layout.itemSize = CGSize(width: 64, height: 64)
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 8
         layout.headerReferenceSize = CGSize(width: 0, height: 44)
         layout.sectionHeadersPinToVisibleBounds = true
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
