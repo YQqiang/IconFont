@@ -17,6 +17,7 @@ class IFEditHomeViewController: IFBaseViewController {
     
     fileprivate lazy var tableView: UITableView = {
         let table = UITableView(frame: CGRect.zero, style: .plain)
+        table.delaysContentTouches = false
         table.dataSource = self
         table.delegate = self
         table.separatorStyle = .none
@@ -72,5 +73,12 @@ extension IFEditHomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return CGFloat.leastNonzeroMagnitude
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! IFEditHomeCell
+        cell.freezeAnimations()
+        print("\(#function)")
+        cell.unfreezeAnimations()
     }
 }

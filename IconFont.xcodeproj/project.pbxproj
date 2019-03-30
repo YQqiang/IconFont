@@ -23,6 +23,7 @@
 		2F60EED9224069EB0031A484 /* IFEditHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EED8224069EB0031A484 /* IFEditHomeViewController.swift */; };
 		2F60EEDB22406A310031A484 /* IFBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EEDA22406A310031A484 /* IFBaseNavigationController.swift */; };
 		2F60EEDE224089C20031A484 /* IFListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EEDD224089C20031A484 /* IFListViewController.swift */; };
+		2F722038224F0E29002E2F9D /* IFScaleAnimateable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F722037224F0E29002E2F9D /* IFScaleAnimateable.swift */; };
 		2FA1717E224482AD000EC866 /* IFOverviewDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */; };
 		2FA171872246253C000EC866 /* creativeLetters_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FA171852246253C000EC866 /* creativeLetters_index.html */; };
 		2FA171882246253C000EC866 /* creativeLetters_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FA171862246253C000EC866 /* creativeLetters_iconfont.ttf */; };
@@ -89,6 +90,7 @@
 		2F60EED8224069EB0031A484 /* IFEditHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditHomeViewController.swift; sourceTree = "<group>"; };
 		2F60EEDA22406A310031A484 /* IFBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFBaseNavigationController.swift; sourceTree = "<group>"; };
 		2F60EEDD224089C20031A484 /* IFListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFListViewController.swift; sourceTree = "<group>"; };
+		2F722037224F0E29002E2F9D /* IFScaleAnimateable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFScaleAnimateable.swift; sourceTree = "<group>"; };
 		2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewDetailContentView.swift; sourceTree = "<group>"; };
 		2FA171852246253C000EC866 /* creativeLetters_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = creativeLetters_index.html; sourceTree = "<group>"; };
 		2FA171862246253C000EC866 /* creativeLetters_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = creativeLetters_iconfont.ttf; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				2F60EECF223FAC3C0031A484 /* IFRoundShadowView.swift */,
 				2F2937832243373100F55578 /* IFGradientView.swift */,
 				2F60EEDA22406A310031A484 /* IFBaseNavigationController.swift */,
+				2F722037224F0E29002E2F9D /* IFScaleAnimateable.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				2F2937822243353400F55578 /* IFSlowlyShowTransition.swift in Sources */,
 				2FAC3D4A224225140089EC76 /* IFOverviewCell.swift in Sources */,
 				1A242B1B2245272700FE6365 /* IFIntroductionViewController.swift in Sources */,
+				2F722038224F0E29002E2F9D /* IFScaleAnimateable.swift in Sources */,
 				2F2937862243577E00F55578 /* IFOverviewDetailTitleView.swift in Sources */,
 				2F3A40442249ABDA0065E982 /* ColorUtil.swift in Sources */,
 				2FD13454223F64AA0023B097 /* IFBaseViewController.swift in Sources */,
