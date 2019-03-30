@@ -31,7 +31,7 @@ class IFEditHomeHeaderView: UITableViewHeaderFooterView {
     
     private func createView() {
         addSubview(titleLabel)
-        backgroundColor = UIColor.IFBg
+        contentView.backgroundColor = UIColor.IFBg
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalToSuperview().offset(8)
             make.left.equalToSuperview().offset(16)
