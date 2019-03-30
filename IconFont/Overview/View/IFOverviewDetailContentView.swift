@@ -39,7 +39,7 @@ class IFOverviewDetailContentView: IFGradientView {
             }
             
             var sizeDatas: [(title: String, size: CGSize, color: UIColor)] = []
-            sizeDatas.append(("8 * 8", CGSize(width: 8, height: 8), UIColor.red))
+            sizeDatas.append(("8 * 8", CGSize(width: 12, height: 12), UIColor.red))
             sizeDatas.append(("16 * 16", CGSize(width: 16, height: 16), UIColor.orange))
             sizeDatas.append(("24 * 24", CGSize(width: 24, height: 24), UIColor.brown))
             sizeDatas.append(("32 * 32", CGSize(width: 32, height: 32), UIColor.purple))
@@ -58,7 +58,7 @@ class IFOverviewDetailContentView: IFGradientView {
         stack.axis = .horizontal
         stack.alignment = .fill
         stack.distribution = .fillEqually
-        stack.spacing = 0
+        stack.spacing = 8
         return stack
     }()
     
@@ -66,8 +66,8 @@ class IFOverviewDetailContentView: IFGradientView {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.alignment = .fill
-        stack.distribution = .fill
-        stack.spacing = 0
+        stack.distribution = .fillEqually
+        stack.spacing = 8
         return stack
     }()
     
@@ -75,8 +75,8 @@ class IFOverviewDetailContentView: IFGradientView {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.alignment = .fill
-        stack.distribution = .fill
-        stack.spacing = 0
+        stack.distribution = .fillEqually
+        stack.spacing = 8
         return stack
     }()
     
@@ -84,8 +84,8 @@ class IFOverviewDetailContentView: IFGradientView {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.alignment = .fill
-        stack.distribution = .fill
-        stack.spacing = 0
+        stack.distribution = .fillEqually
+        stack.spacing = 8
         return stack
     }()
     
@@ -96,7 +96,8 @@ class IFOverviewDetailContentView: IFGradientView {
         
         contentView.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.top.left.equalToSuperview().offset(8)
+            make.bottom.right.equalToSuperview().offset(-8)
         }
         
         stackView.addArrangedSubview(otherStackView)
@@ -133,8 +134,17 @@ class IFOverviewDetailContentItem: IFBaseView {
     
     override func createViews() {
         super.createViews()
-        contentView.backgroundColor = UIColor.clear
+        contentView.backgroundColor = UIColor.IFBg
         contentView.addSubview(stackView)
+        contentView.layer.cornerRadius = 8
+        contentView.layer.masksToBounds = true
+        
+        backgroundColor = .clear
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.1
+        layer.shadowOffset = CGSize.zero
+        layer.shadowRadius = 2
+        
         stackView.snp.makeConstraints { (make) in
             make.top.left.equalToSuperview().offset(16)
             make.bottom.right.equalToSuperview().offset(-16)

@@ -21,8 +21,8 @@ class IFOverviewCell: UICollectionViewCell {
         }
     }
     
-    fileprivate lazy var iconBtn: UIButton = {
-        let btn = UIButton(type: .custom)
+    fileprivate lazy var iconBtn: IFButton = {
+        let btn = IFButton(type: .custom)
         btn.isUserInteractionEnabled = false
         btn.adjustsImageWhenHighlighted = false
         btn.layer.cornerRadius = 8
@@ -47,5 +47,29 @@ class IFOverviewCell: UICollectionViewCell {
             make.bottom.right.equalToSuperview().offset(-8)
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        iconBtn.animate(isHighlighted: true)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        iconBtn.animate(isHighlighted: false)
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        iconBtn.animate(isHighlighted: false)
+    }
+}
 
+extension IFOverviewCell {
+    public func freezeAnimations() {
+        iconBtn.scaleComment.disable = true
+    }
+    
+    public func unfreezeAnimations() {
+        iconBtn.scaleComment.disable = false
+    }
 }

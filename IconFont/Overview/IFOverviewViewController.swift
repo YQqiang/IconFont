@@ -23,6 +23,7 @@ class IFOverviewViewController: IFBaseViewController {
         layout.headerReferenceSize = CGSize(width: 0, height: 44)
         layout.sectionHeadersPinToVisibleBounds = true
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        collection.delaysContentTouches = false
         collection.backgroundColor = UIColor.IFBg
         collection.register(IFOverviewCell.self, forCellWithReuseIdentifier: IFOverviewCell.description())
         collection.register(IFOverviewHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: IFOverviewHeaderView.description())

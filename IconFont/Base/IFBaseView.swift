@@ -10,6 +10,8 @@ import UIKit
 
 class IFBaseView: UIView {
     
+    public var autoAnimate: Bool = true
+    
     public private(set) lazy var contentView: UIView = {
         let v = UIView()
         v.backgroundColor = UIColor.white
@@ -55,12 +57,24 @@ class IFBaseView: UIView {
         }
     }
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        if autoAnimate {
+            animate(isHighlighted: true)
+        }
     }
-    */
-
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        if autoAnimate {
+            animate(isHighlighted: false)
+        }
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        if autoAnimate {
+            animate(isHighlighted: false)
+        }
+    }
 }
