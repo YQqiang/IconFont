@@ -11,6 +11,7 @@ target 'IconFont' do
   pod 'SnapKit'
   pod 'IconFontRegister'
   pod 'Kanna'
+  pod 'ShowTime'
   pod 'Reveal-SDK','~>4', :configurations => ['Debug']
 
   target 'IconFontTests' do
