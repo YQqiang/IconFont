@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A242B1B2245272700FE6365 /* IFIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A242B1A2245272700FE6365 /* IFIntroductionViewController.swift */; };
+		1A242B1D2250C00A00FE6365 /* IFEditDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A242B1C2250C00A00FE6365 /* IFEditDetailViewController.swift */; };
 		2F29377D22432DA200F55578 /* weather_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F29377B22432DA200F55578 /* weather_iconfont.ttf */; };
 		2F29377E22432DA200F55578 /* weather_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2F29377C22432DA200F55578 /* weather_index.html */; };
 		2F2937802243315200F55578 /* IFOverviewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F29377F2243315200F55578 /* IFOverviewDetailController.swift */; };
@@ -75,6 +76,7 @@
 /* Begin PBXFileReference section */
 		0D390D62D3F9CD4306FD9AE7 /* Pods-IconFontTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFontTests.release.xcconfig"; path = "Target Support Files/Pods-IconFontTests/Pods-IconFontTests.release.xcconfig"; sourceTree = "<group>"; };
 		1A242B1A2245272700FE6365 /* IFIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFIntroductionViewController.swift; sourceTree = "<group>"; };
+		1A242B1C2250C00A00FE6365 /* IFEditDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditDetailViewController.swift; sourceTree = "<group>"; };
 		2F29377B22432DA200F55578 /* weather_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = weather_iconfont.ttf; sourceTree = "<group>"; };
 		2F29377C22432DA200F55578 /* weather_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = weather_index.html; sourceTree = "<group>"; };
 		2F29377F2243315200F55578 /* IFOverviewDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewDetailController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				2F60EED8224069EB0031A484 /* IFEditHomeViewController.swift */,
+				1A242B1C2250C00A00FE6365 /* IFEditDetailViewController.swift */,
 				2FC3803A224E130A006B12B7 /* View */,
 			);
 			path = Edit;
@@ -659,6 +662,7 @@
 				2F60EED0223FAC3C0031A484 /* IFRoundShadowView.swift in Sources */,
 				2F60EED9224069EB0031A484 /* IFEditHomeViewController.swift in Sources */,
 				2FD13456223F64F10023B097 /* IFMainViewController.swift in Sources */,
+				1A242B1D2250C00A00FE6365 /* IFEditDetailViewController.swift in Sources */,
 				2FD13422223F61B20023B097 /* AppDelegate.swift in Sources */,
 				2F60EEDB22406A310031A484 /* IFBaseNavigationController.swift in Sources */,
 				2F60EEDE224089C20031A484 /* IFListViewController.swift in Sources */,
