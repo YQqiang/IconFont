@@ -30,7 +30,12 @@ extension IconFontAble {
     }
     
     public func image(background: UIColor, tint: UIColor, size: CGSize, insets: UIEdgeInsets, orientation: UIImage.Orientation) -> UIImage  {
-        let image = UIImage.ifr_image(withUnicode: unicode, fontName: fontName, backgroundColor: background, iconColor: tint, size: size, imageInsets: insets, imageOrientation: orientation)
+        let image = self.image(backgrounds: [background], locations: [], start: CGPoint.zero, end: CGPoint.zero, tint: tint, size: size, insets: insets, orientation: orientation)
+        return image
+    }
+    
+    public func image(backgrounds: [UIColor], locations: [NSNumber], start: CGPoint, end: CGPoint, tint: UIColor, size: CGSize, insets: UIEdgeInsets, orientation: UIImage.Orientation) -> UIImage  {
+        let image = UIImage.ifr_image(withUnicode: unicode, fontName: fontName, gradientColors: backgrounds, gradientLocations: locations, gradientStart: start, gradientEnd: end, iconColor: tint, size: size, imageInsets: insets, imageOrientation: orientation)
         return image
     }
 }

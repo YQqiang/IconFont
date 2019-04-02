@@ -60,6 +60,11 @@ class IFEditDetailViewController: IFBaseViewController {
 }
 
 extension IFEditDetailViewController {
+    
+    fileprivate func icon(backgrounds: [UIColor], locations: [NSNumber], start: CGPoint, end: CGPoint, tint: UIColor, size: CGSize, insets: UIEdgeInsets, orientation: UIImage.Orientation) -> UIImage {
+        return item.image(backgrounds: backgrounds, locations: locations, start: start, end: end, tint: tint, size: size, insets: insets, orientation: orientation)
+    }
+    
     fileprivate func dismissSelf() {
         dismiss(animated: true, completion: nil)
     }

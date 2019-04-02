@@ -10,6 +10,12 @@ import UIKit
 
 class IFEditContentIconView: IFBaseView {
     
+    var iconImage: UIImage? {
+        didSet {
+            iconBtn.setImage(iconImage, for: .normal)
+        }
+    }
+    
     public private(set) lazy var iconBtn: IFButton = {
         let btn = IFButton(type: .custom)
         return btn
