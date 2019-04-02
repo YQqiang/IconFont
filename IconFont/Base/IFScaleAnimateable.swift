@@ -74,7 +74,7 @@ class IFButton: UIButton {
     public var autoAnimate: Bool = true
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
+        super.touchesBegan(touches, with: event)
         if autoAnimate {
             animate(isHighlighted: true)
         }

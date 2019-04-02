@@ -78,7 +78,9 @@ extension IFEditHomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! IFEditHomeCell
         cell.freezeAnimations()
-        print("\(#function)")
-        cell.unfreezeAnimations()
+        let detailVC = IFEditDetailViewController(item: dataSource[indexPath.section].items[indexPath.row])
+        present(detailVC, animated: true) {
+            cell.unfreezeAnimations()
+        }
     }
 }

@@ -25,6 +25,9 @@
 		2F60EEDB22406A310031A484 /* IFBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EEDA22406A310031A484 /* IFBaseNavigationController.swift */; };
 		2F60EEDE224089C20031A484 /* IFListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F60EEDD224089C20031A484 /* IFListViewController.swift */; };
 		2F722038224F0E29002E2F9D /* IFScaleAnimateable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F722037224F0E29002E2F9D /* IFScaleAnimateable.swift */; };
+		2F9B6F15225356F100BC0CB0 /* IFFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B6F14225356F100BC0CB0 /* IFFilter.swift */; };
+		2F9B6F172253757400BC0CB0 /* IFEditContentIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B6F162253757400BC0CB0 /* IFEditContentIconView.swift */; };
+		2F9B6F1922537C2500BC0CB0 /* IFEditNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B6F1822537C2500BC0CB0 /* IFEditNavBar.swift */; };
 		2FA1717E224482AD000EC866 /* IFOverviewDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */; };
 		2FA171872246253C000EC866 /* creativeLetters_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FA171852246253C000EC866 /* creativeLetters_index.html */; };
 		2FA171882246253C000EC866 /* creativeLetters_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FA171862246253C000EC866 /* creativeLetters_iconfont.ttf */; };
@@ -93,6 +96,9 @@
 		2F60EEDA22406A310031A484 /* IFBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFBaseNavigationController.swift; sourceTree = "<group>"; };
 		2F60EEDD224089C20031A484 /* IFListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFListViewController.swift; sourceTree = "<group>"; };
 		2F722037224F0E29002E2F9D /* IFScaleAnimateable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFScaleAnimateable.swift; sourceTree = "<group>"; };
+		2F9B6F14225356F100BC0CB0 /* IFFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFFilter.swift; sourceTree = "<group>"; };
+		2F9B6F162253757400BC0CB0 /* IFEditContentIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditContentIconView.swift; sourceTree = "<group>"; };
+		2F9B6F1822537C2500BC0CB0 /* IFEditNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditNavBar.swift; sourceTree = "<group>"; };
 		2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewDetailContentView.swift; sourceTree = "<group>"; };
 		2FA171852246253C000EC866 /* creativeLetters_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = creativeLetters_index.html; sourceTree = "<group>"; };
 		2FA171862246253C000EC866 /* creativeLetters_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = creativeLetters_iconfont.ttf; sourceTree = "<group>"; };
@@ -274,6 +280,8 @@
 			children = (
 				2FC3803B224E132B006B12B7 /* IFEditHomeCell.swift */,
 				2FC3803D224E147C006B12B7 /* IFEditHomeHeaderView.swift */,
+				2F9B6F162253757400BC0CB0 /* IFEditContentIconView.swift */,
+				2F9B6F1822537C2500BC0CB0 /* IFEditNavBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -367,6 +375,7 @@
 				2F3F86A3223F831500EBE35A /* IconFont.swift */,
 				2FAC3D412241F0550089EC76 /* IFItem.swift */,
 				2F2937812243353400F55578 /* IFSlowlyShowTransition.swift */,
+				2F9B6F14225356F100BC0CB0 /* IFFilter.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -656,8 +665,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F9B6F1922537C2500BC0CB0 /* IFEditNavBar.swift in Sources */,
 				2F2937802243315200F55578 /* IFOverviewDetailController.swift in Sources */,
 				2FD13459223F664A0023B097 /* IFBaseView.swift in Sources */,
+				2F9B6F15225356F100BC0CB0 /* IFFilter.swift in Sources */,
 				2F3F86A4223F831500EBE35A /* IconFont.swift in Sources */,
 				2F60EED0223FAC3C0031A484 /* IFRoundShadowView.swift in Sources */,
 				2F60EED9224069EB0031A484 /* IFEditHomeViewController.swift in Sources */,
@@ -667,6 +678,7 @@
 				2F60EEDB22406A310031A484 /* IFBaseNavigationController.swift in Sources */,
 				2F60EEDE224089C20031A484 /* IFListViewController.swift in Sources */,
 				2FA1717E224482AD000EC866 /* IFOverviewDetailContentView.swift in Sources */,
+				2F9B6F172253757400BC0CB0 /* IFEditContentIconView.swift in Sources */,
 				2F3F86A6223F946000EBE35A /* UIColor+IF.swift in Sources */,
 				2F2937822243353400F55578 /* IFSlowlyShowTransition.swift in Sources */,
 				2FAC3D4A224225140089EC76 /* IFOverviewCell.swift in Sources */,
