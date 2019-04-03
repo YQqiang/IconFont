@@ -30,6 +30,7 @@
 		2F9B6F1922537C2500BC0CB0 /* IFEditNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B6F1822537C2500BC0CB0 /* IFEditNavBar.swift */; };
 		2F9B6F1B225446E500BC0CB0 /* IFCalculatorPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B6F1A225446E500BC0CB0 /* IFCalculatorPanel.swift */; };
 		2F9B6F1D2254B27B00BC0CB0 /* IFEditToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B6F1C2254B27B00BC0CB0 /* IFEditToolBar.swift */; };
+		2F9B6F1F2254C7E300BC0CB0 /* IFEditToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B6F1E2254C7E300BC0CB0 /* IFEditToolViewController.swift */; };
 		2FA1717E224482AD000EC866 /* IFOverviewDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */; };
 		2FA171872246253C000EC866 /* creativeLetters_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FA171852246253C000EC866 /* creativeLetters_index.html */; };
 		2FA171882246253C000EC866 /* creativeLetters_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FA171862246253C000EC866 /* creativeLetters_iconfont.ttf */; };
@@ -103,6 +104,7 @@
 		2F9B6F1822537C2500BC0CB0 /* IFEditNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditNavBar.swift; sourceTree = "<group>"; };
 		2F9B6F1A225446E500BC0CB0 /* IFCalculatorPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFCalculatorPanel.swift; sourceTree = "<group>"; };
 		2F9B6F1C2254B27B00BC0CB0 /* IFEditToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditToolBar.swift; sourceTree = "<group>"; };
+		2F9B6F1E2254C7E300BC0CB0 /* IFEditToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditToolViewController.swift; sourceTree = "<group>"; };
 		2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewDetailContentView.swift; sourceTree = "<group>"; };
 		2FA171852246253C000EC866 /* creativeLetters_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = creativeLetters_index.html; sourceTree = "<group>"; };
 		2FA171862246253C000EC866 /* creativeLetters_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = creativeLetters_iconfont.ttf; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				2F60EED8224069EB0031A484 /* IFEditHomeViewController.swift */,
 				1A242B1C2250C00A00FE6365 /* IFEditDetailViewController.swift */,
+				2F9B6F1E2254C7E300BC0CB0 /* IFEditToolViewController.swift */,
 				2FC3803A224E130A006B12B7 /* View */,
 			);
 			path = Edit;
@@ -676,6 +679,7 @@
 				2FD13459223F664A0023B097 /* IFBaseView.swift in Sources */,
 				2F9B6F15225356F100BC0CB0 /* IFFilter.swift in Sources */,
 				2F3F86A4223F831500EBE35A /* IconFont.swift in Sources */,
+				2F9B6F1F2254C7E300BC0CB0 /* IFEditToolViewController.swift in Sources */,
 				2F60EED0223FAC3C0031A484 /* IFRoundShadowView.swift in Sources */,
 				2F60EED9224069EB0031A484 /* IFEditHomeViewController.swift in Sources */,
 				2FD13456223F64F10023B097 /* IFMainViewController.swift in Sources */,

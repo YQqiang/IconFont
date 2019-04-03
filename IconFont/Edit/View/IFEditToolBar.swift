@@ -10,10 +10,13 @@ import UIKit
 
 class IFEditToolBar: IFBaseView {
     
+    public var sizeClosure: ((_ sender: IFButton) -> Void)?
+    
     fileprivate lazy var sizeBtn: IFButton = {
         let btn = IFButton(type: .custom)
         let image = IconFontType.toolSize.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
         btn.setImage(image, for: .normal)
+        btn.addTarget(self, action: #selector(sizeBtnAction(_:)), for: .touchUpInside)
         return btn
     }()
     
@@ -71,11 +74,19 @@ class IFEditToolBar: IFBaseView {
         super.createViews()
         contentView.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(0)
-            make.right.equalToSuperview().offset(0)
+            make.left.equalToSuperview().offset(8)
+            make.right.equalToSuperview().offset(-8)
             make.top.equalToSuperview()
             make.bottom.equalToSuperview().offset(-16)
             make.height.equalTo(44)
+        }
+    }
+}
+
+extension IFEditToolBar {
+    @objc fileprivate func sizeBtnAction(_ sender: IFButton) {
+        if let closure = sizeClosure {
+            closure(sender)
         }
     }
 }
