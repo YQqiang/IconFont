@@ -73,7 +73,8 @@ class IFEditToolBar: IFBaseView {
         stackView.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(0)
             make.right.equalToSuperview().offset(0)
-            make.top.bottom.equalToSuperview()
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-16)
             make.height.equalTo(44)
         }
     }

@@ -66,7 +66,6 @@ class IFEditDetailViewController: IFBaseViewController {
         
         let image = item.image(background: UIColor.clear, tint: UIColor.IFItem, size: CGSize(width: 140, height: 140), insets: UIEdgeInsets.zero, orientation: .up)
         contentIconView.iconBtn.setImage(image, for: .normal)
-        
     }
 }
 
