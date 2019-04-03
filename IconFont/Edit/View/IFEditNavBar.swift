@@ -23,7 +23,7 @@ class IFEditNavBar: IFBaseView {
     
     fileprivate lazy var closeBtn: IFButton = {
         let btn = IFButton(type: .custom)
-        let image = IconFontType.nodeManage.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
+        let image = IconFontType.navClose.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
         btn.setImage(image, for: .normal)
         btn.addTarget(self, action: #selector(closeAction(_:)), for: .touchUpInside)
         return btn
@@ -31,14 +31,12 @@ class IFEditNavBar: IFBaseView {
     
     public private(set) lazy var iconBtn: IFButton = {
         let btn = IFButton(type: .custom)
-        let image = IconFontType.nodeManage.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
-        btn.setImage(image, for: .normal)
         return btn
     }()
     
     fileprivate lazy var saveBtn: IFButton = {
         let btn = IFButton(type: .custom)
-        let image = IconFontType.nodeManage.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
+        let image = IconFontType.navSave.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
         btn.setImage(image, for: .normal)
         btn.addTarget(self, action: #selector(saveAction(_:)), for: .touchUpInside)
         return btn
@@ -55,8 +53,8 @@ class IFEditNavBar: IFBaseView {
         }
         
         stackView.addArrangedSubview(closeBtn)
-        stackView.addArrangedSubview(saveBtn)
         stackView.addArrangedSubview(iconBtn)
+        stackView.addArrangedSubview(saveBtn)
     }
 }
 
@@ -68,7 +66,7 @@ extension IFEditNavBar {
     }
     
     @objc fileprivate func saveAction(_ sender: IFButton) {
-        if let cloure = closeClosure {
+        if let cloure = saveClosure {
             cloure(sender)
         }
     }

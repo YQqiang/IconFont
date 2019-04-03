@@ -49,6 +49,24 @@ enum IconFontType: Int {
     case appManage = 0xeb63
     /// 方块的列表
     case listChunk = 0xeb64
+    /// 导航栏-关闭
+    case navClose = 0xe633
+    /// 导航栏-保存
+    case navSave = 0xe629
+    /// 工具栏-旋转
+    case toolRotate = 0xe604
+    /// 工具栏-尺寸
+    case toolSize = 0xe672
+    /// 工具栏-更多
+    case toolMore = 0xe616
+    /// 工具栏-内边距
+    case toolInsets = 0xe620
+    /// 工具栏-背景色
+    case toolBgColor = 0xe600
+    /// 工具栏-颜色
+    case toolColor = 0xe652
+    /// 工具栏-镜像
+    case toolMirror = 0xe62f
     
     static var name: String {
         return "YQIconFont"
