@@ -29,6 +29,7 @@
 		2F9B6F172253757400BC0CB0 /* IFEditContentIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B6F162253757400BC0CB0 /* IFEditContentIconView.swift */; };
 		2F9B6F1922537C2500BC0CB0 /* IFEditNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B6F1822537C2500BC0CB0 /* IFEditNavBar.swift */; };
 		2F9B6F1B225446E500BC0CB0 /* IFCalculatorPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B6F1A225446E500BC0CB0 /* IFCalculatorPanel.swift */; };
+		2F9B6F1D2254B27B00BC0CB0 /* IFEditToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B6F1C2254B27B00BC0CB0 /* IFEditToolBar.swift */; };
 		2FA1717E224482AD000EC866 /* IFOverviewDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */; };
 		2FA171872246253C000EC866 /* creativeLetters_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FA171852246253C000EC866 /* creativeLetters_index.html */; };
 		2FA171882246253C000EC866 /* creativeLetters_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FA171862246253C000EC866 /* creativeLetters_iconfont.ttf */; };
@@ -101,6 +102,7 @@
 		2F9B6F162253757400BC0CB0 /* IFEditContentIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditContentIconView.swift; sourceTree = "<group>"; };
 		2F9B6F1822537C2500BC0CB0 /* IFEditNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditNavBar.swift; sourceTree = "<group>"; };
 		2F9B6F1A225446E500BC0CB0 /* IFCalculatorPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFCalculatorPanel.swift; sourceTree = "<group>"; };
+		2F9B6F1C2254B27B00BC0CB0 /* IFEditToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditToolBar.swift; sourceTree = "<group>"; };
 		2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewDetailContentView.swift; sourceTree = "<group>"; };
 		2FA171852246253C000EC866 /* creativeLetters_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = creativeLetters_index.html; sourceTree = "<group>"; };
 		2FA171862246253C000EC866 /* creativeLetters_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = creativeLetters_iconfont.ttf; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				2FC3803D224E147C006B12B7 /* IFEditHomeHeaderView.swift */,
 				2F9B6F162253757400BC0CB0 /* IFEditContentIconView.swift */,
 				2F9B6F1822537C2500BC0CB0 /* IFEditNavBar.swift */,
+				2F9B6F1C2254B27B00BC0CB0 /* IFEditToolBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				2F2937862243577E00F55578 /* IFOverviewDetailTitleView.swift in Sources */,
 				2F3A40442249ABDA0065E982 /* ColorUtil.swift in Sources */,
 				2FD13454223F64AA0023B097 /* IFBaseViewController.swift in Sources */,
+				2F9B6F1D2254B27B00BC0CB0 /* IFEditToolBar.swift in Sources */,
 				2FC3803E224E147C006B12B7 /* IFEditHomeHeaderView.swift in Sources */,
 				2F2937842243373100F55578 /* IFGradientView.swift in Sources */,
 				2FC38039224E0DE5006B12B7 /* IFGlobalManager.swift in Sources */,

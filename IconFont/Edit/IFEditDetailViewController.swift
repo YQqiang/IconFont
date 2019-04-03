@@ -12,11 +12,6 @@ class IFEditDetailViewController: IFBaseViewController {
 
     fileprivate var item: IFItem
     
-    fileprivate lazy var calculatorPanel: IFCalculatorPanel = {
-        let panel = IFCalculatorPanel(type: IFCalculatorPanel.CalculatorType.decimal)
-        return panel
-    }()
-    
     fileprivate lazy var navBar: IFEditNavBar = {
         let bar = IFEditNavBar()
         bar.closeClosure = {[weak self] (sender) in
@@ -25,6 +20,11 @@ class IFEditDetailViewController: IFBaseViewController {
         bar.saveClosure = {[weak self] (sender) in
             
         }
+        return bar
+    }()
+    
+    fileprivate lazy var toolBar: IFEditToolBar = {
+        let bar = IFEditToolBar()
         return bar
     }()
     
@@ -51,6 +51,11 @@ class IFEditDetailViewController: IFBaseViewController {
             make.top.left.right.equalToSuperview()
         }
         
+        view.addSubview(toolBar)
+        toolBar.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalToSuperview()
+        }
+        
         let bgSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.65)
         view.addSubview(contentIconView)
         contentIconView.snp.makeConstraints { (make) in
@@ -62,12 +67,6 @@ class IFEditDetailViewController: IFBaseViewController {
         let image = item.image(background: UIColor.clear, tint: UIColor.IFItem, size: CGSize(width: 140, height: 140), insets: UIEdgeInsets.zero, orientation: .up)
         contentIconView.iconBtn.setImage(image, for: .normal)
         
-        view.addSubview(calculatorPanel)
-        calculatorPanel.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
-            make.height.equalTo(300)
-            make.width.equalTo(220)
-        }
     }
 }
 
