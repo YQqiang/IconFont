@@ -25,10 +25,22 @@ final class IFCalculatorPanel: IFBaseView {
                 da.superview?.isHidden = false
                 dd.superview?.isHidden = false
                 dp.isHidden = true
+                guard let decimal = Int(resultView.resultView.text ?? "") else {
+                    resultView.resultView.text = ""
+                    return
+                }
+                resultView.resultView.text = String(format: "%x", decimal).uppercased()
+                resultView.selectAllText()
             } else if calculatorType == .decimal {
                 da.superview?.isHidden = true
                 dd.superview?.isHidden = true
                 dp.isHidden = false
+                guard let hex = Int(resultView.resultView.text ?? "", radix: 16) else {
+                    resultView.resultView.text = ""
+                    return
+                }
+                resultView.resultView.text = String(format: "%d", hex)
+                resultView.selectAllText()
             }
         }
     }
@@ -237,9 +249,11 @@ final class IFCalculatorPanel: IFBaseView {
             let point = touch.location(in: self)
             allSenders.forEach { (sender) in
                 sender.animate(isHighlighted: false)
+                if sender.isHidden {
+                    return
+                }
                 let resultFrame = sender.superview!.convert(sender.frame, to: self)
                 if resultFrame.contains(point) {
-                    
                     if sender == fTran {
                         convertAction()
                     } else if sender == fDele {
@@ -264,11 +278,11 @@ final class IFCalculatorPanel: IFBaseView {
     }
     
     fileprivate func deleteAction() {
-        resultView.resultView.deleteBackward()
+        resultView.deleteBackward()
     }
     
     fileprivate func enterAction() {
-        resultView.resultView.selectAll(nil)
+        resultView.selectAllText()
     }
     
     fileprivate func convertAction() {
@@ -280,10 +294,13 @@ final class IFCalculatorPanel: IFBaseView {
     }
     
     fileprivate func pointAction() {
-        if resultView.resultView.text?.isEmpty ?? false {
+        guard let text = resultView.resultView.text else {
             return
         }
-        if resultView.resultView.text?.contains(decimalPoint) ?? false {
+        if text.count <= 0 {
+            return
+        }
+        if text.contains(decimalPoint) {
             return
         }
         resultView.resultView.text = String(format: "%@%@", resultView.resultView.text ?? "", dp.text ?? "")
@@ -313,5 +330,13 @@ class IFCalculatorResult: IFRoundShadowView {
             make.bottom.equalToSuperview().offset(-16)
             make.right.equalToSuperview().offset(-16)
         }
+    }
+    
+    fileprivate func selectAllText() {
+        resultView.selectAll(nil)
+    }
+    
+    fileprivate func deleteBackward() {
+        resultView.deleteBackward()
     }
 }
