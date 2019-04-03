@@ -12,6 +12,11 @@ class IFEditDetailViewController: IFBaseViewController {
 
     fileprivate var item: IFItem
     
+    fileprivate lazy var calculatorPanel: IFCalculatorPanel = {
+        let panel = IFCalculatorPanel(type: IFCalculatorPanel.CalculatorType.decimal)
+        return panel
+    }()
+    
     fileprivate lazy var navBar: IFEditNavBar = {
         let bar = IFEditNavBar()
         bar.closeClosure = {[weak self] (sender) in
@@ -56,6 +61,13 @@ class IFEditDetailViewController: IFBaseViewController {
         
         let image = item.image(background: UIColor.clear, tint: UIColor.IFItem, size: CGSize(width: 140, height: 140), insets: UIEdgeInsets.zero, orientation: .up)
         contentIconView.iconBtn.setImage(image, for: .normal)
+        
+        view.addSubview(calculatorPanel)
+        calculatorPanel.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.height.equalTo(300)
+            make.width.equalTo(220)
+        }
     }
 }
 
