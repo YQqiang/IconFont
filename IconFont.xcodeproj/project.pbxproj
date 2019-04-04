@@ -31,6 +31,7 @@
 		2F9B6F1B225446E500BC0CB0 /* IFCalculatorPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B6F1A225446E500BC0CB0 /* IFCalculatorPanel.swift */; };
 		2F9B6F1D2254B27B00BC0CB0 /* IFEditToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B6F1C2254B27B00BC0CB0 /* IFEditToolBar.swift */; };
 		2F9B6F1F2254C7E300BC0CB0 /* IFEditToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B6F1E2254C7E300BC0CB0 /* IFEditToolViewController.swift */; };
+		2F9B6F222255B4E800BC0CB0 /* IFCalculatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B6F212255B4E800BC0CB0 /* IFCalculatorController.swift */; };
 		2FA1717E224482AD000EC866 /* IFOverviewDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */; };
 		2FA171872246253C000EC866 /* creativeLetters_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FA171852246253C000EC866 /* creativeLetters_index.html */; };
 		2FA171882246253C000EC866 /* creativeLetters_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FA171862246253C000EC866 /* creativeLetters_iconfont.ttf */; };
@@ -105,6 +106,7 @@
 		2F9B6F1A225446E500BC0CB0 /* IFCalculatorPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFCalculatorPanel.swift; sourceTree = "<group>"; };
 		2F9B6F1C2254B27B00BC0CB0 /* IFEditToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditToolBar.swift; sourceTree = "<group>"; };
 		2F9B6F1E2254C7E300BC0CB0 /* IFEditToolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditToolViewController.swift; sourceTree = "<group>"; };
+		2F9B6F212255B4E800BC0CB0 /* IFCalculatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFCalculatorController.swift; sourceTree = "<group>"; };
 		2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewDetailContentView.swift; sourceTree = "<group>"; };
 		2FA171852246253C000EC866 /* creativeLetters_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = creativeLetters_index.html; sourceTree = "<group>"; };
 		2FA171862246253C000EC866 /* creativeLetters_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = creativeLetters_iconfont.ttf; sourceTree = "<group>"; };
@@ -219,6 +221,15 @@
 				2F60EEDD224089C20031A484 /* IFListViewController.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		2F9B6F202255B4C600BC0CB0 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				2F9B6F1A225446E500BC0CB0 /* IFCalculatorPanel.swift */,
+				2F9B6F212255B4E800BC0CB0 /* IFCalculatorController.swift */,
+			);
+			path = Calculator;
 			sourceTree = "<group>";
 		};
 		2FA171842246251C000EC866 /* creativeLetters */ = {
@@ -357,6 +368,7 @@
 		2FD1344F223F632A0023B097 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2F9B6F202255B4C600BC0CB0 /* Calculator */,
 				2FD13455223F64F10023B097 /* IFMainViewController.swift */,
 				2FD13457223F66300023B097 /* View */,
 			);
@@ -401,7 +413,6 @@
 			isa = PBXGroup;
 			children = (
 				2FD1345A223F66660023B097 /* IFMainTabBar.swift */,
-				2F9B6F1A225446E500BC0CB0 /* IFCalculatorPanel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -706,6 +717,7 @@
 				2FD1345B223F66660023B097 /* IFMainTabBar.swift in Sources */,
 				2FC3803C224E132B006B12B7 /* IFEditHomeCell.swift in Sources */,
 				2FAC3D4C22423D690089EC76 /* IFOverviewHeaderView.swift in Sources */,
+				2F9B6F222255B4E800BC0CB0 /* IFCalculatorController.swift in Sources */,
 				2FAC3D422241F0550089EC76 /* IFItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

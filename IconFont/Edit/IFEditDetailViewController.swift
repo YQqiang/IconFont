@@ -26,7 +26,7 @@ class IFEditDetailViewController: IFBaseViewController {
     fileprivate lazy var toolBar: IFEditToolBar = {
         let bar = IFEditToolBar()
         bar.sizeClosure = {[weak self] (sender) in
-            let toolVC = IFEditToolViewController(sourceView: sender)
+            let toolVC: IFCalculatorController = IFCalculatorController(sourceView: sender)
             self?.present(toolVC, animated: true, completion: nil)
         }
         return bar

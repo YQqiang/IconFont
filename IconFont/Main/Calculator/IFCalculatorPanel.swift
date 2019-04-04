@@ -19,7 +19,13 @@ final class IFCalculatorPanel: IFBaseView {
         case decimal
     }
     
-    private var calculatorType: CalculatorType = .hexadecimal {
+    public var canConvert: Bool = true {
+        didSet {
+            fTran.isHidden = !canConvert
+        }
+    }
+    
+    public var calculatorType: CalculatorType = .hexadecimal {
         didSet {
             if calculatorType == .hexadecimal {
                 da.superview?.isHidden = false
@@ -207,6 +213,7 @@ final class IFCalculatorPanel: IFBaseView {
         digitalStack.addArrangedSubview(rowStack)
         
         calculatorType = { calculatorType }()
+        canConvert = { canConvert }()
         resultView.resultView.becomeFirstResponder()
     }
     
