@@ -130,7 +130,7 @@ final class IFCalculatorPanel: IFBaseView {
         autoAnimate = false
         contentView.backgroundColor = "#575757".hexColor
         contentView.addSubview(UIVisualEffectView(effect: UIBlurEffect(style: .dark)))
-        contentView.layer.cornerRadius = 16
+        contentView.layer.cornerRadius = 12
         contentView.layer.masksToBounds = true
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize.zero
