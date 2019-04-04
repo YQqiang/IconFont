@@ -87,29 +87,29 @@ final class IFCalculatorPanel: IFBaseView {
         return stack
     }()
     
-    fileprivate lazy var allSenders: [UILabel] = []
+    fileprivate lazy var allSenders: [IFCalculatorItem] = []
     
-    public private(set) lazy var dp = makeButton(title: decimalPoint)
-    public private(set) lazy var d0 = makeButton(title: "0")
-    public private(set) lazy var d1 = makeButton(title: "1")
-    public private(set) lazy var d2 = makeButton(title: "2")
-    public private(set) lazy var d3 = makeButton(title: "3")
-    public private(set) lazy var d4 = makeButton(title: "4")
-    public private(set) lazy var d5 = makeButton(title: "5")
-    public private(set) lazy var d6 = makeButton(title: "6")
-    public private(set) lazy var d7 = makeButton(title: "7")
-    public private(set) lazy var d8 = makeButton(title: "8")
-    public private(set) lazy var d9 = makeButton(title: "9")
-    public private(set) lazy var da = makeButton(title: "A")
-    public private(set) lazy var db = makeButton(title: "B")
-    public private(set) lazy var dc = makeButton(title: "C")
-    public private(set) lazy var dd = makeButton(title: "D")
-    public private(set) lazy var de = makeButton(title: "E")
-    public private(set) lazy var df = makeButton(title: "F")
+    public private(set) lazy var dp = makeItem(title: decimalPoint)
+    public private(set) lazy var d0 = makeItem(title: "0")
+    public private(set) lazy var d1 = makeItem(title: "1")
+    public private(set) lazy var d2 = makeItem(title: "2")
+    public private(set) lazy var d3 = makeItem(title: "3")
+    public private(set) lazy var d4 = makeItem(title: "4")
+    public private(set) lazy var d5 = makeItem(title: "5")
+    public private(set) lazy var d6 = makeItem(title: "6")
+    public private(set) lazy var d7 = makeItem(title: "7")
+    public private(set) lazy var d8 = makeItem(title: "8")
+    public private(set) lazy var d9 = makeItem(title: "9")
+    public private(set) lazy var da = makeItem(title: "A")
+    public private(set) lazy var db = makeItem(title: "B")
+    public private(set) lazy var dc = makeItem(title: "C")
+    public private(set) lazy var dd = makeItem(title: "D")
+    public private(set) lazy var de = makeItem(title: "E")
+    public private(set) lazy var df = makeItem(title: "F")
     
-    public private(set) lazy var fTran = makeButton(title: "◎")
-    public private(set) lazy var fDele = makeButton(title: "←")
-    public private(set) lazy var fEnt = makeButton(title: "↩︎")
+    public private(set) lazy var fTran = makeItem(title: "◎")
+    public private(set) lazy var fDele = makeItem(title: "←")
+    public private(set) lazy var fEnt = makeItem(title: "↩︎")
     
     fileprivate var decimalPoint: String {
         return "."
@@ -127,15 +127,24 @@ final class IFCalculatorPanel: IFBaseView {
     
     override func createViews() {
         super.createViews()
+        
+        let cornerRadius: CGFloat = 12
+        
         autoAnimate = false
         contentView.backgroundColor = "#575757".hexColor
         contentView.addSubview(UIVisualEffectView(effect: UIBlurEffect(style: .dark)))
-        contentView.layer.cornerRadius = 12
+        contentView.layer.cornerRadius = cornerRadius
         contentView.layer.masksToBounds = true
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize.zero
         layer.shadowRadius = 4
         layer.shadowOpacity = 0.3
+        
+        d0.roundCorner = .bottomLeft
+        d0.roundRadius = cornerRadius
+        
+        fEnt.roundCorner = .bottomRight
+        fEnt.roundRadius = cornerRadius
         
         contentView.addSubview(resultView)
         resultView.snp.makeConstraints { (make) in
@@ -217,15 +226,15 @@ final class IFCalculatorPanel: IFBaseView {
         resultView.resultView.becomeFirstResponder()
     }
     
-    fileprivate func makeButton(title: String) -> UILabel {
-        let lbl = UILabel()
-        lbl.backgroundColor = "#6E6E6E".hexColor
-        lbl.textColor = UIColor.white
-        lbl.textAlignment = .center
-        lbl.font = UIFont.boldSystemFont(ofSize: 16)
-        lbl.text = title
-        allSenders.append(lbl)
-        return lbl
+    fileprivate func makeItem(title: String) -> IFCalculatorItem {
+        let item = IFCalculatorItem()
+        item.backgroundColor = "#6E6E6E".hexColor
+        item.textColor = UIColor.white
+        item.textAlignment = .center
+        item.font = UIFont.boldSystemFont(ofSize: 18)
+        item.text = title
+        allSenders.append(item)
+        return item
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -311,6 +320,32 @@ final class IFCalculatorPanel: IFBaseView {
             return
         }
         resultView.resultView.text = String(format: "%@%@", resultView.resultView.text ?? "", dp.text ?? "")
+    }
+}
+
+class IFCalculatorItem: UILabel {
+    
+    private lazy var maskLayer: CAShapeLayer = {
+        let ly = CAShapeLayer()
+        return ly
+    }()
+    
+    public var roundCorner: UIRectCorner = .allCorners {
+        didSet {
+            layoutIfNeeded()
+        }
+    }
+    
+    public var roundRadius: CGFloat = 0 {
+        didSet {
+            layoutIfNeeded()
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        maskLayer.path = UIBezierPath(roundedRect: bounds, byRoundingCorners: roundCorner, cornerRadii: CGSize(width: roundRadius, height: roundRadius)).cgPath
+        layer.mask = maskLayer
     }
 }
 
