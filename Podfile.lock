@@ -2,14 +2,12 @@ PODS:
   - IconFontRegister (0.1.1)
   - Kanna (4.0.3)
   - Reveal-SDK (4)
-  - ShowTime (2.5.0)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - IconFontRegister
   - Kanna
   - Reveal-SDK (~> 4)
-  - ShowTime
   - SnapKit
 
 SPEC REPOS:
@@ -17,16 +15,14 @@ SPEC REPOS:
     - IconFontRegister
     - Kanna
     - Reveal-SDK
-    - ShowTime
     - SnapKit
 
 SPEC CHECKSUMS:
   IconFontRegister: 0a119b2a97342854a2e9e5d3c8880b0d1df84517
   Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
   Reveal-SDK: 178c927f1a3230648d3a92b96f6e730a35b2750a
-  ShowTime: 7821a8fc33629f34dbd970e0b55f34126f6d9750
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 8ff5955297389e31cff94d4d55cd6199aa2a2a3d
+PODFILE CHECKSUM: f1e9ba2ccaea88d4ce4a6c1e136c70d3b6e2044f
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.6.0
