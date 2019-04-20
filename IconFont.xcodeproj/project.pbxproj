@@ -46,6 +46,8 @@
 		2FC38039224E0DE5006B12B7 /* IFGlobalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC38038224E0DE5006B12B7 /* IFGlobalManager.swift */; };
 		2FC3803C224E132B006B12B7 /* IFEditHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC3803B224E132B006B12B7 /* IFEditHomeCell.swift */; };
 		2FC3803E224E147C006B12B7 /* IFEditHomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC3803D224E147C006B12B7 /* IFEditHomeHeaderView.swift */; };
+		2FC3AAD5226B06AE00CF0805 /* sungrow_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FC3AAD3226B06AE00CF0805 /* sungrow_iconfont.ttf */; };
+		2FC3AAD6226B06AE00CF0805 /* sungrow_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FC3AAD4226B06AE00CF0805 /* sungrow_index.html */; };
 		2FD13422223F61B20023B097 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD13421223F61B20023B097 /* AppDelegate.swift */; };
 		2FD13429223F61B40023B097 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FD13428223F61B40023B097 /* Assets.xcassets */; };
 		2FD1342C223F61B40023B097 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD1342A223F61B40023B097 /* LaunchScreen.storyboard */; };
@@ -122,6 +124,8 @@
 		2FC38038224E0DE5006B12B7 /* IFGlobalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFGlobalManager.swift; sourceTree = "<group>"; };
 		2FC3803B224E132B006B12B7 /* IFEditHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditHomeCell.swift; sourceTree = "<group>"; };
 		2FC3803D224E147C006B12B7 /* IFEditHomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditHomeHeaderView.swift; sourceTree = "<group>"; };
+		2FC3AAD3226B06AE00CF0805 /* sungrow_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sungrow_iconfont.ttf; sourceTree = "<group>"; };
+		2FC3AAD4226B06AE00CF0805 /* sungrow_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = sungrow_index.html; sourceTree = "<group>"; };
 		2FD1341E223F61B20023B097 /* IconFont.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IconFont.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD13421223F61B20023B097 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD13428223F61B40023B097 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 		2FAC3D432241F1F70089EC76 /* IFResource */ = {
 			isa = PBXGroup;
 			children = (
+				2FC3AAD2226B067300CF0805 /* sungrow */,
 				2FA171842246251C000EC866 /* creativeLetters */,
 				2F29377A22432D8D00F55578 /* weather */,
 				2FE4ABDB224264C800A777D1 /* beautyMakeup */,
@@ -313,6 +318,15 @@
 				2F9B6F1C2254B27B00BC0CB0 /* IFEditToolBar.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2FC3AAD2226B067300CF0805 /* sungrow */ = {
+			isa = PBXGroup;
+			children = (
+				2FC3AAD3226B06AE00CF0805 /* sungrow_iconfont.ttf */,
+				2FC3AAD4226B06AE00CF0805 /* sungrow_index.html */,
+			);
+			path = sungrow;
 			sourceTree = "<group>";
 		};
 		2FD13415223F61B20023B097 = {
@@ -573,6 +587,8 @@
 				2FD13429223F61B40023B097 /* Assets.xcassets in Resources */,
 				2FA171872246253C000EC866 /* creativeLetters_index.html in Resources */,
 				2FAC3D52224258BC0089EC76 /* sportProject_iconfont.ttf in Resources */,
+				2FC3AAD6226B06AE00CF0805 /* sungrow_index.html in Resources */,
+				2FC3AAD5226B06AE00CF0805 /* sungrow_iconfont.ttf in Resources */,
 				2FAC3D472241F21E0089EC76 /* dingding_index.html in Resources */,
 				2FAC3D482241F21E0089EC76 /* dingding_iconfont.ttf in Resources */,
 				2FE4ABD9224263AF00A777D1 /* sportMovement_index.html in Resources */,
@@ -677,12 +693,8 @@
 			);
 			inputFileListPaths = (
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
