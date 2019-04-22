@@ -36,8 +36,8 @@ class IFOverviewDetailTitleView: IFGradientView {
     override func createViews() {
         super.createViews()
         gradientColors = [
-            UIColor(red:0.42, green:0.69, blue:0.47, alpha:1.00).cgColor,
-            UIColor(red:0.30, green:0.60, blue:0.36, alpha:1.00).cgColor
+            "#6E6E6E".hexColor!.cgColor,
+            "#575757".hexColor!.cgColor
         ]
         roundCorner = [.topLeft, .topRight]
         
