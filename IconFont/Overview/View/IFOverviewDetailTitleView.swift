@@ -27,7 +27,7 @@ class IFOverviewDetailTitleView: IFGradientView {
     
     public private(set) lazy var nameLbl: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = UIColor(red:0.65, green:0.80, blue:0.68, alpha:1.00)
+        lbl.textColor = .white
         lbl.font = UIFont.systemFont(ofSize: 12)
         lbl.textAlignment = .center
         return lbl
