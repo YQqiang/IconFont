@@ -61,6 +61,8 @@
 		2FE4ABDA224263AF00A777D1 /* sportMovement_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FE4ABD8224263AF00A777D1 /* sportMovement_iconfont.ttf */; };
 		2FE4ABDE224264E600A777D1 /* beautyMakeup_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FE4ABDC224264E600A777D1 /* beautyMakeup_index.html */; };
 		2FE4ABDF224264E600A777D1 /* beautyMakeup_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FE4ABDD224264E600A777D1 /* beautyMakeup_iconfont.ttf */; };
+		2FE681482271DAFA00976059 /* IFHorizontalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE681472271DAFA00976059 /* IFHorizontalItem.swift */; };
+		2FE6814A2271DB1400976059 /* IFVerticalItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE681492271DB1400976059 /* IFVerticalItem.swift */; };
 		469AA9B6AF068CB50ED03705 /* Pods_IconFontTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D063CDC879F9AC2A0BD91013 /* Pods_IconFontTests.framework */; };
 		70C470A93F2AA4D218688034 /* Pods_IconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D13C2AD5060CDAD6BB8198F /* Pods_IconFont.framework */; };
 		9C2AEE9ED5B07428C62FE454 /* Pods_IconFontUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65819DF1B984C86E541D973 /* Pods_IconFontUITests.framework */; };
@@ -145,6 +147,8 @@
 		2FE4ABD8224263AF00A777D1 /* sportMovement_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sportMovement_iconfont.ttf; sourceTree = "<group>"; };
 		2FE4ABDC224264E600A777D1 /* beautyMakeup_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = beautyMakeup_index.html; sourceTree = "<group>"; };
 		2FE4ABDD224264E600A777D1 /* beautyMakeup_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = beautyMakeup_iconfont.ttf; sourceTree = "<group>"; };
+		2FE681472271DAFA00976059 /* IFHorizontalItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFHorizontalItem.swift; sourceTree = "<group>"; };
+		2FE681492271DB1400976059 /* IFVerticalItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFVerticalItem.swift; sourceTree = "<group>"; };
 		3628752A21A91BF3FDC3DB76 /* Pods-IconFontUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFontUITests.release.xcconfig"; path = "Target Support Files/Pods-IconFontUITests/Pods-IconFontUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6B7FCDBDA111ADBDCC57E3FA /* Pods-IconFontUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFontUITests.debug.xcconfig"; path = "Target Support Files/Pods-IconFontUITests/Pods-IconFontUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6CE19778AF5FB9C650BEBDA0 /* Pods-IconFont.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFont.debug.xcconfig"; path = "Target Support Files/Pods-IconFont/Pods-IconFont.debug.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 		1A242B19224526F100FE6365 /* Introduction */ = {
 			isa = PBXGroup;
 			children = (
+				2FE681462271DACF00976059 /* View */,
 				1A242B1A2245272700FE6365 /* IFIntroductionViewController.swift */,
 			);
 			path = Introduction;
@@ -451,6 +456,15 @@
 			path = beautyMakeup;
 			sourceTree = "<group>";
 		};
+		2FE681462271DACF00976059 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2FE681472271DAFA00976059 /* IFHorizontalItem.swift */,
+				2FE681492271DB1400976059 /* IFVerticalItem.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7CBB41780CE6930819E976A1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -693,12 +707,8 @@
 			);
 			inputFileListPaths = (
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -716,6 +726,7 @@
 				2F2937802243315200F55578 /* IFOverviewDetailController.swift in Sources */,
 				2FD13459223F664A0023B097 /* IFBaseView.swift in Sources */,
 				2F9B6F15225356F100BC0CB0 /* IFFilter.swift in Sources */,
+				2FE6814A2271DB1400976059 /* IFVerticalItem.swift in Sources */,
 				2F3F86A4223F831500EBE35A /* IconFont.swift in Sources */,
 				2F20B1B7225AFB46003A658C /* IFSliderView.swift in Sources */,
 				2F9B6F1F2254C7E300BC0CB0 /* IFEditToolViewController.swift in Sources */,
@@ -737,6 +748,7 @@
 				2F3A40442249ABDA0065E982 /* ColorUtil.swift in Sources */,
 				2FD13454223F64AA0023B097 /* IFBaseViewController.swift in Sources */,
 				2F9B6F1D2254B27B00BC0CB0 /* IFEditToolBar.swift in Sources */,
+				2FE681482271DAFA00976059 /* IFHorizontalItem.swift in Sources */,
 				2FC3803E224E147C006B12B7 /* IFEditHomeHeaderView.swift in Sources */,
 				2F2937842243373100F55578 /* IFGradientView.swift in Sources */,
 				2FC38039224E0DE5006B12B7 /* IFGlobalManager.swift in Sources */,
