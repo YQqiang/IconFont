@@ -12,7 +12,7 @@ class IFIntroductionViewController: IFBaseViewController {
     
     fileprivate lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView()
-        
+        scroll.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 20 + 44, right: 16)
         return scroll
     }()
     
@@ -21,8 +21,64 @@ class IFIntroductionViewController: IFBaseViewController {
         stack.axis = .vertical
         stack.alignment = .fill
         stack.distribution = .fill
-        stack.spacing = 0
+        stack.spacing = 24
         return stack
+    }()
+    
+    fileprivate lazy var defineItem: IFHorizontalItem = {
+        let item = IFHorizontalItem()
+        item.gradientColors = [
+            "#6AB27A".hexColor!.cgColor,
+            "#3E9553".hexColor!.cgColor]
+        item.titleLbl.text = "字体库"
+        item.titleLbl.textColor = "#F0E8AF".hexColor
+        item.subTitleLbl.text = "生么是字体库"
+        item.subTitleLbl.textColor = "#C5D59C".hexColor
+        let image = IconFontType.nodeManage.image(background: UIColor.clear, tint: item.titleLbl.textColor!, size: CGSize(width: 64, height: 64), insets: UIEdgeInsets.zero, orientation: .up)
+        item.iconBtn.setImage(image, for: .normal)
+        return item;
+    }()
+    
+    fileprivate lazy var scopeItem: IFHorizontalItem = {
+        let item = IFHorizontalItem()
+        item.gradientColors = [
+            "#E2E6E9".hexColor!.cgColor,
+            "#CBD3D8".hexColor!.cgColor]
+        item.titleLbl.text = "功能介绍"
+        item.titleLbl.textColor = "#0D0E0E".hexColor
+        item.subTitleLbl.text = "实现了什么功能"
+        item.subTitleLbl.textColor = "#8D9194".hexColor
+        let image = IconFontType.editHexagon.image(background: UIColor.clear, tint: item.titleLbl.textColor!, size: CGSize(width: 64, height: 64), insets: UIEdgeInsets.zero, orientation: .up)
+        item.iconBtn.setImage(image, for: .normal)
+        return item;
+    }()
+    
+    fileprivate lazy var codeItem: IFHorizontalItem = {
+        let item = IFHorizontalItem()
+        item.gradientColors = [
+            "#E2E6E9".hexColor!.cgColor,
+            "#CBD3D8".hexColor!.cgColor]
+        item.titleLbl.text = "功能介绍"
+        item.titleLbl.textColor = "#0D0E0E".hexColor
+        item.subTitleLbl.text = "实现了什么功能"
+        item.subTitleLbl.textColor = "#8D9194".hexColor
+        let image = IconFontType.editHexagon.image(background: UIColor.clear, tint: item.titleLbl.textColor!, size: CGSize(width: 64, height: 64), insets: UIEdgeInsets.zero, orientation: .up)
+        item.iconBtn.setImage(image, for: .normal)
+        return item;
+    }()
+    
+    fileprivate lazy var sourceItem: IFHorizontalItem = {
+        let item = IFHorizontalItem()
+        item.gradientColors = [
+            "#E2E6E9".hexColor!.cgColor,
+            "#CBD3D8".hexColor!.cgColor]
+        item.titleLbl.text = "功能介绍"
+        item.titleLbl.textColor = "#0D0E0E".hexColor
+        item.subTitleLbl.text = "实现了什么功能"
+        item.subTitleLbl.textColor = "#8D9194".hexColor
+        let image = IconFontType.editHexagon.image(background: UIColor.clear, tint: item.titleLbl.textColor!, size: CGSize(width: 64, height: 64), insets: UIEdgeInsets.zero, orientation: .up)
+        item.iconBtn.setImage(image, for: .normal)
+        return item;
     }()
 
     override func viewDidLoad() {
@@ -37,8 +93,14 @@ class IFIntroductionViewController: IFBaseViewController {
         
         scrollView.addSubview(stackView)
         stackView.snp.makeConstraints { (make) in
+            make.width.equalToSuperview().offset(-32)
             make.edges.equalToSuperview()
         }
+        
+        stackView.addArrangedSubview(defineItem)
+        stackView.addArrangedSubview(scopeItem)
+        stackView.addArrangedSubview(codeItem)
+        stackView.addArrangedSubview(sourceItem)
     }
 
 }

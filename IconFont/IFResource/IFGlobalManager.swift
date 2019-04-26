@@ -6,7 +6,7 @@
 //  Copyright © 2019 yuqiang. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class IFGlobalManager {
     private init() {}
@@ -57,4 +57,6 @@ class IFGlobalManager {
         }
         return groups
     }()
+    
+    public let radius: CGFloat = 22.0
 }
