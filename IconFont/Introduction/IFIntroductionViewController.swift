@@ -67,16 +67,16 @@ class IFIntroductionViewController: IFBaseViewController {
         return item;
     }()
     
-    fileprivate lazy var sourceItem: IFHorizontalItem = {
-        let item = IFHorizontalItem()
+    fileprivate lazy var sourceItem: IFVerticalItem = {
+        let item = IFVerticalItem()
         item.gradientColors = [
-            "#E2E6E9".hexColor!.cgColor,
-            "#CBD3D8".hexColor!.cgColor]
-        item.titleLbl.text = "功能介绍"
-        item.titleLbl.textColor = "#0D0E0E".hexColor
-        item.subTitleLbl.text = "实现了什么功能"
-        item.subTitleLbl.textColor = "#8D9194".hexColor
-        let image = IconFontType.editHexagon.image(background: UIColor.clear, tint: item.titleLbl.textColor!, size: CGSize(width: 64, height: 64), insets: UIEdgeInsets.zero, orientation: .up)
+            "#6AB27A".hexColor!.cgColor,
+            "#3E9553".hexColor!.cgColor]
+        item.titleLbl.text = "字体库"
+        item.titleLbl.textColor = "#F0E8AF".hexColor
+        item.subTitleLbl.text = "生么是字体库"
+        item.subTitleLbl.textColor = "#C5D59C".hexColor
+        let image = IconFontType.nodeManage.image(background: UIColor.clear, tint: item.titleLbl.textColor!, size: CGSize(width: 64, height: 64), insets: UIEdgeInsets.zero, orientation: .up)
         item.iconBtn.setImage(image, for: .normal)
         return item;
     }()
@@ -99,8 +99,7 @@ class IFIntroductionViewController: IFBaseViewController {
         
         stackView.addArrangedSubview(defineItem)
         stackView.addArrangedSubview(scopeItem)
-        stackView.addArrangedSubview(codeItem)
         stackView.addArrangedSubview(sourceItem)
+        stackView.addArrangedSubview(codeItem)
     }
-
 }
