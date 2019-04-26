@@ -22,8 +22,9 @@ class IFVerticalItem: IFGradientView {
         return lbl
     }()
     
-    public private(set) lazy var iconBtn: UIButton = {
-        let btn = UIButton()
+    public private(set) lazy var iconBtn: IFButton = {
+        let btn = IFButton()
+        btn.adjustsImageWhenHighlighted = false
         btn.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
         return btn;
     }()
