@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A242B1B2245272700FE6365 /* IFIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A242B1A2245272700FE6365 /* IFIntroductionViewController.swift */; };
 		1A242B1D2250C00A00FE6365 /* IFEditDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A242B1C2250C00A00FE6365 /* IFEditDetailViewController.swift */; };
+		2F10045122732A9200E67309 /* IFHorizontalIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F10045022732A9200E67309 /* IFHorizontalIView.swift */; };
 		2F20B1B7225AFB46003A658C /* IFSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F20B1B6225AFB46003A658C /* IFSliderView.swift */; };
 		2F29377D22432DA200F55578 /* weather_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F29377B22432DA200F55578 /* weather_iconfont.ttf */; };
 		2F29377E22432DA200F55578 /* weather_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2F29377C22432DA200F55578 /* weather_index.html */; };
@@ -89,6 +90,7 @@
 		0D390D62D3F9CD4306FD9AE7 /* Pods-IconFontTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IconFontTests.release.xcconfig"; path = "Target Support Files/Pods-IconFontTests/Pods-IconFontTests.release.xcconfig"; sourceTree = "<group>"; };
 		1A242B1A2245272700FE6365 /* IFIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFIntroductionViewController.swift; sourceTree = "<group>"; };
 		1A242B1C2250C00A00FE6365 /* IFEditDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditDetailViewController.swift; sourceTree = "<group>"; };
+		2F10045022732A9200E67309 /* IFHorizontalIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFHorizontalIView.swift; sourceTree = "<group>"; };
 		2F20B1B6225AFB46003A658C /* IFSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFSliderView.swift; sourceTree = "<group>"; };
 		2F29377B22432DA200F55578 /* weather_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = weather_iconfont.ttf; sourceTree = "<group>"; };
 		2F29377C22432DA200F55578 /* weather_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = weather_index.html; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 			children = (
 				2FE681472271DAFA00976059 /* IFHorizontalItem.swift */,
 				2FE681492271DB1400976059 /* IFVerticalItem.swift */,
+				2F10045022732A9200E67309 /* IFHorizontalIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -747,6 +750,7 @@
 				2F2937862243577E00F55578 /* IFOverviewDetailTitleView.swift in Sources */,
 				2F3A40442249ABDA0065E982 /* ColorUtil.swift in Sources */,
 				2FD13454223F64AA0023B097 /* IFBaseViewController.swift in Sources */,
+				2F10045122732A9200E67309 /* IFHorizontalIView.swift in Sources */,
 				2F9B6F1D2254B27B00BC0CB0 /* IFEditToolBar.swift in Sources */,
 				2FE681482271DAFA00976059 /* IFHorizontalItem.swift in Sources */,
 				2FC3803E224E147C006B12B7 /* IFEditHomeHeaderView.swift in Sources */,

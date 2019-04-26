@@ -67,6 +67,11 @@ class IFIntroductionViewController: IFBaseViewController {
         return item;
     }()
     
+    fileprivate lazy var horizontalView: IFHorizontalView = {
+        let view = IFHorizontalView()
+        return view
+    }()
+    
     fileprivate lazy var sourceItem: IFVerticalItem = {
         let item = IFVerticalItem()
         item.gradientColors = [
@@ -99,7 +104,8 @@ class IFIntroductionViewController: IFBaseViewController {
         
         stackView.addArrangedSubview(defineItem)
         stackView.addArrangedSubview(scopeItem)
-        stackView.addArrangedSubview(sourceItem)
+        stackView.addArrangedSubview(horizontalView)
         stackView.addArrangedSubview(codeItem)
+        stackView.addArrangedSubview(sourceItem)
     }
 }
