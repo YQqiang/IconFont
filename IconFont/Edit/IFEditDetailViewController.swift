@@ -71,6 +71,16 @@ class IFEditDetailViewController: IFBaseViewController {
         let image = item.image(background: UIColor.clear, tint: UIColor.IFItem, size: CGSize(width: 140, height: 140), insets: UIEdgeInsets.zero, orientation: .up)
         contentIconView.iconBtn.setImage(image, for: .normal)
     }
+    
+    override var previewActionItems: [UIPreviewActionItem] {
+        let action1 = UIPreviewAction(title: "喜欢", style: .default) { (action, viewControlelr) in
+            
+        }
+        let action2 = UIPreviewAction(title: "取消喜欢", style: .default) { (action, viewControlelr) in
+            
+        }
+        return [action1, action2]
+    }
 }
 
 extension IFEditDetailViewController {
