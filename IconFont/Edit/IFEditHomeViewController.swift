@@ -31,6 +31,7 @@ class IFEditHomeViewController: IFBaseViewController {
         super.viewDidLoad()
         navigationItem.title = "编辑"
         navigationController?.setNavigationBarHidden(true, animated: true)
+        registerForPreviewing(with: self, sourceView: tableView)
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.top.equalTo(topLayoutGuide.snp.bottom)
@@ -82,5 +83,21 @@ extension IFEditHomeViewController: UITableViewDelegate {
         present(detailVC, animated: true) {
             cell.unfreezeAnimations()
         }
+    }
+}
+
+extension IFEditHomeViewController: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location) else {
+            return nil
+        }
+        let cell = tableView.cellForRow(at: indexPath)
+        previewingContext.sourceRect = cell?.frame ?? CGRect.zero
+        let detail = IFEditDetailViewController(item: dataSource[indexPath.section].items[indexPath.row])
+        return detail
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        present(viewControllerToCommit, animated: true, completion: nil)
     }
 }
