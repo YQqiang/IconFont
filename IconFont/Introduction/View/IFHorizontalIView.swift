@@ -13,13 +13,13 @@ class IFHorizontalView: IFBaseView {
     public private(set) lazy var aItem: IFVerticalItem = {
         let item = IFVerticalItem()
         item.gradientColors = [
-            "#6AB27A".hexColor!.cgColor,
-            "#3E9553".hexColor!.cgColor]
+            "#CC4D33".hexColor!.cgColor,
+            "#AA2C1D".hexColor!.cgColor]
         item.titleLbl.text = "字体库"
-        item.titleLbl.textColor = "#F0E8AF".hexColor
+        item.titleLbl.textColor = "#E9D9A3".hexColor
         item.subTitleLbl.text = "生么是字体库"
-        item.subTitleLbl.textColor = "#C5D59C".hexColor
-        let image = IconFontType.nodeManage.image(background: UIColor.clear, tint: item.titleLbl.textColor!, size: CGSize(width: 64, height: 64), insets: UIEdgeInsets.zero, orientation: .up)
+        item.subTitleLbl.textColor = "#D59D74".hexColor
+        let image = IconFontType.nodeManage.image(background: UIColor.clear, tint: "#7F2920".hexColor!, size: CGSize(width: 64, height: 64), insets: UIEdgeInsets.zero, orientation: .up)
         item.iconBtn.setImage(image, for: .normal)
         return item;
     }()
@@ -27,13 +27,13 @@ class IFHorizontalView: IFBaseView {
     public private(set) lazy var bItem: IFVerticalItem = {
         let item = IFVerticalItem()
         item.gradientColors = [
-            "#6AB27A".hexColor!.cgColor,
-            "#3E9553".hexColor!.cgColor]
+            "#F1E8DD".hexColor!.cgColor,
+            "#E4D5C3".hexColor!.cgColor]
         item.titleLbl.text = "字体库"
-        item.titleLbl.textColor = "#F0E8AF".hexColor
+        item.titleLbl.textColor = "#1D1C1A".hexColor
         item.subTitleLbl.text = "生么是字体库"
-        item.subTitleLbl.textColor = "#C5D59C".hexColor
-        let image = IconFontType.nodeManage.image(background: UIColor.clear, tint: item.titleLbl.textColor!, size: CGSize(width: 64, height: 64), insets: UIEdgeInsets.zero, orientation: .up)
+        item.subTitleLbl.textColor = "#8B8378".hexColor
+        let image = IconFontType.nodeManage.image(background: UIColor.clear, tint: "#F9B22A".hexColor!, size: CGSize(width: 64, height: 64), insets: UIEdgeInsets.zero, orientation: .up)
         item.iconBtn.setImage(image, for: .normal)
         return item;
     }()
@@ -41,33 +41,20 @@ class IFHorizontalView: IFBaseView {
     public private(set) lazy var cItem: IFVerticalItem = {
         let item = IFVerticalItem()
         item.gradientColors = [
-            "#6AB27A".hexColor!.cgColor,
-            "#3E9553".hexColor!.cgColor]
+            "#84DDEB".hexColor!.cgColor,
+            "#49C2DC".hexColor!.cgColor]
         item.titleLbl.text = "字体库"
-        item.titleLbl.textColor = "#F0E8AF".hexColor
+        item.titleLbl.textColor = "#FFFFFF".hexColor
         item.subTitleLbl.text = "生么是字体库"
-        item.subTitleLbl.textColor = "#C5D59C".hexColor
-        let image = IconFontType.nodeManage.image(background: UIColor.clear, tint: item.titleLbl.textColor!, size: CGSize(width: 64, height: 64), insets: UIEdgeInsets.zero, orientation: .up)
-        item.iconBtn.setImage(image, for: .normal)
-        return item;
-    }()
-    
-    public private(set) lazy var dItem: IFVerticalItem = {
-        let item = IFVerticalItem()
-        item.gradientColors = [
-            "#6AB27A".hexColor!.cgColor,
-            "#3E9553".hexColor!.cgColor]
-        item.titleLbl.text = "字体库"
-        item.titleLbl.textColor = "#F0E8AF".hexColor
-        item.subTitleLbl.text = "生么是字体库"
-        item.subTitleLbl.textColor = "#C5D59C".hexColor
-        let image = IconFontType.nodeManage.image(background: UIColor.clear, tint: item.titleLbl.textColor!, size: CGSize(width: 64, height: 64), insets: UIEdgeInsets.zero, orientation: .up)
+        item.subTitleLbl.textColor = "#C1EBF3".hexColor
+        let image = IconFontType.nodeManage.image(background: UIColor.clear, tint: "#1B8398".hexColor!, size: CGSize(width: 64, height: 64), insets: UIEdgeInsets.zero, orientation: .up)
         item.iconBtn.setImage(image, for: .normal)
         return item;
     }()
     
     fileprivate lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView()
+        scroll.showsHorizontalScrollIndicator = false
         return scroll
     }()
     
@@ -76,7 +63,7 @@ class IFHorizontalView: IFBaseView {
         stack.axis = .horizontal
         stack.alignment = .fill
         stack.distribution = .fill
-        stack.spacing = 8
+        stack.spacing = 16
         return stack
     }()
     
@@ -92,11 +79,11 @@ class IFHorizontalView: IFBaseView {
         stackView.snp.makeConstraints { (make) in
             make.height.equalToSuperview()
             make.edges.equalToSuperview()
+            make.width.equalTo(self)
         }
         
         stackView.addArrangedSubview(aItem)
         stackView.addArrangedSubview(bItem)
         stackView.addArrangedSubview(cItem)
-        stackView.addArrangedSubview(dItem)
     }
 }
