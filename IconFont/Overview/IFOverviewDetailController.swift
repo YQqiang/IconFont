@@ -73,6 +73,11 @@ class IFOverviewDetailController: IFBaseViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.clear
+        let effect = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
+        view.addSubview(effect)
+        effect.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview();
+        }
         view.addSubview(contentView)
         contentView.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
@@ -110,7 +115,7 @@ class IFOverviewDetailController: IFBaseViewController {
         guard let touch = touches.first else {
             return
         }
-        if touch.view == view {
+        if touch.view == view.subviews.first {
             dismissSelf()
         }
     }
