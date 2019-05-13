@@ -11,6 +11,7 @@ target 'IconFont' do
   pod 'SnapKit'
   pod 'IconFontRegister'
   pod 'Kanna'
+  pod 'RealmSwift'
 #  pod 'ShowTime'
   pod 'Reveal-SDK','~>4', :configurations => ['Debug']
 

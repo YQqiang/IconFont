@@ -1,12 +1,18 @@
 PODS:
   - IconFontRegister (0.1.1)
   - Kanna (4.0.3)
+  - Realm (3.14.2):
+    - Realm/Headers (= 3.14.2)
+  - Realm/Headers (3.14.2)
+  - RealmSwift (3.14.2):
+    - Realm (= 3.14.2)
   - Reveal-SDK (4)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - IconFontRegister
   - Kanna
+  - RealmSwift
   - Reveal-SDK (~> 4)
   - SnapKit
 
@@ -14,15 +20,19 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - IconFontRegister
     - Kanna
+    - Realm
+    - RealmSwift
     - Reveal-SDK
     - SnapKit
 
 SPEC CHECKSUMS:
   IconFontRegister: 0a119b2a97342854a2e9e5d3c8880b0d1df84517
   Kanna: 0ebbdd0e7e3308f0aafbd569e79c8cadc5eb877c
+  Realm: 179c6706e3a49dbfe112e572fd3c03d3169bea35
+  RealmSwift: 1797f272fb51c555b764fada32e82159a2c65247
   Reveal-SDK: 178c927f1a3230648d3a92b96f6e730a35b2750a
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: f1e9ba2ccaea88d4ce4a6c1e136c70d3b6e2044f
+PODFILE CHECKSUM: f4ebbe9d94a73f61f317adeff2033b2bf9bd5004
 
 COCOAPODS: 1.7.0.beta.3
