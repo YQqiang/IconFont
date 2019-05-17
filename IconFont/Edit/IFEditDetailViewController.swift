@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class IFEditDetailViewController: IFBaseViewController {
 
@@ -75,6 +76,13 @@ class IFEditDetailViewController: IFBaseViewController {
     override var previewActionItems: [UIPreviewActionItem] {
         let action1 = UIPreviewAction(title: "喜欢", style: .default) { (action, viewControlelr) in
             
+            let realm = try! Realm()
+            let puppies = realm.objects(IFItem.self)
+            print("count = \(puppies.count)")
+            try! realm.write {
+                realm.add(self.item)
+            }
+            print("count = \(puppies.count)")
         }
         let action2 = UIPreviewAction(title: "取消喜欢", style: .default) { (action, viewControlelr) in
             

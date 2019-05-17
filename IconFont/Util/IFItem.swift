@@ -8,11 +8,16 @@
 
 import Foundation
 import Kanna
+import RealmSwift
 
-struct IFItem: IconFontAble {
-    public var fontName: String
+class IFItem: Object, IconFontAble {
+    @objc dynamic public var fontName: String = ""
     
-    public var filePath: URL
+    @objc dynamic public var fontPath: String = ""
+    
+    public var filePath: URL {
+        return URL(string: fontPath)!
+    }
     
     public var hexValue: Int {
         get {
@@ -20,12 +25,13 @@ struct IFItem: IconFontAble {
         }
     }
     
-    public var hexString: String = ""
-    public var name: String = ""
+    @objc dynamic public var hexString: String = ""
+    @objc dynamic public var name: String = ""
     
-    init(fontName: String, filePath: URL, hexString: String, name: String) {
+    convenience init(fontName: String, fontPath: String, hexString: String, name: String) {
+        self.init()
         self.fontName = fontName
-        self.filePath = filePath
+        self.fontPath = fontPath
         self.hexString = hexString
         self.name = name
     }
@@ -50,7 +56,7 @@ struct IFGroupItem {
         for li in ul.enumerated() {
             let name = li.element.at_xpath("div[@class='name']")?.content ?? ""
             let hexString = li.element.at_xpath("div[@class='code-name']")?.content ?? ""
-            let item = IFItem(fontName: fontName, filePath: fontPath, hexString: hexString.trimmingCharacters(in: CharacterSet(charactersIn: "&#x;")), name: name)
+            let item = IFItem(fontName: fontName, fontPath: fontPath.absoluteString, hexString: hexString.trimmingCharacters(in: CharacterSet(charactersIn: "&#x;")), name: name)
             itemArray.append(item)
         }
         return itemArray
