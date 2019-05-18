@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class IFEditDetailViewController: IFBaseViewController {
 
@@ -74,24 +73,17 @@ class IFEditDetailViewController: IFBaseViewController {
     }
     
     override var previewActionItems: [UIPreviewActionItem] {
-        let realm = try! Realm()
-        let filter = "fontName = '\(self.item.fontName)' AND hexString BEGINSWITH '\(self.item.hexString)'"
-        let collection = realm.objects(IFItem.self).filter(filter)
         // 收藏
-        if collection.count == 1 {
+        if !IFRealm.isCollection(item: item) {
             let action = UIPreviewAction(title: "收藏", style: .default) { (action, viewControlelr) in
-                try! realm.write {
-                    realm.add(self.item)
-                }
+                IFRealm.collection(item: self.item)
             }
             return [action]
         }
         // 取消收藏
         else {
-            let action = UIPreviewAction(title: "取消收藏", style: .default) { (action, viewControlelr) in
-                try! realm.write {
-                    realm.delete(collection.first!)
-                }
+            let action = UIPreviewAction(title: "取消收藏", style: .destructive) { (action, viewControlelr) in
+                IFRealm.cancleCollection(item: self.item)
             }
             return [action]
         }
