@@ -30,12 +30,15 @@ class IFIntroductionViewController: IFBaseViewController {
         item.gradientColors = [
             "#6AB27A".hexColor!.cgColor,
             "#3E9553".hexColor!.cgColor]
-        item.titleLbl.text = "字体库"
+        item.titleLbl.text = "已收藏"
         item.titleLbl.textColor = "#F0E8AF".hexColor
-        item.subTitleLbl.text = "生么是字体库"
+        item.subTitleLbl.text = "我喜欢的图标"
         item.subTitleLbl.textColor = "#C5D59C".hexColor
         let image = IconFontType.nodeManage.image(background: UIColor.clear, tint: item.titleLbl.textColor!, size: CGSize(width: 64, height: 64), insets: UIEdgeInsets.zero, orientation: .up)
         item.iconBtn.setImage(image, for: .normal)
+        item.tapClosure = { (_) in
+            print("tap")
+        }
         return item;
     }()
     

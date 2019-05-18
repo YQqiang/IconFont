@@ -10,6 +10,8 @@ import UIKit
 
 class IFHorizontalItem: IFGradientView {
     
+    public var tapClosure: ((_ item: IFHorizontalItem) -> Void)?
+    
     public private(set) lazy var titleLbl: UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.boldSystemFont(ofSize: 25)
@@ -24,6 +26,7 @@ class IFHorizontalItem: IFGradientView {
     
     public private(set) lazy var iconBtn: IFButton = {
         let btn = IFButton()
+        btn.isUserInteractionEnabled = false
         btn.adjustsImageWhenHighlighted = false
         btn.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
         return btn;
@@ -58,6 +61,16 @@ class IFHorizontalItem: IFGradientView {
             make.bottom.equalToSuperview().offset(-24)
             make.right.equalToSuperview().offset(-24)
             make.left.equalTo(lblView.snp.right).offset(8)
+        }
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapAction(_:)))
+        addGestureRecognizer(tap)
+    }
+}
+
+extension IFHorizontalItem {
+    @objc fileprivate func tapAction(_ tap: UITapGestureRecognizer) {
+        if let closure = tapClosure {
+            closure(self)
         }
     }
 }
