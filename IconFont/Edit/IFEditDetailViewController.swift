@@ -74,20 +74,27 @@ class IFEditDetailViewController: IFBaseViewController {
     }
     
     override var previewActionItems: [UIPreviewActionItem] {
-        let action1 = UIPreviewAction(title: "喜欢", style: .default) { (action, viewControlelr) in
-            
-            let realm = try! Realm()
-            let puppies = realm.objects(IFItem.self)
-            print("count = \(puppies.count)")
-            try! realm.write {
-                realm.add(self.item)
+        let realm = try! Realm()
+        let filter = "fontName = '\(self.item.fontName)' AND hexString BEGINSWITH '\(self.item.hexString)'"
+        let collection = realm.objects(IFItem.self).filter(filter)
+        // 收藏
+        if collection.count == 1 {
+            let action = UIPreviewAction(title: "收藏", style: .default) { (action, viewControlelr) in
+                try! realm.write {
+                    realm.add(self.item)
+                }
             }
-            print("count = \(puppies.count)")
+            return [action]
         }
-        let action2 = UIPreviewAction(title: "取消喜欢", style: .default) { (action, viewControlelr) in
-            
+        // 取消收藏
+        else {
+            let action = UIPreviewAction(title: "取消收藏", style: .default) { (action, viewControlelr) in
+                try! realm.write {
+                    realm.delete(collection.first!)
+                }
+            }
+            return [action]
         }
-        return [action1, action2]
     }
 }
 
