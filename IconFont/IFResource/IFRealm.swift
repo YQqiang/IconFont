@@ -34,7 +34,7 @@ struct IFRealm {
     /// 取消收藏
     ///
     /// - Parameter item: 字体
-    static func cancleCollection(item: IFItem) {
+    static func cancelCollection(item: IFItem) {
         if IFRealm.isCollection(item: item) {
             try! realm.write {
                 realm.delete(IFRealm.filter(fontName: item.fontName, hex: item.hexString))

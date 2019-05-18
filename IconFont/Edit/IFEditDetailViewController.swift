@@ -83,7 +83,7 @@ class IFEditDetailViewController: IFBaseViewController {
         // 取消收藏
         else {
             let action = UIPreviewAction(title: "取消收藏", style: .destructive) { (action, viewControlelr) in
-                IFRealm.cancleCollection(item: self.item)
+                IFRealm.cancelCollection(item: self.item)
             }
             return [action]
         }
