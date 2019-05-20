@@ -20,7 +20,11 @@ class IFEditDetailViewController: IFBaseViewController {
             self?.dismissSelf()
         }
         bar.saveClosure = {[weak self] (sender) in
-            
+            guard let image = self?.contentIconView.iconImage else {
+                return
+            }
+            let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+            self?.present(activityViewController, animated: true, completion: nil)
         }
         return bar
     }()
@@ -135,7 +139,7 @@ class IFEditDetailViewController: IFBaseViewController {
         }
         
         let image = item.image(background: UIColor.clear, tint: UIColor.IFItem, size: CGSize(width: 140, height: 140), insets: UIEdgeInsets.zero, orientation: .up)
-        contentIconView.iconBtn.setImage(image, for: .normal)
+        contentIconView.iconImage = image
     }
     
     override var previewActionItems: [UIPreviewActionItem] {
