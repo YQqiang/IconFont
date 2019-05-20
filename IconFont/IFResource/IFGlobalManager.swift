@@ -19,6 +19,10 @@ class IFGlobalManager {
         //                      "weather_iconfont.ttf",
         //                      "weather_iconfont",
         //                      "天气"))
+        datas.append(("furniture_index.html",
+                      "furniture_iconfont.ttf",
+                      "furniture_iconfont",
+                      "家具"))
         datas.append(("sungrow_index.html",
                       "sungrow_iconfont.ttf",
                       "iSolar",
