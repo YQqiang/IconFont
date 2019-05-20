@@ -12,6 +12,8 @@ class IFEditDetailViewController: IFBaseViewController {
 
     fileprivate var item: IFItem
     
+    fileprivate lazy var orientation: UIImage.Orientation = .up
+    
     fileprivate lazy var navBar: IFEditNavBar = {
         let bar = IFEditNavBar()
         bar.closeClosure = {[weak self] (sender) in
@@ -28,6 +30,70 @@ class IFEditDetailViewController: IFBaseViewController {
         bar.sizeClosure = {[weak self] (sender) in
             let toolVC: IFCalculatorController = IFCalculatorController(sourceView: sender)
             self?.present(toolVC, animated: true, completion: nil)
+        }
+        bar.rotateClosure = {[weak self] (sender) in
+            guard let direction = self?.orientation else {
+                return
+            }
+            switch direction {
+            case .up:
+                self?.orientation = .right
+                break
+            case .right:
+                self?.orientation = .down
+                break
+            case .down:
+                self?.orientation = .left
+                break
+            case .left:
+                self?.orientation = .up
+                break
+            case .upMirrored:
+                self?.orientation = .rightMirrored
+                break
+            case .rightMirrored:
+                self?.orientation = .downMirrored
+                break
+            case .downMirrored:
+                self?.orientation = .leftMirrored
+                break
+            case .leftMirrored:
+                self?.orientation = .upMirrored
+                break
+            }
+            self?.updateIcon()
+        }
+        bar.mirrorClosure = {[weak self] (sender) in
+            guard let direction = self?.orientation else {
+                return
+            }
+            switch direction {
+            case .up:
+                self?.orientation = .upMirrored
+                break
+            case .upMirrored:
+                self?.orientation = .up
+                break
+            case .down:
+                self?.orientation = .downMirrored
+                break
+            case .downMirrored:
+                self?.orientation = .down
+                break
+            case .left:
+                self?.orientation = .leftMirrored
+                break
+            case .leftMirrored:
+                self?.orientation = .left
+                break
+            case .right:
+                self?.orientation = .rightMirrored
+                break
+            case .rightMirrored:
+                self?.orientation = .right
+                break
+            }
+            self?.updateIcon()
         }
         return bar
     }()
@@ -91,6 +157,11 @@ class IFEditDetailViewController: IFBaseViewController {
 }
 
 extension IFEditDetailViewController {
+    
+    fileprivate func updateIcon() {
+        let image = icon(backgrounds: [UIColor.clear], locations: [1.0], start: CGPoint.zero, end: CGPoint.zero, tint: UIColor.IFItem, size: CGSize(width: 140, height: 140), insets: UIEdgeInsets.zero, orientation: orientation)
+        self.contentIconView.iconImage = image
+    }
     
     fileprivate func icon(backgrounds: [UIColor], locations: [NSNumber], start: CGPoint, end: CGPoint, tint: UIColor, size: CGSize, insets: UIEdgeInsets, orientation: UIImage.Orientation) -> UIImage {
         return item.image(backgrounds: backgrounds, locations: locations, start: start, end: end, tint: tint, size: size, insets: insets, orientation: orientation)

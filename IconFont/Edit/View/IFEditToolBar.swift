@@ -11,6 +11,8 @@ import UIKit
 class IFEditToolBar: IFBaseView {
     
     public var sizeClosure: ((_ sender: IFButton) -> Void)?
+    public var rotateClosure: ((_ sender: IFButton) -> Void)?
+    public var mirrorClosure: ((_ sender: IFButton) -> Void)?
     
     fileprivate lazy var sizeBtn: IFButton = {
         let btn = IFButton(type: .custom)
@@ -45,6 +47,7 @@ class IFEditToolBar: IFBaseView {
         let btn = IFButton(type: .custom)
         let image = IconFontType.toolRotate.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
         btn.setImage(image, for: .normal)
+        btn.addTarget(self, action: #selector(rotateBtnAction(_:)), for: .touchUpInside)
         return btn
     }()
     
@@ -52,6 +55,7 @@ class IFEditToolBar: IFBaseView {
         let btn = IFButton(type: .custom)
         let image = IconFontType.toolMirror.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
         btn.setImage(image, for: .normal)
+        btn.addTarget(self, action: #selector(mirrorBtnAction(_:)), for: .touchUpInside)
         return btn
     }()
 
@@ -86,6 +90,18 @@ class IFEditToolBar: IFBaseView {
 extension IFEditToolBar {
     @objc fileprivate func sizeBtnAction(_ sender: IFButton) {
         if let closure = sizeClosure {
+            closure(sender)
+        }
+    }
+    
+    @objc fileprivate func rotateBtnAction(_ sender: IFButton) {
+        if let closure = rotateClosure {
+            closure(sender)
+        }
+    }
+    
+    @objc fileprivate func mirrorBtnAction(_ sender: IFButton) {
+        if let closure = mirrorClosure {
             closure(sender)
         }
     }
