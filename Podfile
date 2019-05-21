@@ -12,7 +12,6 @@ target 'IconFont' do
   pod 'IconFontRegister'
   pod 'Kanna'
   pod 'RealmSwift'
-  pod 'SharkORM'
 #  pod 'ShowTime'
   pod 'Reveal-SDK','~>4', :configurations => ['Debug']
 
