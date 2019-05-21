@@ -38,6 +38,8 @@
 		2FA1717E224482AD000EC866 /* IFOverviewDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */; };
 		2FA171872246253C000EC866 /* creativeLetters_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FA171852246253C000EC866 /* creativeLetters_index.html */; };
 		2FA171882246253C000EC866 /* creativeLetters_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FA171862246253C000EC866 /* creativeLetters_iconfont.ttf */; };
+		2FABE53422942FAC004E3BE6 /* ColorCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABE53322942FAC004E3BE6 /* ColorCircle.swift */; };
+		2FABE53622943712004E3BE6 /* IFColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FABE53522943712004E3BE6 /* IFColorController.swift */; };
 		2FAC3D422241F0550089EC76 /* IFItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC3D412241F0550089EC76 /* IFItem.swift */; };
 		2FAC3D472241F21E0089EC76 /* dingding_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FAC3D452241F21E0089EC76 /* dingding_index.html */; };
 		2FAC3D482241F21E0089EC76 /* dingding_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FAC3D462241F21E0089EC76 /* dingding_iconfont.ttf */; };
@@ -122,6 +124,8 @@
 		2FA1717D224482AD000EC866 /* IFOverviewDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFOverviewDetailContentView.swift; sourceTree = "<group>"; };
 		2FA171852246253C000EC866 /* creativeLetters_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = creativeLetters_index.html; sourceTree = "<group>"; };
 		2FA171862246253C000EC866 /* creativeLetters_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = creativeLetters_iconfont.ttf; sourceTree = "<group>"; };
+		2FABE53322942FAC004E3BE6 /* ColorCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCircle.swift; sourceTree = "<group>"; };
+		2FABE53522943712004E3BE6 /* IFColorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFColorController.swift; sourceTree = "<group>"; };
 		2FAC3D412241F0550089EC76 /* IFItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFItem.swift; sourceTree = "<group>"; };
 		2FAC3D452241F21E0089EC76 /* dingding_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = dingding_index.html; sourceTree = "<group>"; };
 		2FAC3D462241F21E0089EC76 /* dingding_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dingding_iconfont.ttf; sourceTree = "<group>"; };
@@ -419,6 +423,7 @@
 				2F9B6F202255B4C600BC0CB0 /* Calculator */,
 				2FD13455223F64F10023B097 /* IFMainViewController.swift */,
 				2FD13457223F66300023B097 /* View */,
+				2FABE53522943712004E3BE6 /* IFColorController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 				2FAC3D412241F0550089EC76 /* IFItem.swift */,
 				2F2937812243353400F55578 /* IFSlowlyShowTransition.swift */,
 				2F9B6F14225356F100BC0CB0 /* IFFilter.swift */,
+				2FABE53322942FAC004E3BE6 /* ColorCircle.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -778,9 +784,11 @@
 				2FC38039224E0DE5006B12B7 /* IFGlobalManager.swift in Sources */,
 				2F9B6F1B225446E500BC0CB0 /* IFCalculatorPanel.swift in Sources */,
 				2F60EED7224069DE0031A484 /* IFOverviewViewController.swift in Sources */,
+				2FABE53622943712004E3BE6 /* IFColorController.swift in Sources */,
 				2FD1345B223F66660023B097 /* IFMainTabBar.swift in Sources */,
 				2FC3803C224E132B006B12B7 /* IFEditHomeCell.swift in Sources */,
 				2FAC3D4C22423D690089EC76 /* IFOverviewHeaderView.swift in Sources */,
+				2FABE53422942FAC004E3BE6 /* ColorCircle.swift in Sources */,
 				2F9B6F222255B4E800BC0CB0 /* IFCalculatorController.swift in Sources */,
 				2FAC3D422241F0550089EC76 /* IFItem.swift in Sources */,
 			);
