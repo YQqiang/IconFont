@@ -10,8 +10,11 @@ import UIKit
 
 class IFColorController: IFBaseViewController {
     
+    public var colorDidChanged: ((_ color: UIColor) -> Void)?
+    
     public private(set) lazy var colorPanel: ColorCircle = {
         let panel = ColorCircle(frame: CGRect.zero)
+        panel.addTarget(self, action: #selector(changeColor), for: .valueChanged)
         return panel
     }()
     
@@ -45,5 +48,11 @@ class IFColorController: IFBaseViewController {
 extension IFColorController: UIPopoverPresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
+    }
+    
+    @objc fileprivate func changeColor() {
+        if let colsure = colorDidChanged {
+            colsure(colorPanel.color)
+        }
     }
 }

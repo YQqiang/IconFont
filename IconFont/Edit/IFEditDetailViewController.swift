@@ -13,6 +13,7 @@ class IFEditDetailViewController: IFBaseViewController {
     fileprivate var item: IFItem
     
     fileprivate lazy var orientation: UIImage.Orientation = .up
+    fileprivate lazy var bgColor: UIColor = UIColor.white
     
     fileprivate lazy var navBar: IFEditNavBar = {
         let bar = IFEditNavBar()
@@ -37,6 +38,10 @@ class IFEditDetailViewController: IFBaseViewController {
         }
         bar.bgColorClosure = {[weak self] (sender) in
             let toolVC: IFColorController = IFColorController(sourceView: sender)
+            toolVC.colorDidChanged = { (color) in
+                self?.bgColor = color
+                self?.updateIcon()
+            }
             self?.present(toolVC, animated: true, completion: nil)
         }
         bar.rotateClosure = {[weak self] (sender) in
@@ -167,7 +172,7 @@ class IFEditDetailViewController: IFBaseViewController {
 extension IFEditDetailViewController {
     
     fileprivate func updateIcon() {
-        let image = icon(backgrounds: [UIColor.clear], locations: [1.0], start: CGPoint.zero, end: CGPoint.zero, tint: UIColor.IFItem, size: CGSize(width: 140, height: 140), insets: UIEdgeInsets.zero, orientation: orientation)
+        let image = icon(backgrounds: [bgColor], locations: [1.0], start: CGPoint.zero, end: CGPoint.zero, tint: UIColor.IFItem, size: CGSize(width: 140, height: 140), insets: UIEdgeInsets.zero, orientation: orientation)
         self.contentIconView.iconImage = image
     }
     
