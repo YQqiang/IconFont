@@ -35,6 +35,10 @@ class IFEditDetailViewController: IFBaseViewController {
             let toolVC: IFCalculatorController = IFCalculatorController(sourceView: sender)
             self?.present(toolVC, animated: true, completion: nil)
         }
+        bar.bgColorClosure = {[weak self] (sender) in
+            let toolVC: IFColorController = IFColorController(sourceView: sender)
+            self?.present(toolVC, animated: true, completion: nil)
+        }
         bar.rotateClosure = {[weak self] (sender) in
             guard let direction = self?.orientation else {
                 return

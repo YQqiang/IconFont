@@ -18,7 +18,7 @@ class IFColorController: IFBaseViewController {
     init(sourceView: UIView) {
         super.init(nibName: nil, bundle: nil)
         modalPresentationStyle = .popover
-        preferredContentSize = CGSize(width: 240, height: 320)
+        preferredContentSize = CGSize(width: 200, height: 200)
         let popover = popoverPresentationController
         popover?.delegate = self
         popover?.sourceView = sourceView
@@ -36,7 +36,8 @@ class IFColorController: IFBaseViewController {
         view.backgroundColor = "#6E6E6E".hexColor
         view.addSubview(colorPanel)
         colorPanel.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
+            make.top.left.equalToSuperview().offset(16)
+            make.right.bottom.equalToSuperview().offset(-16)
         }
     }
 }
