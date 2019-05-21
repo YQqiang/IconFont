@@ -12,6 +12,7 @@ class IFEditToolBar: IFBaseView {
     
     public var sizeClosure: ((_ sender: IFButton) -> Void)?
     public var bgColorClosure: ((_ sender: IFButton) -> Void)?
+    public var colorClosure: ((_ sender: IFButton) -> Void)?
     public var rotateClosure: ((_ sender: IFButton) -> Void)?
     public var mirrorClosure: ((_ sender: IFButton) -> Void)?
     
@@ -35,6 +36,7 @@ class IFEditToolBar: IFBaseView {
         let btn = IFButton(type: .custom)
         let image = IconFontType.toolColor.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
         btn.setImage(image, for: .normal)
+        btn.addTarget(self, action: #selector(colorBtnAction(_:)), for: .touchUpInside)
         return btn
     }()
     
@@ -98,6 +100,12 @@ extension IFEditToolBar {
     
     @objc fileprivate func bgColorBtnAction(_ sender: IFButton) {
         if let closure = bgColorClosure {
+            closure(sender)
+        }
+    }
+    
+    @objc fileprivate func colorBtnAction(_ sender: IFButton) {
+        if let closure = colorClosure {
             closure(sender)
         }
     }

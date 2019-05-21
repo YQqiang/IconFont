@@ -15,6 +15,8 @@ class IFEditDetailViewController: IFBaseViewController {
     fileprivate lazy var orientation: UIImage.Orientation = .up
     fileprivate lazy var bgColor: UIColor = UIColor.white
     
+    fileprivate lazy var tintColor: UIColor = UIColor.IFItem
+    
     fileprivate lazy var navBar: IFEditNavBar = {
         let bar = IFEditNavBar()
         bar.closeClosure = {[weak self] (sender) in
@@ -40,6 +42,14 @@ class IFEditDetailViewController: IFBaseViewController {
             let toolVC: IFColorController = IFColorController(sourceView: sender)
             toolVC.colorDidChanged = { (color) in
                 self?.bgColor = color
+                self?.updateIcon()
+            }
+            self?.present(toolVC, animated: true, completion: nil)
+        }
+        bar.colorClosure = {[weak self] (sender) in
+            let toolVC: IFColorController = IFColorController(sourceView: sender)
+            toolVC.colorDidChanged = { (color) in
+                self?.tintColor = color
                 self?.updateIcon()
             }
             self?.present(toolVC, animated: true, completion: nil)
@@ -172,7 +182,7 @@ class IFEditDetailViewController: IFBaseViewController {
 extension IFEditDetailViewController {
     
     fileprivate func updateIcon() {
-        let image = icon(backgrounds: [bgColor], locations: [1.0], start: CGPoint.zero, end: CGPoint.zero, tint: UIColor.IFItem, size: CGSize(width: 140, height: 140), insets: UIEdgeInsets.zero, orientation: orientation)
+        let image = icon(backgrounds: [bgColor], locations: [1.0], start: CGPoint.zero, end: CGPoint.zero, tint: tintColor, size: CGSize(width: 140, height: 140), insets: UIEdgeInsets.zero, orientation: orientation)
         self.contentIconView.iconImage = image
     }
     
