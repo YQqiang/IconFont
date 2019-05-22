@@ -9,6 +9,8 @@
 import UIKit
 
 class IFCalculatorController: IFBaseViewController {
+    
+    public var valueDidChanged: ((_ value: String) -> Void)?
 
     public private(set) lazy var calculatorPanel: IFCalculatorPanel = {
         let panel = IFCalculatorPanel(type: IFCalculatorPanel.CalculatorType.decimal)
