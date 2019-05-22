@@ -12,6 +12,8 @@ private let spacing: CGFloat = 2.0 / UIScreen.main.scale
 
 final class IFCalculatorPanel: IFBaseView {
     
+    public var enterColsure: ((_ value: String) -> Void)?
+    
     public enum CalculatorType {
         /// 十六进制
         case hexadecimal
@@ -299,6 +301,9 @@ final class IFCalculatorPanel: IFBaseView {
     
     fileprivate func enterAction() {
         resultView.selectAllText()
+        if let closure = enterColsure {
+            closure(resultView.resultView.text ?? "")
+        }
     }
     
     fileprivate func convertAction() {
