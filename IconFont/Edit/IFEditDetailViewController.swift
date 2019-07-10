@@ -37,10 +37,11 @@ class IFEditDetailViewController: IFBaseViewController {
         let bar = IFEditToolBar()
         bar.sizeClosure = {[weak self] (sender) in
             let toolVC: IFCalculatorController = IFCalculatorController(sourceView: sender)
-            toolVC.valueDidChanged = {[weak self] (value) in
+            toolVC.valueDidChanged = {[weak self] (value, vc) in
                 let wh = Int(value) ?? 0
                 self?.imageSize = CGSize(width: wh, height: wh)
                 self?.updateIcon()
+                vc.dismiss(animated: true, completion: nil)
             }
             self?.present(toolVC, animated: true, completion: nil)
         }

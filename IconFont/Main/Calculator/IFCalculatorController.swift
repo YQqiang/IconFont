@@ -10,13 +10,13 @@ import UIKit
 
 class IFCalculatorController: IFBaseViewController {
     
-    public var valueDidChanged: ((_ value: String) -> Void)?
+    public var valueDidChanged: ((_ value: String, _ vc: IFCalculatorController) -> Void)?
 
     public private(set) lazy var calculatorPanel: IFCalculatorPanel = {
         let panel = IFCalculatorPanel(type: IFCalculatorPanel.CalculatorType.decimal)
         panel.enterColsure = {[weak self] (value) in
-            if let closure = self?.valueDidChanged {
-                closure(value)
+            if let closure = self?.valueDidChanged, let strongSelf = self {
+                closure(value, strongSelf)
             }
         }
         return panel
