@@ -14,6 +14,11 @@ class IFCalculatorController: IFBaseViewController {
 
     public private(set) lazy var calculatorPanel: IFCalculatorPanel = {
         let panel = IFCalculatorPanel(type: IFCalculatorPanel.CalculatorType.decimal)
+        panel.enterColsure = {[weak self] (value) in
+            if let closure = self?.valueDidChanged {
+                closure(value)
+            }
+        }
         return panel
     }()
     

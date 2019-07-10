@@ -12,6 +12,7 @@ class IFEditDetailViewController: IFBaseViewController {
 
     fileprivate var item: IFItem
     
+    fileprivate lazy var imageSize: CGSize = CGSize(width: 140, height: 140)
     fileprivate lazy var orientation: UIImage.Orientation = .up
     fileprivate lazy var bgColor: UIColor = UIColor.white
     
@@ -36,6 +37,11 @@ class IFEditDetailViewController: IFBaseViewController {
         let bar = IFEditToolBar()
         bar.sizeClosure = {[weak self] (sender) in
             let toolVC: IFCalculatorController = IFCalculatorController(sourceView: sender)
+            toolVC.valueDidChanged = {[weak self] (value) in
+                let wh = Int(value) ?? 0
+                self?.imageSize = CGSize(width: wh, height: wh)
+                self?.updateIcon()
+            }
             self?.present(toolVC, animated: true, completion: nil)
         }
         bar.bgColorClosure = {[weak self] (sender) in
@@ -182,7 +188,7 @@ class IFEditDetailViewController: IFBaseViewController {
 extension IFEditDetailViewController {
     
     fileprivate func updateIcon() {
-        let image = icon(backgrounds: [bgColor], locations: [1.0], start: CGPoint.zero, end: CGPoint.zero, tint: tintColor, size: CGSize(width: 140, height: 140), insets: UIEdgeInsets.zero, orientation: orientation)
+        let image = icon(backgrounds: [bgColor], locations: [1.0], start: CGPoint.zero, end: CGPoint.zero, tint: tintColor, size: imageSize, insets: UIEdgeInsets.zero, orientation: orientation)
         self.contentIconView.iconImage = image
     }
     
