@@ -14,7 +14,7 @@ class IFEditDetailViewController: IFBaseViewController {
     
     fileprivate lazy var imageSize: CGSize = CGSize(width: 140, height: 140)
     fileprivate lazy var orientation: UIImage.Orientation = .up
-    fileprivate lazy var bgColor: UIColor = UIColor.white
+    fileprivate lazy var bgColor: UIColor = UIColor.clear
     
     fileprivate lazy var tintColor: UIColor = UIColor.IFItem
     
@@ -163,9 +163,7 @@ class IFEditDetailViewController: IFBaseViewController {
             make.left.right.equalToSuperview()
             make.size.equalTo(bgSize)
         }
-        
-        let image = item.image(background: UIColor.clear, tint: UIColor.IFItem, size: CGSize(width: 140, height: 140), insets: UIEdgeInsets.zero, orientation: .up)
-        contentIconView.iconImage = image
+        updateIcon()
     }
     
     override var previewActionItems: [UIPreviewActionItem] {
