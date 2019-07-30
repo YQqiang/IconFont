@@ -1,11 +1,11 @@
 PODS:
-  - IconFontRegister (0.1.1)
+  - IconFontRegister (0.1.2)
   - Kanna (5.0.0)
-  - Realm (3.16.2):
-    - Realm/Headers (= 3.16.2)
-  - Realm/Headers (3.16.2)
-  - RealmSwift (3.16.2):
-    - Realm (= 3.16.2)
+  - Realm (3.17.3):
+    - Realm/Headers (= 3.17.3)
+  - Realm/Headers (3.17.3)
+  - RealmSwift (3.17.3):
+    - Realm (= 3.17.3)
   - Reveal-SDK (4)
   - SnapKit (4.2.0)
 
@@ -26,10 +26,10 @@ SPEC REPOS:
     - SnapKit
 
 SPEC CHECKSUMS:
-  IconFontRegister: 0a119b2a97342854a2e9e5d3c8880b0d1df84517
+  IconFontRegister: 737146d2ecdd7181bbe9acb3cd4a66a673d78ce9
   Kanna: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
-  Realm: 0e73b4edeb5b6a90da3d83206883b2e34e00eb38
-  RealmSwift: a81e650171ef0a5f999df1ed8d39ba8d6fce88a4
+  Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
+  RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
   Reveal-SDK: 178c927f1a3230648d3a92b96f6e730a35b2750a
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
