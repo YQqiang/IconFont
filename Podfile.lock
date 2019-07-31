@@ -1,5 +1,5 @@
 PODS:
-  - IconFontRegister (0.1.2)
+  - IconFontRegister (0.1.3)
   - Kanna (5.0.0)
   - Realm (3.17.3):
     - Realm/Headers (= 3.17.3)
@@ -26,7 +26,7 @@ SPEC REPOS:
     - SnapKit
 
 SPEC CHECKSUMS:
-  IconFontRegister: 737146d2ecdd7181bbe9acb3cd4a66a673d78ce9
+  IconFontRegister: bbba5c268a640f91484c28d57be3781f4a58beda
   Kanna: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
   Realm: 5a1d9d47bfc101dd597668b1a8af4288a2557f6d
   RealmSwift: b7fdc2d18616621c31df5c7a398a45a2163f8eb0
