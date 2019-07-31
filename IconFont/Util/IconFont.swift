@@ -9,6 +9,27 @@
 import UIKit
 import IconFontRegister
 
+public struct IconFontStroke {
+    var color: UIColor
+    var width: CGFloat
+}
+
+public struct IconFontGradient {
+    var backgrounds: [UIColor]
+    var locations: [NSNumber]
+    var start: CGPoint
+    var end: CGPoint
+}
+
+public struct IconFontStyle {
+    var gradient: IconFontGradient
+    var stroke: IconFontStroke
+    var tint: UIColor
+    var size: CGSize
+    var insets: UIEdgeInsets
+    var orientation: UIImage.Orientation
+}
+
 protocol IconFontAble {
     var fontName: String { get }
     var filePath: URL { get }
@@ -29,13 +50,18 @@ extension IconFontAble {
         return String(scalar)
     }
     
-    public func image(background: UIColor, tint: UIColor, size: CGSize, insets: UIEdgeInsets, orientation: UIImage.Orientation) -> UIImage  {
-        let image = self.image(backgrounds: [background], locations: [], start: CGPoint.zero, end: CGPoint.zero, tint: tint, size: size, insets: insets, orientation: orientation)
+    public func image(style: IconFontStyle) -> UIImage {
+        let image = UIImage.ifr_image(withUnicode: unicode, fontName: fontName, gradientColors: style.gradient.backgrounds, gradientLocations: style.gradient.locations, gradientStart: style.gradient.start, gradientEnd:  style.gradient.end, iconColor: style.tint, size: style.size, imageInsets: style.insets, imageOrientation: style.orientation, stroke: style.stroke.color, strokeWidth: style.stroke.width)
         return image
     }
     
     public func image(backgrounds: [UIColor], locations: [NSNumber], start: CGPoint, end: CGPoint, tint: UIColor, size: CGSize, insets: UIEdgeInsets, orientation: UIImage.Orientation) -> UIImage  {
-        let image = UIImage.ifr_image(withUnicode: unicode, fontName: fontName, gradientColors: backgrounds, gradientLocations: locations, gradientStart: start, gradientEnd: end, iconColor: tint, size: size, imageInsets: insets, imageOrientation: orientation)
+        let style = IconFontStyle(gradient: IconFontGradient(backgrounds: backgrounds, locations: locations, start: start, end: end), stroke: IconFontStroke(color: UIColor.clear, width: 0), tint: tint, size: size, insets: insets, orientation: orientation)
+        return image(style: style)
+    }
+    
+    public func image(background: UIColor, tint: UIColor, size: CGSize, insets: UIEdgeInsets, orientation: UIImage.Orientation) -> UIImage  {
+        let image = self.image(backgrounds: [background], locations: [], start: CGPoint.zero, end: CGPoint.zero, tint: tint, size: size, insets: insets, orientation: orientation)
         return image
     }
 }
