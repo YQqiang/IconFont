@@ -63,6 +63,7 @@
 		2FD13456223F64F10023B097 /* IFMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD13455223F64F10023B097 /* IFMainViewController.swift */; };
 		2FD13459223F664A0023B097 /* IFBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD13458223F664A0023B097 /* IFBaseView.swift */; };
 		2FD1345B223F66660023B097 /* IFMainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD1345A223F66660023B097 /* IFMainTabBar.swift */; };
+		2FDCCDD122F18428000271EC /* IFSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDCCDD022F18428000271EC /* IFSlider.swift */; };
 		2FE4ABD9224263AF00A777D1 /* sportMovement_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FE4ABD7224263AF00A777D1 /* sportMovement_index.html */; };
 		2FE4ABDA224263AF00A777D1 /* sportMovement_iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FE4ABD8224263AF00A777D1 /* sportMovement_iconfont.ttf */; };
 		2FE4ABDE224264E600A777D1 /* beautyMakeup_index.html in Resources */ = {isa = PBXBuildFile; fileRef = 2FE4ABDC224264E600A777D1 /* beautyMakeup_index.html */; };
@@ -155,6 +156,7 @@
 		2FD13455223F64F10023B097 /* IFMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMainViewController.swift; sourceTree = "<group>"; };
 		2FD13458223F664A0023B097 /* IFBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFBaseView.swift; sourceTree = "<group>"; };
 		2FD1345A223F66660023B097 /* IFMainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMainTabBar.swift; sourceTree = "<group>"; };
+		2FDCCDD022F18428000271EC /* IFSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFSlider.swift; sourceTree = "<group>"; };
 		2FE4ABD7224263AF00A777D1 /* sportMovement_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = sportMovement_index.html; sourceTree = "<group>"; };
 		2FE4ABD8224263AF00A777D1 /* sportMovement_iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sportMovement_iconfont.ttf; sourceTree = "<group>"; };
 		2FE4ABDC224264E600A777D1 /* beautyMakeup_index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = beautyMakeup_index.html; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 				2F2937832243373100F55578 /* IFGradientView.swift */,
 				2F60EEDA22406A310031A484 /* IFBaseNavigationController.swift */,
 				2F722037224F0E29002E2F9D /* IFScaleAnimateable.swift */,
+				2FDCCDD022F18428000271EC /* IFSlider.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 				1A242B1B2245272700FE6365 /* IFIntroductionViewController.swift in Sources */,
 				2F722038224F0E29002E2F9D /* IFScaleAnimateable.swift in Sources */,
 				2F2937862243577E00F55578 /* IFOverviewDetailTitleView.swift in Sources */,
+				2FDCCDD122F18428000271EC /* IFSlider.swift in Sources */,
 				2F3A40442249ABDA0065E982 /* ColorUtil.swift in Sources */,
 				2FD13454223F64AA0023B097 /* IFBaseViewController.swift in Sources */,
 				2F10045122732A9200E67309 /* IFHorizontalIView.swift in Sources */,
