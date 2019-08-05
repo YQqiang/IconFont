@@ -16,15 +16,14 @@ class IFSlider: IFGradientView {
     
     fileprivate lazy var valueLayer: CALayer = {
         let ly = CALayer()
-        ly.backgroundColor = UIColor.orange.cgColor
+        ly.backgroundColor = "#FEFFFF".hexColor!.cgColor
         return ly
     }()
 
     override func createViews() {
         super .createViews()
         autoAnimate = false
-        
-        gradientColors = [UIColor.black.cgColor, UIColor.black.cgColor]
+        gradientColors = ["#6D6E6F".hexColor!.cgColor, "#6D6E6F".hexColor!.cgColor]
         
         roundRadius = 8
         

@@ -111,9 +111,14 @@ class IFIntroductionViewController: IFBaseViewController {
         stackView.addArrangedSubview(codeItem)
         stackView.addArrangedSubview(sourceItem)
         
+        let effect = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
+        view.addSubview(effect)
+        effect.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview();
+        }
+        
         let bgV = UIView()
         view.addSubview(bgV)
-        bgV.backgroundColor = UIColor.white
         bgV.frame = view.bounds
         
         let slider = IFSlider()
