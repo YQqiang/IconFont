@@ -22,11 +22,15 @@ class IFSlider: IFGradientView {
 
     override func createViews() {
         super .createViews()
-        autoAnimate = false
-        gradientColors = ["#6D6E6F".hexColor!.cgColor, "#6D6E6F".hexColor!.cgColor]
-        
+        autoAnimate = true
         roundRadius = 8
+        scaleComment.factor = 1.05
         
+        let effect = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        addSubview(effect)
+        effect.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview();
+        }
         layer.addSublayer(valueLayer)
     }
     

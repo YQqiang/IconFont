@@ -116,14 +116,8 @@ class IFIntroductionViewController: IFBaseViewController {
         effect.snp.makeConstraints { (make) in
             make.edges.equalToSuperview();
         }
-        
-        let bgV = UIView()
-        view.addSubview(bgV)
-        bgV.frame = view.bounds
-        
         let slider = IFSlider()
-        bgV.addSubview(slider)
-        slider.backgroundColor = UIColor.red
+        effect.contentView.addSubview(slider)
         slider.frame = CGRect(x: 32, y: 32, width: 64, height: 300)
     }
 }
