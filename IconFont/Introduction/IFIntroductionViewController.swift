@@ -110,5 +110,15 @@ class IFIntroductionViewController: IFBaseViewController {
         stackView.addArrangedSubview(horizontalView)
         stackView.addArrangedSubview(codeItem)
         stackView.addArrangedSubview(sourceItem)
+        
+        let bgV = UIView()
+        view.addSubview(bgV)
+        bgV.backgroundColor = UIColor.white
+        bgV.frame = view.bounds
+        
+        let slider = IFSlider()
+        bgV.addSubview(slider)
+        slider.backgroundColor = UIColor.red
+        slider.frame = CGRect(x: 32, y: 32, width: 64, height: 300)
     }
 }

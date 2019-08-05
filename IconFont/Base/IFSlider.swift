@@ -9,11 +9,81 @@
 import UIKit
 import QuartzCore
 
-class IFSlider: IFBaseView {
+class IFSlider: IFGradientView {
+    
+    fileprivate var startPoint = CGPoint.zero
+    fileprivate var startValueFrame = CGRect.zero
+    
+    fileprivate lazy var valueLayer: CALayer = {
+        let ly = CALayer()
+        ly.backgroundColor = UIColor.orange.cgColor
+        return ly
+    }()
 
     override func createViews() {
         super .createViews()
         autoAnimate = false
+        
+        gradientColors = [UIColor.black.cgColor, UIColor.black.cgColor]
+        
+        roundRadius = 8
+        
+        layer.addSublayer(valueLayer)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let valueHeight = valueLayer.bounds.height
+        let valueY = bounds.height - valueHeight
+        valueLayer.frame = CGRect(x: 0, y: valueY, width: bounds.width, height: valueHeight)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        if let touch = touches.first {
+            let point = touch.location(in: self)
+            startPoint = point
+            startValueFrame = valueLayer.frame
+            print("\(#function) - \(point)")
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        if let touch = touches.first {
+            let point = touch.location(in: self)
+            let difference = startPoint.y - point.y
+            var finalHeight = startValueFrame.height + difference
+            let height = bounds.height
+            if finalHeight > height {
+                finalHeight = height
+            }
+            if finalHeight < 0 {
+                finalHeight = 0
+            }
+            let y = height - finalHeight
+            
+            valueLayer.frame = CGRect(x: 0, y: y, width: bounds.size.width, height: finalHeight)
+            print("\(#function) - \(point) - \(difference)")
+        }
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        startPoint = CGPoint.zero
+        if let touch = touches.first {
+            let point = touch.location(in: self)
+            print("\(#function) - \(point)")
+        }
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+        startPoint = CGPoint.zero
+        if let touch = touches.first {
+            let point = touch.location(in: self)
+            print("\(#function) - \(point)")
+        }
     }
 
 }
