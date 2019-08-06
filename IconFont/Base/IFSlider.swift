@@ -15,7 +15,7 @@ enum SliderDirection {
     case rightToLeft
 }
 
-class IFSlider: UIView {
+class IFSlider: UIControl {
     
     fileprivate var startPoint = CGPoint.zero
     fileprivate var startValueFrame = CGRect.zero
@@ -44,6 +44,7 @@ class IFSlider: UIView {
         layer.masksToBounds = true
         
         let effect = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        effect.isUserInteractionEnabled = false
         addSubview(effect)
         effect.translatesAutoresizingMaskIntoConstraints = false
         effect.topAnchor.constraint(equalTo: topAnchor).isActive = true
@@ -80,20 +81,16 @@ class IFSlider: UIView {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        if let touch = touches.first {
-            let point = touch.location(in: self)
-            startPoint = point
-            startValueFrame = valueLayer.frame
-        }
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        super.beginTracking(touch, with: event)
+        let point = touch.location(in: self)
+        startPoint = point
+        startValueFrame = valueLayer.frame
+        return true
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
-        guard let touch = touches.first else {
-            return
-        }
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        super.continueTracking(touch, with: event)
         let point = touch.location(in: self)
         let valueW = startValueFrame.width
         let valueH = startValueFrame.height
@@ -137,15 +134,17 @@ class IFSlider: UIView {
             break
         }
         valueLayer.frame = CGRect(x: x, y: y, width: width, height: height)
+        sendActions(for: .valueChanged)
+        return true
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        super.endTracking(touch, with: event)
         startPoint = CGPoint.zero
     }
     
-    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesCancelled(touches, with: event)
+    override func cancelTracking(with event: UIEvent?) {
+        super.cancelTracking(with: event)
         startPoint = CGPoint.zero
     }
 }
