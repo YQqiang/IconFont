@@ -117,12 +117,13 @@ class IFIntroductionViewController: IFBaseViewController {
             make.edges.equalToSuperview();
         }
         let slider = IFSlider()
+        slider.value = 0.5
         effect.contentView.addSubview(slider)
         slider.frame = CGRect(x: 32, y: 32, width: 64, height: 300)
         slider.addTarget(self, action: #selector(sliderAction(_:)), for: .valueChanged)
     }
     
     @objc func sliderAction(_ sender: IFSlider) {
-        print("slider = \(sender)")
+        print("slider = \(sender.value)")
     }
 }

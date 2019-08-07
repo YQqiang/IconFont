@@ -22,6 +22,49 @@ class IFSlider: UIControl {
     
     public lazy var sliderDirection: SliderDirection = .bottomToTop
     
+    @IBInspectable public var minimumValue: Double = 0.0 {
+        willSet(newValue) {
+            assert(newValue < maximumValue, "IFSlider: minimumValue should be lower than maximumValue")
+        }
+        didSet {
+            
+        }
+    }
+    
+    @IBInspectable public var maximumValue: Double = 1.0 {
+        willSet(newValue) {
+            assert(newValue > minimumValue, "IFSlider: maximumValue should be greater than minimumValue")
+        }
+        didSet {
+            
+        }
+    }
+    
+    @IBInspectable public var value: CGFloat = 0.5 {
+        didSet {
+//            if sliderDirection == .topToBottom
+//                || sliderDirection == .bottomToTop {
+//                let valueFrame = valueLayer.frame
+//                valueLayer.frame = CGRect(origin: valueFrame.origin, size: CGSize(width: valueFrame.width, height: value / proportion))
+//            } else if sliderDirection == .leftToRight
+//                || sliderDirection == .rightToLeft {
+//                let valueFrame = valueLayer.frame
+//                valueLayer.frame = CGRect(origin: valueFrame.origin, size: CGSize(width: value / proportion, height: valueFrame.width))
+//            }
+        }
+        
+//        get {
+//            if sliderDirection == .topToBottom
+//                || sliderDirection == .bottomToTop {
+//                return valueLayer.bounds.height * proportion
+//            } else if sliderDirection == .leftToRight
+//                || sliderDirection == .rightToLeft {
+//                return valueLayer.bounds.width * proportion
+//            }
+//            return CGFloat.zero
+//        }
+    }
+    
     fileprivate lazy var valueLayer: CALayer = {
         let ly = CALayer()
         ly.backgroundColor = "#FEFFFF".hexColor!.cgColor
@@ -56,29 +99,7 @@ class IFSlider: UIControl {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        switch sliderDirection {
-        case .topToBottom:
-            let valueHeight = valueLayer.bounds.height
-            valueLayer.frame = CGRect(x: 0, y: 0, width: bounds.width, height: valueHeight)
-            break
-            
-        case .bottomToTop:
-            let valueHeight = valueLayer.bounds.height
-            let valueY = bounds.height - valueHeight
-            valueLayer.frame = CGRect(x: 0, y: valueY, width: bounds.width, height: valueHeight)
-            break
-            
-        case .leftToRight:
-            let valueWidth = valueLayer.bounds.width
-            valueLayer.frame = CGRect(x: 0, y: 0, width: valueWidth, height: bounds.height)
-            break
-            
-        case .rightToLeft:
-            let valueWidth = valueLayer.bounds.width
-            let valueX: CGFloat = bounds.width - valueWidth
-            valueLayer.frame = CGRect(x: valueX, y: 0, width: valueWidth, height: bounds.height)
-            break
-        }
+        updateFrame()
     }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
@@ -134,6 +155,13 @@ class IFSlider: UIControl {
             break
         }
         valueLayer.frame = CGRect(x: x, y: y, width: width, height: height)
+        if sliderDirection == .topToBottom
+            || sliderDirection == .bottomToTop {
+            value = valueLayer.bounds.height * proportion
+        } else if sliderDirection == .leftToRight
+            || sliderDirection == .rightToLeft {
+            value = valueLayer.bounds.width * proportion
+        }
         sendActions(for: .valueChanged)
         return true
     }
@@ -146,5 +174,57 @@ class IFSlider: UIControl {
     override func cancelTracking(with event: UIEvent?) {
         super.cancelTracking(with: event)
         startPoint = CGPoint.zero
+    }
+}
+
+extension IFSlider {
+    fileprivate var proportion: CGFloat {
+        let valueDifference = CGFloat(maximumValue - minimumValue)
+        var frameDifference: CGFloat = 0
+        if sliderDirection == .topToBottom
+            || sliderDirection == .bottomToTop {
+            frameDifference = bounds.height
+        } else if sliderDirection == .leftToRight
+            || sliderDirection == .rightToLeft {
+            frameDifference = bounds.width
+        }
+        return frameDifference == 0 ? 1 : valueDifference / frameDifference
+    }
+    
+    fileprivate func updateFrame() {
+        
+        if sliderDirection == .topToBottom
+            || sliderDirection == .bottomToTop {
+            let valueFrame = valueLayer.frame
+            valueLayer.frame = CGRect(origin: valueFrame.origin, size: CGSize(width: valueFrame.width, height: value / proportion))
+        } else if sliderDirection == .leftToRight
+            || sliderDirection == .rightToLeft {
+            let valueFrame = valueLayer.frame
+            valueLayer.frame = CGRect(origin: valueFrame.origin, size: CGSize(width: value / proportion, height: valueFrame.width))
+        }
+        
+        switch sliderDirection {
+        case .topToBottom:
+            let valueHeight = valueLayer.bounds.height
+            valueLayer.frame = CGRect(x: 0, y: 0, width: bounds.width, height: valueHeight)
+            break
+            
+        case .bottomToTop:
+            let valueHeight = valueLayer.bounds.height
+            let valueY = bounds.height - valueHeight
+            valueLayer.frame = CGRect(x: 0, y: valueY, width: bounds.width, height: valueHeight)
+            break
+            
+        case .leftToRight:
+            let valueWidth = valueLayer.bounds.width
+            valueLayer.frame = CGRect(x: 0, y: 0, width: valueWidth, height: bounds.height)
+            break
+            
+        case .rightToLeft:
+            let valueWidth = valueLayer.bounds.width
+            let valueX: CGFloat = bounds.width - valueWidth
+            valueLayer.frame = CGRect(x: valueX, y: 0, width: valueWidth, height: bounds.height)
+            break
+        }
     }
 }
