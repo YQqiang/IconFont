@@ -17,53 +17,21 @@ enum SliderDirection {
 
 class IFSlider: UIControl {
     
+    public var sliderDirection: SliderDirection = .bottomToTop {
+        didSet {
+            updateFrame()
+        }
+    }
+    
+    public private(set) var minimumValue: CGFloat = 1.0
+    
+    public private(set) var maximumValue: CGFloat = 0.0
+    
+    public private(set) var value: CGFloat = 0.5
+    
     fileprivate var startPoint = CGPoint.zero
+    
     fileprivate var startValueFrame = CGRect.zero
-    
-    public lazy var sliderDirection: SliderDirection = .bottomToTop
-    
-    @IBInspectable public var minimumValue: CGFloat = 0.0 {
-        willSet(newValue) {
-            assert(newValue < maximumValue, "IFSlider: minimumValue should be lower than maximumValue")
-        }
-        didSet {
-            
-        }
-    }
-    
-    @IBInspectable public var maximumValue: CGFloat = 1.0 {
-        willSet(newValue) {
-            assert(newValue > minimumValue, "IFSlider: maximumValue should be greater than minimumValue")
-        }
-        didSet {
-            
-        }
-    }
-    
-    @IBInspectable public var value: CGFloat = 0.5 {
-        didSet {
-//            if sliderDirection == .topToBottom
-//                || sliderDirection == .bottomToTop {
-//                let valueFrame = valueLayer.frame
-//                valueLayer.frame = CGRect(origin: valueFrame.origin, size: CGSize(width: valueFrame.width, height: value / proportion))
-//            } else if sliderDirection == .leftToRight
-//                || sliderDirection == .rightToLeft {
-//                let valueFrame = valueLayer.frame
-//                valueLayer.frame = CGRect(origin: valueFrame.origin, size: CGSize(width: value / proportion, height: valueFrame.width))
-//            }
-        }
-        
-//        get {
-//            if sliderDirection == .topToBottom
-//                || sliderDirection == .bottomToTop {
-//                return valueLayer.bounds.height * proportion
-//            } else if sliderDirection == .leftToRight
-//                || sliderDirection == .rightToLeft {
-//                return valueLayer.bounds.width * proportion
-//            }
-//            return CGFloat.zero
-//        }
-    }
     
     fileprivate lazy var valueLayer: CALayer = {
         let ly = CALayer()
@@ -192,7 +160,6 @@ extension IFSlider {
     }
     
     fileprivate func updateFrame() {
-        
         if sliderDirection == .topToBottom
             || sliderDirection == .bottomToTop {
             let valueFrame = valueLayer.frame
@@ -226,5 +193,23 @@ extension IFSlider {
             valueLayer.frame = CGRect(x: valueX, y: 0, width: valueWidth, height: bounds.height)
             break
         }
+    }
+}
+
+extension IFSlider {
+    func configValue(minimum: CGFloat, maximum: CGFloat, value: CGFloat) {
+        guard minimum <= maximum else {
+            return
+        }
+        guard value <= maximum else {
+            return
+        }
+        guard value >= minimum else {
+            return
+        }
+        maximumValue = maximum
+        minimumValue = minimum
+        self.value = value
+        updateFrame()
     }
 }

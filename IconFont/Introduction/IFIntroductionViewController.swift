@@ -117,11 +117,14 @@ class IFIntroductionViewController: IFBaseViewController {
             make.edges.equalToSuperview();
         }
         let slider = IFSlider()
-        slider.maximumValue = 100
-        slider.minimumValue = 50
-        slider.value = 95
+        slider.configValue(minimum: -200, maximum: -100, value: -150)
         effect.contentView.addSubview(slider)
-        slider.frame = CGRect(x: 32, y: 32, width: 64, height: 300)
+        slider.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-64)
+            make.left.equalToSuperview().offset(32)
+            make.width.equalTo(64)
+        }
         slider.addTarget(self, action: #selector(sliderAction(_:)), for: .valueChanged)
     }
     
