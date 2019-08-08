@@ -22,7 +22,7 @@ class IFSlider: UIControl {
     
     public lazy var sliderDirection: SliderDirection = .bottomToTop
     
-    @IBInspectable public var minimumValue: Double = 0.0 {
+    @IBInspectable public var minimumValue: CGFloat = 0.0 {
         willSet(newValue) {
             assert(newValue < maximumValue, "IFSlider: minimumValue should be lower than maximumValue")
         }
@@ -31,7 +31,7 @@ class IFSlider: UIControl {
         }
     }
     
-    @IBInspectable public var maximumValue: Double = 1.0 {
+    @IBInspectable public var maximumValue: CGFloat = 1.0 {
         willSet(newValue) {
             assert(newValue > minimumValue, "IFSlider: maximumValue should be greater than minimumValue")
         }
@@ -157,10 +157,10 @@ class IFSlider: UIControl {
         valueLayer.frame = CGRect(x: x, y: y, width: width, height: height)
         if sliderDirection == .topToBottom
             || sliderDirection == .bottomToTop {
-            value = valueLayer.bounds.height * proportion
+            value = valueLayer.bounds.height * proportion + minimumValue
         } else if sliderDirection == .leftToRight
             || sliderDirection == .rightToLeft {
-            value = valueLayer.bounds.width * proportion
+            value = valueLayer.bounds.width * proportion + minimumValue
         }
         sendActions(for: .valueChanged)
         return true
@@ -196,11 +196,11 @@ extension IFSlider {
         if sliderDirection == .topToBottom
             || sliderDirection == .bottomToTop {
             let valueFrame = valueLayer.frame
-            valueLayer.frame = CGRect(origin: valueFrame.origin, size: CGSize(width: valueFrame.width, height: value / proportion))
+            valueLayer.frame = CGRect(origin: valueFrame.origin, size: CGSize(width: valueFrame.width, height: (value - minimumValue) / proportion))
         } else if sliderDirection == .leftToRight
             || sliderDirection == .rightToLeft {
             let valueFrame = valueLayer.frame
-            valueLayer.frame = CGRect(origin: valueFrame.origin, size: CGSize(width: value / proportion, height: valueFrame.width))
+            valueLayer.frame = CGRect(origin: valueFrame.origin, size: CGSize(width: (value - minimumValue) / proportion, height: valueFrame.width))
         }
         
         switch sliderDirection {
