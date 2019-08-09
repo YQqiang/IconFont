@@ -164,6 +164,18 @@ class IFEditDetailViewController: IFBaseViewController {
             make.size.equalTo(bgSize)
         }
         updateIcon()
+        
+        let slider = IFSlider()
+        slider.sliderDirection = .leftToRight
+        slider.configValue(minimum: 16, maximum: UIScreen.main.bounds.width, value: 200)
+        slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        view.addSubview(slider)
+        slider.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(32)
+            make.right.equalToSuperview().offset(-32)
+            make.height.equalTo(32)
+            make.bottom.equalToSuperview().offset(-64)
+        }
     }
     
     override var previewActionItems: [UIPreviewActionItem] {
@@ -187,8 +199,12 @@ class IFEditDetailViewController: IFBaseViewController {
 extension IFEditDetailViewController {
     
     fileprivate func updateIcon() {
-        let image = icon(backgrounds: [bgColor], locations: [1.0], start: CGPoint.zero, end: CGPoint.zero, tint: tintColor, size: imageSize, insets: UIEdgeInsets.zero, orientation: orientation)
-        self.contentIconView.iconImage = image
+        DispatchQueue.global().async {
+            let image = self.icon(backgrounds: [self.bgColor], locations: [1.0], start: CGPoint.zero, end: CGPoint.zero, tint: self.tintColor, size: self.imageSize, insets: UIEdgeInsets.zero, orientation: self.orientation)
+            DispatchQueue.main.async {
+                self.contentIconView.iconImage = image
+            }
+        }
     }
     
     fileprivate func icon(backgrounds: [UIColor], locations: [NSNumber], start: CGPoint, end: CGPoint, tint: UIColor, size: CGSize, insets: UIEdgeInsets, orientation: UIImage.Orientation) -> UIImage {
@@ -197,5 +213,12 @@ extension IFEditDetailViewController {
     
     fileprivate func dismissSelf() {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension IFEditDetailViewController {
+    @objc func sliderValueChanged(_ sender: IFSlider) {
+        imageSize = CGSize(width: sender.value, height: sender.value)
+        updateIcon()
     }
 }
