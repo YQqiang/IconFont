@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum SliderDirection {
+public enum SliderDirection {
     case topToBottom
     case bottomToTop
     case leftToRight
