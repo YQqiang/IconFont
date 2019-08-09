@@ -10,7 +10,7 @@ import UIKit
 
 extension UIColor {
     class var IFBg: UIColor {
-        return UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.00)
+        return UIColor.groupTableViewBackground
     }
     
     class var IFTabBg: UIColor {
