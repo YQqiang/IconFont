@@ -23,11 +23,35 @@ class IFSlider: UIControl {
         }
     }
     
-    public private(set) var minimumValue: CGFloat = 1.0
+    public private(set) var minimumValue: CGFloat = 0.0 {
+        didSet {
+            minimumButton.setTitle("\(minimumValue)", for: .normal)
+        }
+    }
     
-    public private(set) var maximumValue: CGFloat = 0.0
+    public private(set) var maximumValue: CGFloat = 1.0 {
+        didSet {
+            maximumButton.setTitle("\(maximumValue)", for: .normal)
+        }
+    }
     
     public private(set) var value: CGFloat = 0.5
+    
+    public private(set) var minimumButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setTitleColor("#D2D3D4".hexColor!, for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        btn.isUserInteractionEnabled = false
+        return btn
+    }()
+    
+    public private(set) var maximumButton: UIButton = {
+        let btn = UIButton(type: .custom)
+        btn.setTitleColor("#D2D3D4".hexColor!, for: .normal)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        btn.isUserInteractionEnabled = false
+        return btn
+    }()
     
     fileprivate var startPoint = CGPoint.zero
     
@@ -63,6 +87,9 @@ class IFSlider: UIControl {
         effect.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
         effect.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         effect.contentView.layer.addSublayer(valueLayer)
+        
+        effect.contentView.addSubview(minimumButton)
+        effect.contentView.addSubview(maximumButton)
     }
     
     override func layoutSubviews() {
@@ -170,27 +197,38 @@ extension IFSlider {
             valueLayer.frame = CGRect(origin: valueFrame.origin, size: CGSize(width: (value - minimumValue) / proportion, height: valueFrame.width))
         }
         
+        let space: CGFloat = 16
+        minimumButton.sizeToFit()
+        maximumButton.sizeToFit()
         switch sliderDirection {
         case .topToBottom:
             let valueHeight = valueLayer.bounds.height
             valueLayer.frame = CGRect(x: 0, y: 0, width: bounds.width, height: valueHeight)
+            minimumButton.center = CGPoint(x: bounds.width * 0.5, y: space + minimumButton.bounds.height * 0.5)
+            maximumButton.center = CGPoint(x: bounds.width * 0.5, y: bounds.height - space - maximumButton.bounds.height * 0.5)
             break
             
         case .bottomToTop:
             let valueHeight = valueLayer.bounds.height
             let valueY = bounds.height - valueHeight
             valueLayer.frame = CGRect(x: 0, y: valueY, width: bounds.width, height: valueHeight)
+            minimumButton.center = CGPoint(x: bounds.width * 0.5, y: bounds.height - space - minimumButton.bounds.height * 0.5)
+            maximumButton.center = CGPoint(x: bounds.width * 0.5, y: space + maximumButton.bounds.height * 0.5)
             break
             
         case .leftToRight:
             let valueWidth = valueLayer.bounds.width
             valueLayer.frame = CGRect(x: 0, y: 0, width: valueWidth, height: bounds.height)
+            minimumButton.center = CGPoint(x: space + minimumButton.bounds.width * 0.5, y: bounds.height * 0.5)
+            maximumButton.center = CGPoint(x: bounds.width - space - maximumButton.bounds.width * 0.5, y: bounds.height * 0.5)
             break
             
         case .rightToLeft:
             let valueWidth = valueLayer.bounds.width
             let valueX: CGFloat = bounds.width - valueWidth
             valueLayer.frame = CGRect(x: valueX, y: 0, width: valueWidth, height: bounds.height)
+            minimumButton.center = CGPoint(x: bounds.width - space - minimumButton.bounds.width * 0.5, y: bounds.height * 0.5)
+            maximumButton.center = CGPoint(x: space + maximumButton.bounds.width * 0.5, y: bounds.height * 0.5)
             break
         }
     }
