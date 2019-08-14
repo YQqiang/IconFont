@@ -23,15 +23,26 @@ class IFSlider: UIControl {
         }
     }
     
+    public var showMinimumValue = true {
+        didSet {
+            updateMinimumValue()
+        }
+    }
+    public var showMaximumValue = true {
+        didSet {
+            updateMaximumValue()
+        }
+    }
+    
     public private(set) var minimumValue: CGFloat = 0.0 {
         didSet {
-            minimumButton.setTitle("\(minimumValue)", for: .normal)
+            updateMinimumValue()
         }
     }
     
     public private(set) var maximumValue: CGFloat = 1.0 {
         didSet {
-            maximumButton.setTitle("\(maximumValue)", for: .normal)
+            updateMaximumValue()
         }
     }
     
@@ -231,6 +242,14 @@ extension IFSlider {
             maximumButton.center = CGPoint(x: space + maximumButton.bounds.width * 0.5, y: bounds.height * 0.5)
             break
         }
+    }
+    
+    fileprivate func updateMinimumValue() {
+        minimumButton.setTitle(showMinimumValue ? "\(minimumValue)" : "", for: .normal)
+    }
+    
+    fileprivate func updateMaximumValue() {
+        maximumButton.setTitle(showMaximumValue ? "\(maximumValue)" : "", for: .normal)
     }
 }
 

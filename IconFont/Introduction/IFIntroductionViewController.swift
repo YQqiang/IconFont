@@ -117,6 +117,8 @@ class IFIntroductionViewController: IFBaseViewController {
             make.edges.equalToSuperview();
         }
         let slider = IFSlider()
+        slider.showMinimumValue = false
+        slider.showMaximumValue = false
         slider.configValue(minimum: -200, maximum: -100, value: -150)
         effect.contentView.addSubview(slider)
         slider.snp.makeConstraints { (make) in
