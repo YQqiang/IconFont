@@ -167,6 +167,10 @@ class IFEditDetailViewController: IFBaseViewController {
         
         let slider = IFSlider()
         slider.sliderDirection = .leftToRight
+        slider.showMinimumValue = false
+        slider.showMaximumValue = false
+        slider.minimumButton.setImage(IconFontType.toolSize.image(background: UIColor.clear, tint: "#D2D3D4".hexColor!, size: CGSize(width: 12, height: 12), insets: UIEdgeInsets.zero, orientation: .up), for: .normal)
+        slider.maximumButton.setImage(IconFontType.toolSize.image(background: UIColor.clear, tint: "#D2D3D4".hexColor!, size: CGSize(width: 16, height: 16), insets: UIEdgeInsets.zero, orientation: .up), for: .normal)
         slider.configValue(minimum: 16, maximum: UIScreen.main.bounds.width, value: 200)
         slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
         view.addSubview(slider)
