@@ -15,6 +15,7 @@ class IFEditDetailViewController: IFBaseViewController {
     fileprivate lazy var imageSize: CGSize = CGSize(width: 140, height: 140)
     fileprivate lazy var orientation: UIImage.Orientation = .up
     fileprivate lazy var bgColor: UIColor = UIColor.clear
+    fileprivate lazy var insets: UIEdgeInsets = UIEdgeInsets.zero
     
     fileprivate lazy var tintColor: UIColor = UIColor.IFItem
     
@@ -135,6 +136,37 @@ class IFEditDetailViewController: IFBaseViewController {
         return v
     }()
     
+    fileprivate lazy var sliderStack: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 8
+        
+        let screenWidth = UIScreen.main.bounds.width
+        let sizeSlider = IFSlider()
+        sizeSlider.sliderDirection = .leftToRight
+        sizeSlider.showMinimumValue = false
+        sizeSlider.showMaximumValue = false
+        sizeSlider.minimumButton.setImage(IconFontType.toolSize.image(background: UIColor.clear, tint: "#D2D3D4".hexColor!, size: CGSize(width: 12, height: 12), insets: UIEdgeInsets.zero, orientation: .up), for: .normal)
+        sizeSlider.maximumButton.setImage(IconFontType.toolSize.image(background: UIColor.clear, tint: "#D2D3D4".hexColor!, size: CGSize(width: 16, height: 16), insets: UIEdgeInsets.zero, orientation: .up), for: .normal)
+        sizeSlider.configValue(minimum: 16, maximum: screenWidth, value: 200)
+        sizeSlider.addTarget(self, action: #selector(sizeSliderValueChanged(_:)), for: .valueChanged)
+        sizeSlider.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        stack.addArrangedSubview(sizeSlider)
+        
+        let edgeSlider = IFSlider()
+        edgeSlider.sliderDirection = .leftToRight
+        edgeSlider.showMinimumValue = false
+        edgeSlider.showMaximumValue = false
+        edgeSlider.minimumButton.setImage(IconFontType.toolInsets.image(background: UIColor.clear, tint: "#D2D3D4".hexColor!, size: CGSize(width: 12, height: 12), insets: UIEdgeInsets.zero, orientation: .up), for: .normal)
+        edgeSlider.maximumButton.setImage(IconFontType.toolInsets.image(background: UIColor.clear, tint: "#D2D3D4".hexColor!, size: CGSize(width: 16, height: 16), insets: UIEdgeInsets.zero, orientation: .up), for: .normal)
+        edgeSlider.configValue(minimum: 0, maximum: screenWidth * 0.5, value: 0)
+        edgeSlider.addTarget(self, action: #selector(edgeSliderValueChanged(_:)), for: .valueChanged)
+        edgeSlider.heightAnchor.constraint(equalToConstant: 32).isActive = true
+        stack.addArrangedSubview(edgeSlider)
+        
+        return stack
+    }()
+    
     init(item: IFItem) {
         self.item = item
         super.init(nibName: nil, bundle: nil)
@@ -166,19 +198,10 @@ class IFEditDetailViewController: IFBaseViewController {
         }
         updateIcon()
         
-        let slider = IFSlider()
-        slider.sliderDirection = .leftToRight
-        slider.showMinimumValue = false
-        slider.showMaximumValue = false
-        slider.minimumButton.setImage(IconFontType.toolSize.image(background: UIColor.clear, tint: "#D2D3D4".hexColor!, size: CGSize(width: 12, height: 12), insets: UIEdgeInsets.zero, orientation: .up), for: .normal)
-        slider.maximumButton.setImage(IconFontType.toolSize.image(background: UIColor.clear, tint: "#D2D3D4".hexColor!, size: CGSize(width: 16, height: 16), insets: UIEdgeInsets.zero, orientation: .up), for: .normal)
-        slider.configValue(minimum: 16, maximum: UIScreen.main.bounds.width, value: 200)
-        slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
-        view.addSubview(slider)
-        slider.snp.makeConstraints { (make) in
+        view.addSubview(sliderStack)
+        sliderStack.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(32)
             make.right.equalToSuperview().offset(-32)
-            make.height.equalTo(32)
             make.bottom.equalToSuperview().offset(-64)
         }
     }
@@ -205,7 +228,7 @@ extension IFEditDetailViewController {
     
     fileprivate func updateIcon() {
         DispatchQueue.global().async {
-            let image = self.icon(backgrounds: [self.bgColor], locations: [1.0], start: CGPoint.zero, end: CGPoint.zero, tint: self.tintColor, size: self.imageSize, insets: UIEdgeInsets.zero, orientation: self.orientation)
+            let image = self.icon(backgrounds: [self.bgColor], locations: [1.0], start: CGPoint.zero, end: CGPoint.zero, tint: self.tintColor, size: self.imageSize, insets: self.insets, orientation: self.orientation)
             DispatchQueue.main.async {
                 self.contentIconView.iconImage = image
             }
@@ -222,8 +245,14 @@ extension IFEditDetailViewController {
 }
 
 extension IFEditDetailViewController {
-    @objc func sliderValueChanged(_ sender: IFSlider) {
+    @objc func sizeSliderValueChanged(_ sender: IFSlider) {
         imageSize = CGSize(width: sender.value, height: sender.value)
+        updateIcon()
+    }
+    
+    @objc func edgeSliderValueChanged(_ sender: IFSlider) {
+        let offset = sender.value
+        insets = UIEdgeInsets(top: offset, left: offset, bottom: offset, right: offset)
         updateIcon()
     }
 }
