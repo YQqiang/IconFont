@@ -13,6 +13,8 @@ private let spacing: CGFloat = 2.0 / UIScreen.main.scale
 final class IFCalculatorPanel: IFBaseView {
     
     public var enterColsure: ((_ value: String) -> Void)?
+    public var touchesEndedColsure: ((_ value: String) -> Void)?
+    public var deleteColsure: (() -> Void)?
     
     public enum CalculatorType {
         /// 十六进制
@@ -24,6 +26,20 @@ final class IFCalculatorPanel: IFBaseView {
     public var canConvert: Bool = true {
         didSet {
             fTran.isHidden = !canConvert
+        }
+    }
+    
+    public var isShowResultView: Bool = false {
+        didSet {
+            guard oldValue != isShowResultView else {
+                return
+            }
+            resultView.isHidden = !isShowResultView
+            let priority = isShowResultView ? 250.0 : 1000.0
+            resultView.snp.remakeConstraints { (make) in
+                make.top.left.right.equalToSuperview()
+                make.height.equalTo(0).priority(priority)
+            }
         }
     }
     
@@ -53,7 +69,7 @@ final class IFCalculatorPanel: IFBaseView {
         }
     }
     
-    fileprivate lazy var resultView: IFCalculatorResult = {
+    public private(set) lazy var resultView: IFCalculatorResult = {
         let v = IFCalculatorResult()
         return v
     }()
@@ -149,9 +165,7 @@ final class IFCalculatorPanel: IFBaseView {
         fEnt.roundRadius = cornerRadius
         
         contentView.addSubview(resultView)
-        resultView.snp.makeConstraints { (make) in
-            make.top.left.right.equalToSuperview()
-        }
+        isShowResultView = true
         
         contentView.addSubview(operationStack)
         operationStack.snp.makeConstraints { (make) in
@@ -282,6 +296,9 @@ final class IFCalculatorPanel: IFBaseView {
                         pointAction()
                     } else {
                         resultView.resultView.text = String(format: "%@%@", resultView.resultView.text ?? "", sender.text ?? "")
+                        if let colsure = touchesEndedColsure {
+                            colsure(sender.text ?? "")
+                        }
                     }
                 }
             }
@@ -297,6 +314,9 @@ final class IFCalculatorPanel: IFBaseView {
     
     fileprivate func deleteAction() {
         resultView.deleteBackward()
+        if let colsure = deleteColsure {
+            colsure()
+        }
     }
     
     fileprivate func enterAction() {

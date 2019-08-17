@@ -18,10 +18,50 @@ class IFColorController: IFBaseViewController {
         return panel
     }()
     
+    public private(set) lazy var hexInput: UITextField = {
+        let tf = UITextField()
+        tf.textColor = UIColor.black
+        tf.textAlignment = .center
+        tf.font = UIFont.systemFont(ofSize: 14)
+        tf.borderStyle = .roundedRect
+        let panel = IFCalculatorPanel(type: .hexadecimal)
+        panel.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 260)
+        panel.canConvert = false
+        panel.isShowResultView = false
+        panel.enterColsure = { [weak tf, weak panel, weak self] (value) -> Void in
+            panel?.resultView.resultView.resignFirstResponder()
+            tf?.resignFirstResponder()
+            self?.dismiss(animated: true, completion: nil)
+        }
+        panel.deleteColsure = { [weak tf, weak self] in
+            tf?.deleteBackward()
+            guard let color = "#\(tf?.text ?? "")".hexColor else {
+                return
+            }
+            self?.colorPanel.setColor(color, animated: true, sendEvent: false)
+            if let colsure = self?.colorDidChanged {
+                colsure(color)
+            }
+        }
+        panel.touchesEndedColsure = { [weak tf, weak panel, weak self] (value) in
+            tf?.text = "\(tf?.text ?? "")\(value)"
+            guard let color = "#\(tf?.text ?? "")".hexColor else {
+                return
+            }
+            self?.colorPanel.setColor(color, animated: true, sendEvent: false)
+            if let colsure = self?.colorDidChanged {
+                colsure(color)
+            }
+        }
+        tf.inputView = panel
+        tf.placeholder = "RGB/RGBA"
+        return tf
+    }()
+    
     init(sourceView: UIView) {
         super.init(nibName: nil, bundle: nil)
         modalPresentationStyle = .popover
-        preferredContentSize = CGSize(width: 200, height: 200)
+        preferredContentSize = CGSize(width: 180, height: 232)
         let popover = popoverPresentationController
         popover?.delegate = self
         popover?.sourceView = sourceView
@@ -40,7 +80,14 @@ class IFColorController: IFBaseViewController {
         view.addSubview(colorPanel)
         colorPanel.snp.makeConstraints { (make) in
             make.top.left.equalToSuperview().offset(16)
-            make.right.bottom.equalToSuperview().offset(-16)
+            make.right.equalToSuperview().offset(-16)
+        }
+        
+        view.addSubview(hexInput)
+        hexInput.snp.makeConstraints { (make) in
+            make.left.right.equalTo(colorPanel)
+            make.top.equalTo(colorPanel.snp.bottom).offset(8)
+            make.bottom.equalToSuperview().offset(-16)
         }
     }
 }
@@ -51,6 +98,7 @@ extension IFColorController: UIPopoverPresentationControllerDelegate {
     }
     
     @objc fileprivate func changeColor() {
+        hexInput.text = String(colorPanel.color.hexString?.dropFirst() ?? "")
         if let colsure = colorDidChanged {
             colsure(colorPanel.color)
         }
