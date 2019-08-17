@@ -131,6 +131,7 @@ class IFEditDetailViewController: IFBaseViewController {
     fileprivate lazy var contentIconView: IFEditContentIconView = {
         let v = IFEditContentIconView()
         v.contentView.backgroundColor = UIColor.clear
+        v.isUserInteractionEnabled = false
         return v
     }()
     
