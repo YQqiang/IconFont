@@ -93,6 +93,8 @@ enum IconFontType: Int {
     case toolColor = 0xe652
     /// 工具栏-镜像
     case toolMirror = 0xe62f
+    /// 工具栏-圆角
+    case toolCorners = 0xe6ac
     
     static var name: String {
         return "YQIconFont"
