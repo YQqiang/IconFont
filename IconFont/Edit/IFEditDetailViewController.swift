@@ -202,7 +202,7 @@ class IFEditDetailViewController: IFBaseViewController {
         sliderStack.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(32)
             make.right.equalToSuperview().offset(-32)
-            make.bottom.equalToSuperview().offset(-64)
+            make.bottom.equalTo(toolBar.snp.top).offset(-8)
         }
     }
     
