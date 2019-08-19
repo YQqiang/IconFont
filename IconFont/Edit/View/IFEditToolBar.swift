@@ -8,73 +8,40 @@
 
 import UIKit
 
+enum IFEditToolType {
+    case size
+    case bgColor
+    case color
+    case insets
+    case rotate
+    case mirror
+    case corners
+}
+
 class IFEditToolBar: IFBaseView {
     
-    public var sizeClosure: ((_ sender: IFButton) -> Void)?
-    public var bgColorClosure: ((_ sender: IFButton) -> Void)?
-    public var colorClosure: ((_ sender: IFButton) -> Void)?
-    public var rotateClosure: ((_ sender: IFButton) -> Void)?
-    public var mirrorClosure: ((_ sender: IFButton) -> Void)?
+    public var closure: ((_ type: IFEditToolType, _ sender: IFButton) -> Void)?
     
-    fileprivate lazy var sizeBtn: IFButton = {
-        let btn = IFButton(type: .custom)
-        let image = IconFontType.toolSize.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
-        btn.setImage(image, for: .normal)
-        btn.addTarget(self, action: #selector(sizeBtnAction(_:)), for: .touchUpInside)
-        return btn
-    }()
-    
-    fileprivate lazy var bgColorBtn: IFButton = {
-        let btn = IFButton(type: .custom)
-        let image = IconFontType.toolBgColor.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
-        btn.setImage(image, for: .normal)
-        btn.addTarget(self, action: #selector(bgColorBtnAction(_:)), for: .touchUpInside)
-        return btn
-    }()
-    
-    fileprivate lazy var colorBtn: IFButton = {
-        let btn = IFButton(type: .custom)
-        let image = IconFontType.toolColor.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
-        btn.setImage(image, for: .normal)
-        btn.addTarget(self, action: #selector(colorBtnAction(_:)), for: .touchUpInside)
-        return btn
-    }()
-    
-    fileprivate lazy var insetsBtn: IFButton = {
-        let btn = IFButton(type: .custom)
-        let image = IconFontType.toolInsets.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
-        btn.setImage(image, for: .normal)
-        return btn
-    }()
-    
-    fileprivate lazy var rotateBtn: IFButton = {
-        let btn = IFButton(type: .custom)
-        let image = IconFontType.toolRotate.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
-        btn.setImage(image, for: .normal)
-        btn.addTarget(self, action: #selector(rotateBtnAction(_:)), for: .touchUpInside)
-        return btn
-    }()
-    
-    fileprivate lazy var mirrorBtn: IFButton = {
-        let btn = IFButton(type: .custom)
-        let image = IconFontType.toolMirror.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
-        btn.setImage(image, for: .normal)
-        btn.addTarget(self, action: #selector(mirrorBtnAction(_:)), for: .touchUpInside)
-        return btn
-    }()
-
     fileprivate lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.distribution = .fillEqually
         stack.alignment = .fill
-        
-        stack.addArrangedSubview(sizeBtn)
-        stack.addArrangedSubview(bgColorBtn)
-        stack.addArrangedSubview(colorBtn)
-        stack.addArrangedSubview(insetsBtn)
-        stack.addArrangedSubview(rotateBtn)
-        stack.addArrangedSubview(mirrorBtn)
+        let types: [IconFontType] = [.toolSize,
+                                     .toolBgColor,
+                                     .toolColor,
+                                     .toolInsets,
+                                     .toolRotate,
+                                     .toolMirror,
+                                     .toolCorners]
+        for type in types {
+            let btn = IFButton(type: .custom)
+            btn.tag = type.rawValue
+            let image = type.image(background: UIColor.clear, tint: UIColor.IFTabEnable, size: CGSize(width: 24, height: 24), insets: UIEdgeInsets.zero, orientation: .up)
+            btn.setImage(image, for: .normal)
+            btn.addTarget(self, action: #selector(btnAction(_:)), for: .touchUpInside)
+            stack.addArrangedSubview(btn)
+        }
         return stack
     }()
 
@@ -92,33 +59,35 @@ class IFEditToolBar: IFBaseView {
 }
 
 extension IFEditToolBar {
-    @objc fileprivate func sizeBtnAction(_ sender: IFButton) {
-        if let closure = sizeClosure {
-            closure(sender)
+    @objc fileprivate func btnAction(_ sender: IFButton) {
+        guard let closure = closure else {
+            return
         }
-    }
-    
-    @objc fileprivate func bgColorBtnAction(_ sender: IFButton) {
-        if let closure = bgColorClosure {
-            closure(sender)
+        guard let iconType = IconFontType(rawValue: sender.tag) else {
+            return
         }
-    }
-    
-    @objc fileprivate func colorBtnAction(_ sender: IFButton) {
-        if let closure = colorClosure {
-            closure(sender)
+        var type: IFEditToolType = .size
+        if iconType == IconFontType.toolSize {
+            type = .size
         }
-    }
-    
-    @objc fileprivate func rotateBtnAction(_ sender: IFButton) {
-        if let closure = rotateClosure {
-            closure(sender)
+        if iconType == IconFontType.toolBgColor {
+            type = .bgColor
         }
-    }
-    
-    @objc fileprivate func mirrorBtnAction(_ sender: IFButton) {
-        if let closure = mirrorClosure {
-            closure(sender)
+        if iconType == IconFontType.toolColor {
+            type = .color
         }
+        if iconType == IconFontType.toolInsets {
+            type = .insets
+        }
+        if iconType == IconFontType.toolRotate {
+            type = .rotate
+        }
+        if iconType == IconFontType.toolMirror {
+            type = .mirror
+        }
+        if iconType == IconFontType.toolCorners {
+            type = .corners
+        }
+        closure(type, sender)
     }
 }

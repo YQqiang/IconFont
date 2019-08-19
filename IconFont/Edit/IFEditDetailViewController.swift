@@ -36,95 +36,102 @@ class IFEditDetailViewController: IFBaseViewController {
     
     fileprivate lazy var toolBar: IFEditToolBar = {
         let bar = IFEditToolBar()
-        bar.sizeClosure = {[weak self] (sender) in
-            let toolVC: IFCalculatorController = IFCalculatorController(sourceView: sender)
-            toolVC.valueDidChanged = {[weak self] (value, vc) in
-                let wh = Int(value) ?? 0
-                self?.imageSize = CGSize(width: wh, height: wh)
+        bar.closure = { [weak self] (type, sender) in
+            switch type {
+            case .size:
+                let toolVC: IFCalculatorController = IFCalculatorController(sourceView: sender)
+                toolVC.valueDidChanged = {[weak self] (value, vc) in
+                    let wh = Int(value) ?? 0
+                    self?.imageSize = CGSize(width: wh, height: wh)
+                    self?.updateIcon()
+                    vc.dismiss(animated: true, completion: nil)
+                }
+                self?.present(toolVC, animated: true, completion: nil)
+                break
+            case .bgColor:
+                let toolVC: IFColorController = IFColorController(sourceView: sender)
+                toolVC.colorDidChanged = { (color) in
+                    self?.bgColor = color
+                    self?.updateIcon()
+                }
+                self?.present(toolVC, animated: true, completion: nil)
+                break
+            case .color:
+                let toolVC: IFColorController = IFColorController(sourceView: sender)
+                toolVC.colorDidChanged = { (color) in
+                    self?.tintColor = color
+                    self?.updateIcon()
+                }
+                self?.present(toolVC, animated: true, completion: nil)
+                break
+            case .insets:
+                break
+            case .rotate:
+                guard let direction = self?.orientation else {
+                    return
+                }
+                switch direction {
+                case .up:
+                    self?.orientation = .right
+                    break
+                case .right:
+                    self?.orientation = .down
+                    break
+                case .down:
+                    self?.orientation = .left
+                    break
+                case .left:
+                    self?.orientation = .up
+                    break
+                case .upMirrored:
+                    self?.orientation = .rightMirrored
+                    break
+                case .rightMirrored:
+                    self?.orientation = .downMirrored
+                    break
+                case .downMirrored:
+                    self?.orientation = .leftMirrored
+                    break
+                case .leftMirrored:
+                    self?.orientation = .upMirrored
+                    break
+                }
                 self?.updateIcon()
-                vc.dismiss(animated: true, completion: nil)
-            }
-            self?.present(toolVC, animated: true, completion: nil)
-        }
-        bar.bgColorClosure = {[weak self] (sender) in
-            let toolVC: IFColorController = IFColorController(sourceView: sender)
-            toolVC.colorDidChanged = { (color) in
-                self?.bgColor = color
+                break
+            case .mirror:
+                guard let direction = self?.orientation else {
+                    return
+                }
+                switch direction {
+                case .up:
+                    self?.orientation = .upMirrored
+                    break
+                case .upMirrored:
+                    self?.orientation = .up
+                    break
+                case .down:
+                    self?.orientation = .downMirrored
+                    break
+                case .downMirrored:
+                    self?.orientation = .down
+                    break
+                case .left:
+                    self?.orientation = .leftMirrored
+                    break
+                case .leftMirrored:
+                    self?.orientation = .left
+                    break
+                case .right:
+                    self?.orientation = .rightMirrored
+                    break
+                case .rightMirrored:
+                    self?.orientation = .right
+                    break
+                }
                 self?.updateIcon()
+                break
+            case .corners: break
             }
-            self?.present(toolVC, animated: true, completion: nil)
-        }
-        bar.colorClosure = {[weak self] (sender) in
-            let toolVC: IFColorController = IFColorController(sourceView: sender)
-            toolVC.colorDidChanged = { (color) in
-                self?.tintColor = color
-                self?.updateIcon()
-            }
-            self?.present(toolVC, animated: true, completion: nil)
-        }
-        bar.rotateClosure = {[weak self] (sender) in
-            guard let direction = self?.orientation else {
-                return
-            }
-            switch direction {
-            case .up:
-                self?.orientation = .right
-                break
-            case .right:
-                self?.orientation = .down
-                break
-            case .down:
-                self?.orientation = .left
-                break
-            case .left:
-                self?.orientation = .up
-                break
-            case .upMirrored:
-                self?.orientation = .rightMirrored
-                break
-            case .rightMirrored:
-                self?.orientation = .downMirrored
-                break
-            case .downMirrored:
-                self?.orientation = .leftMirrored
-                break
-            case .leftMirrored:
-                self?.orientation = .upMirrored
-                break
-            }
-            self?.updateIcon()
-        }
-        bar.mirrorClosure = {[weak self] (sender) in
-            guard let direction = self?.orientation else {
-                return
-            }
-            switch direction {
-            case .up:
-                self?.orientation = .upMirrored
-                break
-            case .upMirrored:
-                self?.orientation = .up
-                break
-            case .down:
-                self?.orientation = .downMirrored
-                break
-            case .downMirrored:
-                self?.orientation = .down
-                break
-            case .left:
-                self?.orientation = .leftMirrored
-                break
-            case .leftMirrored:
-                self?.orientation = .left
-                break
-            case .right:
-                self?.orientation = .rightMirrored
-                break
-            case .rightMirrored:
-                self?.orientation = .right
-                break
-            }
-            self?.updateIcon()
         }
         return bar
     }()
