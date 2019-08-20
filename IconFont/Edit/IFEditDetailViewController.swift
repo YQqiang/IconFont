@@ -140,6 +140,8 @@ class IFEditDetailViewController: IFBaseViewController {
         let v = IFEditContentIconView()
         v.contentView.backgroundColor = UIColor.clear
         v.isUserInteractionEnabled = false
+        v.iconBtn.layer.cornerRadius = 8;
+        v.iconBtn.layer.masksToBounds = true
         return v
     }()
     
