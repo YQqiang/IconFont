@@ -267,7 +267,7 @@ extension String {
         if !scanner.scanHexInt32(&hexNum) {
             return nil
         }
-        switch String(format: "%x", hexNum).count {
+        switch self.count - 1 {
         case 3:
             return UIColor(hex3: UInt16(hexNum))
         case 4:
